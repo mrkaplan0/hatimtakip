@@ -14,6 +14,8 @@ struct LoginPage: View {
     let loginText = "Giris Yap"
     let emailtext = "Email"
     let passwordText = "Sifre"
+    let haveAccountText = "Hesabiniz yok mu?"
+    let signUpButtonText = "Kaydolun"
     var body: some View {
         
         VStack{
@@ -72,15 +74,18 @@ struct LoginPage: View {
                     }.frame(height: 50)
                         .padding(.horizontal).padding(.top)
                 }}
-            
+            Spacer(minLength: 20)
             HStack{
-                Text("Hesabiniz yok mu?")
-                Button("Kaydolun") {
+                Text("\(haveAccountText)")
+               
+                Button {
                     
-                }.padding()
-                
+                } label: {
+                    
+                    Text("\(signUpButtonText)").foregroundColor(Color(uiColor: .green)).bold()
+                }
             }
-            Spacer(minLength: 80)
+            Spacer(minLength: 30)
         }
         
        

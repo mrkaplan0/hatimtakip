@@ -15,6 +15,12 @@
 		8842F2BE2A785E90009F316D /* hatimtakipappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2BD2A785E90009F316D /* hatimtakipappUITests.swift */; };
 		8842F2C02A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2BF2A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift */; };
 		8873CCAC2A78704800C18995 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CCAB2A78704800C18995 /* Header.swift */; };
+		887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794C2A791717007FFB1B /* TabviewPage.swift */; };
+		887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794E2A791953007FFB1B /* ReadingPage.swift */; };
+		887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79502A791AFA007FFB1B /* IncCountsPage.swift */; };
+		887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79522A791CB6007FFB1B /* ListsPage.swift */; };
+		887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */; };
+		887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToGroupPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		8842F2BD2A785E90009F316D /* hatimtakipappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappUITests.swift; sourceTree = "<group>"; };
 		8842F2BF2A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		887E794C2A791717007FFB1B /* TabviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabviewPage.swift; sourceTree = "<group>"; };
+		887E794E2A791953007FFB1B /* ReadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPage.swift; sourceTree = "<group>"; };
+		887E79502A791AFA007FFB1B /* IncCountsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncCountsPage.swift; sourceTree = "<group>"; };
+		887E79522A791CB6007FFB1B /* ListsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsPage.swift; sourceTree = "<group>"; };
+		887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupPage.swift; sourceTree = "<group>"; };
+		887E79562A795324007FFB1B /* AddUserToGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToGroupPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,12 @@
 			children = (
 				8842F2A42A785E8D009F316D /* LoginPage.swift */,
 				8873CCAB2A78704800C18995 /* Header.swift */,
+				887E794C2A791717007FFB1B /* TabviewPage.swift */,
+				887E794E2A791953007FFB1B /* ReadingPage.swift */,
+				887E79502A791AFA007FFB1B /* IncCountsPage.swift */,
+				887E79522A791CB6007FFB1B /* ListsPage.swift */,
+				887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */,
+				887E79562A795324007FFB1B /* AddUserToGroupPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,8 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */,
+				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
+				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
+				887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */,
+				887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */,
 				8873CCAC2A78704800C18995 /* Header.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
+				887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */,
+				887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

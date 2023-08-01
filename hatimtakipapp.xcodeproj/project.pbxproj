@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */; };
-		8842F2A52A785E8D009F316D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A42A785E8D009F316D /* ContentView.swift */; };
+		8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A42A785E8D009F316D /* LoginPage.swift */; };
 		8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842F2A62A785E8F009F316D /* Assets.xcassets */; };
 		8842F2AA2A785E8F009F316D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842F2A92A785E8F009F316D /* Preview Assets.xcassets */; };
 		8842F2B42A785E90009F316D /* hatimtakipappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2B32A785E90009F316D /* hatimtakipappTests.swift */; };
 		8842F2BE2A785E90009F316D /* hatimtakipappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2BD2A785E90009F316D /* hatimtakipappUITests.swift */; };
 		8842F2C02A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2BF2A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift */; };
+		8873CCAC2A78704800C18995 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CCAB2A78704800C18995 /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		8842F29F2A785E8D009F316D /* hatimtakipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hatimtakipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappApp.swift; sourceTree = "<group>"; };
-		8842F2A42A785E8D009F316D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8842F2A42A785E8D009F316D /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		8842F2A62A785E8F009F316D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8842F2A92A785E8F009F316D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8842F2AF2A785E90009F316D /* hatimtakipappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hatimtakipappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		8842F2B92A785E90009F316D /* hatimtakipappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hatimtakipappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842F2BD2A785E90009F316D /* hatimtakipappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappUITests.swift; sourceTree = "<group>"; };
 		8842F2BF2A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,11 @@
 		8842F2A12A785E8D009F316D /* hatimtakipapp */ = {
 			isa = PBXGroup;
 			children = (
+				8873CCAA2A786FDE00C18995 /* Services */,
+				8873CCA92A786FCF00C18995 /* Models */,
+				8873CCA82A786FBD00C18995 /* ViewModels */,
+				8873CCA72A786F9300C18995 /* Views */,
 				8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */,
-				8842F2A42A785E8D009F316D /* ContentView.swift */,
 				8842F2A62A785E8F009F316D /* Assets.xcassets */,
 				8842F2A82A785E8F009F316D /* Preview Content */,
 			);
@@ -125,6 +130,36 @@
 				8842F2BF2A785E90009F316D /* hatimtakipappUITestsLaunchTests.swift */,
 			);
 			path = hatimtakipappUITests;
+			sourceTree = "<group>";
+		};
+		8873CCA72A786F9300C18995 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8842F2A42A785E8D009F316D /* LoginPage.swift */,
+				8873CCAB2A78704800C18995 /* Header.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8873CCA82A786FBD00C18995 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8873CCA92A786FCF00C18995 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8873CCAA2A786FDE00C18995 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8842F2A52A785E8D009F316D /* ContentView.swift in Sources */,
+				8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */,
+				8873CCAC2A78704800C18995 /* Header.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

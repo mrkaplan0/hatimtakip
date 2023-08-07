@@ -13,21 +13,27 @@ struct TabviewPage: View {
     let readText : String = "Kuran Oku"
     
     var body: some View {
-        TabView{
-            ListsPage().tabItem {
-                Image(systemName: "list.clipboard")
-                Text("\(listsText)")
+        NavigationStack {
+            TabView{
+                ListsPage().tabItem {
+                    Image(systemName: "list.clipboard")
+                    Text("\(listsText)")
+                }
+                IncCountsPage().tabItem {
+                    Image(systemName: "plus.circle")
+                    Text("\(increaseText)")
+                }
+                ReadingPage().tabItem {
+                    Image(systemName: "book")
+                    Text("\(readText)")
+                }
             }
-            IncCountsPage().tabItem {
-                Image(systemName: "plus.circle")
-                Text("\(increaseText)")
-            }
-            ReadingPage().tabItem {
-                Image(systemName: "book")
-                Text("\(readText)")
-            }
+            
+            .navigationBarBackButtonHidden()
         }
+        
     }
+    
 }
 
 struct HomePage_Previews: PreviewProvider {

@@ -13,25 +13,25 @@ struct ListsPage: View {
         let myReadings = "Cüzlerim"
         let addNewGroup = "Yeni Grup Kur"
         NavigationStack {
-            List {
-                       Section(header: Text("\(myGroupsText)")) {
-                        
-                       }
-
-                       Section(header: Text("\(myReadings)")) {
-                           
-                       }
-            }
-            
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        
+            VStack {
+                HStack{
+                    Spacer()
+                    NavigationLink {
+                        AddUserToGroupPage()
                     } label: {
                         
                         Text("\(addNewGroup)")
-                    }
+                    }.padding(.trailing)
+                }
+                
+                List {
+                           Section(header: Text("\(myGroupsText)")) {
+                            
+                           }
 
+                           Section(header: Text("\(myReadings)")) {
+                               
+                           }
                 }
             }
         }

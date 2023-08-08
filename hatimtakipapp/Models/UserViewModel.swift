@@ -6,35 +6,57 @@
 //
 
 import Foundation
+import Firebase
 
 
-struct UserViewModel : MyAuthenticationDelegate{
+class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     
-    func currentUser() -> MyUser {
-        <#code#>
+let authService = FirebaseAuthService()
+   var user  : User?
+    
+    init() {
+      Task{
+         await currentUser()
+      }
     }
     
-    func createUserWithEmailAndPassword(email: String, password: String) -> MyUser {
-        <#code#>
+    func currentUser() async -> User? {
+        user = await authService.currentUser()
+        return user
     }
     
-    func signInWithEmailAndPassword(email: String, password: String) -> MyUser {
-        <#code#>
+    func createUserWithEmailAndPassword(email: String, password: String) async -> User? {
+        return await authService.createUserWithEmailAndPassword(email: email, password: password)
     }
     
-    func signInWithGoogle() -> MyUser {
-        <#code#>
+    func signInWithEmailAndPassword(email: String, password: String) async -> User? {
+        return await authService.signInWithEmailAndPassword(email: email, password: password)
     }
     
-    func signInWithApple() -> MyUser {
-        <#code#>
+    func signInWithGoogle() async -> User? {
+       return await authService.signInWithGoogle()
     }
     
-    func signOut() -> Bool {
-        <#code#>
+    func signInWithApple() async -> User? {
+        return await authService.signInWithApple()
+    }
+    
+    func signOut() async -> Bool {
+        let result = await authService.signOut()
+        
+        if result == true {
+            user = nil
+
+        }
+            return true
     }
     
     
     
+   
+    
+  
+    
+   
     
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		883354772A7AAC8B00DB0965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 883354762A7AAC8B00DB0965 /* GoogleService-Info.plist */; };
+		113B0982B9FF4B3081CE545E /* Pods_hatimtakipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */; };
 		8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */; };
 		8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A42A785E8D009F316D /* LoginPage.swift */; };
 		8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842F2A62A785E8F009F316D /* Assets.xcassets */; };
@@ -19,7 +19,19 @@
 		884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513032A80F4B300127D72 /* MyAuthDelegate.swift */; };
 		884513082A81015D00127D72 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513072A81015D00127D72 /* GroupModel.swift */; };
 		8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513092A8102F100127D72 /* UserViewModel.swift */; };
+		8845130E2A8106C800127D72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8845130D2A8106C800127D72 /* GoogleService-Info.plist */; };
+		884513112A81073D00127D72 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 884513102A81073D00127D72 /* FirebaseAnalytics */; };
+		884513132A81073D00127D72 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 884513122A81073D00127D72 /* FirebaseAnalyticsSwift */; };
+		884513152A81073D00127D72 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 884513142A81073D00127D72 /* FirebaseAuth */; };
+		884513172A81073D00127D72 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 884513162A81073D00127D72 /* FirebaseFirestore */; };
+		884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */; };
+		8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */; };
+		8845131D2A81073D00127D72 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131C2A81073D00127D72 /* FirebaseMessaging */; };
 		8873CCAC2A78704800C18995 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CCAB2A78704800C18995 /* Header.swift */; };
+		887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23E62A81268800E65C05 /* FirebaseAuthService.swift */; };
+		887E23E92A81971F00E65C05 /* RouterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23E82A81971F00E65C05 /* RouterPage.swift */; };
+		887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23EA2A81B85900E65C05 /* FirestoreService.swift */; };
+		887E23ED2A81BD7200E65C05 /* ReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */; };
 		887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794C2A791717007FFB1B /* TabviewPage.swift */; };
 		887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794E2A791953007FFB1B /* ReadingPage.swift */; };
 		887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79502A791AFA007FFB1B /* IncCountsPage.swift */; };
@@ -27,6 +39,8 @@
 		887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */; };
 		887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToGroupPage.swift */; };
 		887E79592A799125007FFB1B /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79582A799125007FFB1B /* MyUser.swift */; };
+		B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */; };
+		DB60E52E2B37DBE32950B17F /* Pods_hatimtakipapp_hatimtakipappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		883354762A7AAC8B00DB0965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.debug.xcconfig"; sourceTree = "<group>"; };
+		1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.release.xcconfig"; sourceTree = "<group>"; };
+		3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842F29F2A785E8D009F316D /* hatimtakipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hatimtakipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappApp.swift; sourceTree = "<group>"; };
 		8842F2A42A785E8D009F316D /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -62,7 +78,12 @@
 		884513032A80F4B300127D72 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAuthDelegate.swift; path = hatimtakipapp/MyAuthDelegate.swift; sourceTree = SOURCE_ROOT; };
 		884513072A81015D00127D72 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		884513092A8102F100127D72 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = hatimtakipapp/Models/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8845130D2A8106C800127D72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		887E23E62A81268800E65C05 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthService.swift; path = hatimtakipapp/Models/FirebaseAuthService.swift; sourceTree = SOURCE_ROOT; };
+		887E23E82A81971F00E65C05 /* RouterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPage.swift; sourceTree = "<group>"; };
+		887E23EA2A81B85900E65C05 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = hatimtakipapp/Views/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
+		887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadingViewModel.swift; path = hatimtakipapp/Views/ReadingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		887E794C2A791717007FFB1B /* TabviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabviewPage.swift; sourceTree = "<group>"; };
 		887E794E2A791953007FFB1B /* ReadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPage.swift; sourceTree = "<group>"; };
 		887E79502A791AFA007FFB1B /* IncCountsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncCountsPage.swift; sourceTree = "<group>"; };
@@ -70,6 +91,12 @@
 		887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupPage.swift; sourceTree = "<group>"; };
 		887E79562A795324007FFB1B /* AddUserToGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToGroupPage.swift; sourceTree = "<group>"; };
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipappTests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipappTests/Pods-hatimtakipappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp_hatimtakipappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD63B1733E7D5948E28B9AE /* Pods-hatimtakipappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipappTests.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipappTests/Pods-hatimtakipappTests.release.xcconfig"; sourceTree = "<group>"; };
+		E53022807AD4511F82A26083 /* Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +104,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884513132A81073D00127D72 /* FirebaseAnalyticsSwift in Frameworks */,
+				884513172A81073D00127D72 /* FirebaseFirestore in Frameworks */,
+				8845131D2A81073D00127D72 /* FirebaseMessaging in Frameworks */,
+				884513152A81073D00127D72 /* FirebaseAuth in Frameworks */,
+				884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				884513112A81073D00127D72 /* FirebaseAnalytics in Frameworks */,
+				8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */,
+				113B0982B9FF4B3081CE545E /* Pods_hatimtakipapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +127,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB60E52E2B37DBE32950B17F /* Pods_hatimtakipapp_hatimtakipappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FDE8DBDBB3B07D3261BEED4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */,
+				A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */,
+				3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E6BC4C2A93BA9B7431564A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */,
+				1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */,
+				891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */,
+				E53022807AD4511F82A26083 /* Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig */,
+				99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */,
+				DBD63B1733E7D5948E28B9AE /* Pods-hatimtakipappTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8842F2962A785E8D009F316D = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +164,8 @@
 				8842F2B22A785E90009F316D /* hatimtakipappTests */,
 				8842F2BC2A785E90009F316D /* hatimtakipappUITests */,
 				8842F2A02A785E8D009F316D /* Products */,
+				4E6BC4C2A93BA9B7431564A1 /* Pods */,
+				0FDE8DBDBB3B07D3261BEED4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +187,7 @@
 				8873CCA82A786FBD00C18995 /* ViewModels */,
 				8873CCA72A786F9300C18995 /* Views */,
 				8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */,
-				883354762A7AAC8B00DB0965 /* GoogleService-Info.plist */,
+				8845130D2A8106C800127D72 /* GoogleService-Info.plist */,
 				8842F2A62A785E8F009F316D /* Assets.xcassets */,
 				8842F2A82A785E8F009F316D /* Preview Content */,
 			);
@@ -168,6 +230,7 @@
 				887E79522A791CB6007FFB1B /* ListsPage.swift */,
 				887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */,
 				887E79562A795324007FFB1B /* AddUserToGroupPage.swift */,
+				887E23E82A81971F00E65C05 /* RouterPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				884513092A8102F100127D72 /* UserViewModel.swift */,
+				887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,6 +258,8 @@
 			children = (
 				884513012A80F44600127D72 /* MyDatabaseDelegate.swift */,
 				884513032A80F4B300127D72 /* MyAuthDelegate.swift */,
+				887E23E62A81268800E65C05 /* FirebaseAuthService.swift */,
+				887E23EA2A81B85900E65C05 /* FirestoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -205,15 +271,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842F2C32A785E90009F316D /* Build configuration list for PBXNativeTarget "hatimtakipapp" */;
 			buildPhases = (
+				01D986AF34868E61D9030EE0 /* [CP] Check Pods Manifest.lock */,
 				8842F29B2A785E8D009F316D /* Sources */,
 				8842F29C2A785E8D009F316D /* Frameworks */,
 				8842F29D2A785E8D009F316D /* Resources */,
+				03051B90A011AE895F41D548 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = hatimtakipapp;
+			packageProductDependencies = (
+				884513102A81073D00127D72 /* FirebaseAnalytics */,
+				884513122A81073D00127D72 /* FirebaseAnalyticsSwift */,
+				884513142A81073D00127D72 /* FirebaseAuth */,
+				884513162A81073D00127D72 /* FirebaseFirestore */,
+				884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */,
+				8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */,
+				8845131C2A81073D00127D72 /* FirebaseMessaging */,
+			);
 			productName = hatimtakipapp;
 			productReference = 8842F29F2A785E8D009F316D /* hatimtakipapp.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +299,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842F2C62A785E90009F316D /* Build configuration list for PBXNativeTarget "hatimtakipappTests" */;
 			buildPhases = (
+				155686815FBEAAD2DB85D6E6 /* [CP] Check Pods Manifest.lock */,
 				8842F2AB2A785E90009F316D /* Sources */,
 				8842F2AC2A785E90009F316D /* Frameworks */,
 				8842F2AD2A785E90009F316D /* Resources */,
@@ -240,9 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842F2C92A785E90009F316D /* Build configuration list for PBXNativeTarget "hatimtakipappUITests" */;
 			buildPhases = (
+				4F962F9B3C62CDB54C903811 /* [CP] Check Pods Manifest.lock */,
 				8842F2B52A785E90009F316D /* Sources */,
 				8842F2B62A785E90009F316D /* Frameworks */,
 				8842F2B72A785E90009F316D /* Resources */,
+				4060A3DAEDA02CFC4CBEB706 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +366,9 @@
 				Base,
 			);
 			mainGroup = 8842F2962A785E8D009F316D;
+			packageReferences = (
+				8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8842F2A02A785E8D009F316D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,7 +387,7 @@
 			files = (
 				8842F2AA2A785E8F009F316D /* Preview Assets.xcassets in Resources */,
 				8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */,
-				883354772A7AAC8B00DB0965 /* GoogleService-Info.plist in Resources */,
+				8845130E2A8106C800127D72 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +407,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01D986AF34868E61D9030EE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hatimtakipapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		03051B90A011AE895F41D548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		155686815FBEAAD2DB85D6E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hatimtakipappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4060A3DAEDA02CFC4CBEB706 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F962F9B3C62CDB54C903811 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hatimtakipapp-hatimtakipappUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8842F29B2A785E8D009F316D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,11 +524,15 @@
 				884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */,
 				884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */,
 				887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */,
+				887E23E92A81971F00E65C05 /* RouterPage.swift in Sources */,
+				887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */,
 				8873CCAC2A78704800C18995 /* Header.swift in Sources */,
+				887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */,
 				884513082A81015D00127D72 /* GroupModel.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
 				887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */,
 				887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */,
+				887E23ED2A81BD7200E65C05 /* ReadingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +685,7 @@
 		};
 		8842F2C42A785E90009F316D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,6 +715,7 @@
 		};
 		8842F2C52A785E90009F316D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -553,6 +745,7 @@
 		};
 		8842F2C72A785E90009F316D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -573,6 +766,7 @@
 		};
 		8842F2C82A785E90009F316D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBD63B1733E7D5948E28B9AE /* Pods-hatimtakipappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -593,6 +787,7 @@
 		};
 		8842F2CA2A785E90009F316D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -611,6 +806,7 @@
 		};
 		8842F2CB2A785E90009F316D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E53022807AD4511F82A26083 /* Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -667,6 +863,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		884513102A81073D00127D72 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		884513122A81073D00127D72 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		884513142A81073D00127D72 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		884513162A81073D00127D72 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		8845131C2A81073D00127D72 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8842F2972A785E8D009F316D /* Project object */;
 }

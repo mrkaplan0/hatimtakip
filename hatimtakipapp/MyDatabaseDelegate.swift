@@ -12,9 +12,7 @@ protocol MyDatabaseDelegate {
     
     func saveMyUser(user : MyUser) -> Bool
     
-    func readMyUser(userID : String) -> MyUser
-    
-    func updateUser(updatedUser : MyUser) -> Bool
+    func fetchUserList() -> [MyUser]
     
     func saveNewGroup(newGroup : Group) -> Bool
     

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginPage: View {
-    
+    @StateObject  var userViewModel = UserViewModel()
+    @StateObject var readingViewModel = ReadingViewModel()
     @State var isSignedIn = false
     @State var email = ""
     @State var password = ""
@@ -35,12 +37,16 @@ struct LoginPage: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(passwordText)", text: $email).padding(.leading)
+                    TextField("\(passwordText)", text: $password).padding(.leading)
                 }.frame(height: 50)
                     .padding(.horizontal)
+                
+            
                 //Login Button
                 Button {
-                    isSignedIn = true
+                    Task{
+                        await createUserWithEmail()
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8).stroke(.green)
@@ -89,12 +95,23 @@ struct LoginPage: View {
                 }
                 Spacer(minLength: 30)
             }.navigationDestination(isPresented: $isSignedIn) {
-                TabviewPage()
+                RouterPage()
             }
+            
         }
+    }
+    
+   
+    
+    func createUserWithEmail() async {
         
-       
-
+      let user =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
+        
+        if user != nil {
+            isSignedIn = true
+            readingViewModel.saveMyUser(user: MyUser(id: user!.uid, email: user!.email!, username: ""))
+        }
+        print(user?.email as Any)
     }
 }
 

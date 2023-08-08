@@ -9,11 +9,13 @@ import Foundation
 
 class MyUser {
     
-    let id : String = UUID().uuidString
-    let email : String = ""
-    let username : String = ""
+    let id : String
+    let email : String
+    let username : String
     
-    init() {
+    init(id: String, email: String, username: String) {
+        self.id = id
+        self.email = email
+        self.username = username
     }
-    
 }

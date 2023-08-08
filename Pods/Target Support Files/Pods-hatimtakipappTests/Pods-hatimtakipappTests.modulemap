@@ -1,0 +1,6 @@
+framework module Pods_hatimtakipappTests {
+  umbrella header "Pods-hatimtakipappTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

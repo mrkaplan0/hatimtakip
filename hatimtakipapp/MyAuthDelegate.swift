@@ -6,20 +6,20 @@
 //
 
 import Foundation
-import Firebase
+
 
 
 protocol MyAuthenticationDelegate {
     
-    func currentUser() async -> User?
+    func currentUser() async -> MyUser?
     
-    func createUserWithEmailAndPassword(email : String, password : String) async -> User?
+    func createUserWithEmailAndPassword(email : String, password : String) async -> MyUser?
     
-    func signInWithEmailAndPassword(email :String, password : String) async -> User?
+    func signInWithEmailAndPassword(email :String, password : String) async -> MyUser?
     
-    func signInWithGoogle() async -> User?
+    func signInWithGoogle() async -> MyUser?
     
-    func signInWithApple() async -> User?
+    func signInWithApple() async -> MyUser?
     
     func signOut() async -> Bool
 

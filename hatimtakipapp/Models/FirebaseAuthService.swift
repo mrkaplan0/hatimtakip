@@ -12,16 +12,26 @@ import Firebase
 struct FirebaseAuthService : MyAuthenticationDelegate{
     let auth = Auth.auth()
     
-    func currentUser() async -> User? {
-        let user = auth.currentUser
-    return user
+    func convertAuthResultToMyUser (user : User) -> MyUser {
+     let  myUser = MyUser(id: user.uid, email: user.email!, username: "")
+        
+        return myUser
+        
     }
     
-    func createUserWithEmailAndPassword(email: String, password: String) async -> User? {
+    func currentUser() async -> MyUser? {
+       if let user = auth.currentUser { return convertAuthResultToMyUser(user: user) }
+        else{
+            return nil
+        }
+   
+    }
+    
+    func createUserWithEmailAndPassword(email: String, password: String) async -> MyUser? {
        
         do {let userResult = try await auth.createUser(withEmail: email, password: password)
             
-            return userResult.user}
+            return convertAuthResultToMyUser(user: userResult.user)}
         catch {
             print(error)
             return nil
@@ -29,27 +39,27 @@ struct FirebaseAuthService : MyAuthenticationDelegate{
         
     }
     
-    func signInWithEmailAndPassword(email: String, password: String) async -> User? {
+    func signInWithEmailAndPassword(email: String, password: String) async -> MyUser? {
         do {let userResult = try await auth.signIn(withEmail: email, password: password)
-            return userResult.user}
+            return convertAuthResultToMyUser(user: userResult.user)}
         catch {
             print(error)
             return nil
             }
     }
     
-    func signInWithGoogle() async -> User? {
+    func signInWithGoogle() async -> MyUser? {
         do {let userResult = try await auth.signInAnonymously()
-            return userResult.user}
+            return convertAuthResultToMyUser(user: userResult.user)}
         catch {
             print(error)
             return nil
             }
     }
     
-    func signInWithApple() async -> User? {
+    func signInWithApple() async -> MyUser? {
         do {let userResult = try await auth.signInAnonymously()
-            return userResult.user}
+            return convertAuthResultToMyUser(user: userResult.user)}
         catch {
             print(error)
             return nil

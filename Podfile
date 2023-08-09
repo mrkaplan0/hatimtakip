@@ -10,6 +10,7 @@ target 'hatimtakipapp' do
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/OAuth' # Used for Sign in with Apple, Twitter, etc
+pod 'FirebaseFirestoreSwift'
 
 
   target 'hatimtakipappTests' do

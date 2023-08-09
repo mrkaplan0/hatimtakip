@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import Firebase
+
 
 struct RouterPage: View {
     
-    @State var user : User?
+    @State var user : MyUser?
     @State var userList = [MyUser]()
     @StateObject var userViewModel = UserViewModel()
     @StateObject var readingViewModel = ReadingViewModel()
@@ -18,24 +18,7 @@ struct RouterPage: View {
    
 
     var body: some View {
-                if userViewModel.user == nil {
-            LoginPage()
-            
-        } else {
-            
-            
-            TabviewPage()
-            
-        }
-        VStack{}.onAppear(){
-           userList = readingViewModel.fetchUserList()
-            
-            let result = userList.contains { user in
-                userViewModel.user! == user as! NSObject
-            }
-           print(result)
-        }
-
+Text("9")
     }
 }
 

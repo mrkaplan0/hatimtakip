@@ -109,7 +109,7 @@ struct LoginPage: View {
         
         if user != nil {
             isSignedIn = true
-            readingViewModel.saveMyUser(user: MyUser(id: user!.uid, email: user!.email!, username: ""))
+        
         }
         print(user?.email as Any)
     }

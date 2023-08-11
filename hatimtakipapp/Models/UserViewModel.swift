@@ -5,6 +5,13 @@
 //  Created by MrKaplan on 07.08.23.
 //
 
+//
+//  UserViewModel.swift
+//  hatimtakipapp
+//
+//  Created by MrKaplan on 07.08.23.
+//
+
 import Foundation
 
 
@@ -22,8 +29,10 @@ let authService = FirebaseAuthService()
     }
     
     func currentUser() async -> MyUser? {
-       let user = await authService.currentUser()
+       user = await authService.currentUser()
         if user != nil {
+            
+            user = firestoreService.readMyUser(userId: user!.id)
             return user
         } else {
             return nil

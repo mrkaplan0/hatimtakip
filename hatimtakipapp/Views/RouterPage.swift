@@ -18,7 +18,17 @@ struct RouterPage: View {
    
 
     var body: some View {
-Text("9")
+                if userViewModel.user == nil {
+            LoginPage()
+            
+        } else {
+            
+            
+            TabviewPage()
+            
+        }
+        
+        
     }
 }
 

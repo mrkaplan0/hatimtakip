@@ -9,20 +9,15 @@ import Foundation
 
 class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     
-    
-    
-    
-    
     let fireStoreService = FirestoreService()
+    
     
     func saveMyUser(user: MyUser) -> Bool {
        return fireStoreService.saveMyUser(user: user)
     }
-    
     func readMyUser(userId: String) -> MyUser? {
-       return fireStoreService.readMyUser(userId: userId)
+        return fireStoreService.readMyUser(userId: userId)
     }
-    
     func fetchUserList() -> [MyUser] {
         return fireStoreService.fetchUserList()
     }

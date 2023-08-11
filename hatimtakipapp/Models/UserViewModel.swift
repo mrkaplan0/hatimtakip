@@ -22,8 +22,10 @@ let authService = FirebaseAuthService()
     }
     
     func currentUser() async -> MyUser? {
-       let user = await authService.currentUser()
+        user = await authService.currentUser()
         if user != nil {
+            
+            user = firestoreService.readMyUser(userId: user!.id)
             return user
         } else {
             return nil

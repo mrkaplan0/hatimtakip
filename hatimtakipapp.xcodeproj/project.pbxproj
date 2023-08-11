@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		113B0982B9FF4B3081CE545E /* Pods_hatimtakipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */; };
+		8838E1C42A866D8B006BA389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8838E1C32A866D8B006BA389 /* GoogleService-Info.plist */; };
 		8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */; };
 		8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A42A785E8D009F316D /* LoginPage.swift */; };
 		8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842F2A62A785E8F009F316D /* Assets.xcassets */; };
@@ -19,7 +20,6 @@
 		884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513032A80F4B300127D72 /* MyAuthDelegate.swift */; };
 		884513082A81015D00127D72 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513072A81015D00127D72 /* GroupModel.swift */; };
 		8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513092A8102F100127D72 /* UserViewModel.swift */; };
-		8845130E2A8106C800127D72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8845130D2A8106C800127D72 /* GoogleService-Info.plist */; };
 		884513112A81073D00127D72 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 884513102A81073D00127D72 /* FirebaseAnalytics */; };
 		884513132A81073D00127D72 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 884513122A81073D00127D72 /* FirebaseAnalyticsSwift */; };
 		884513152A81073D00127D72 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 884513142A81073D00127D72 /* FirebaseAuth */; };
@@ -64,6 +64,7 @@
 		10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.debug.xcconfig"; sourceTree = "<group>"; };
 		1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.release.xcconfig"; sourceTree = "<group>"; };
 		3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8838E1C32A866D8B006BA389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8842F29F2A785E8D009F316D /* hatimtakipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hatimtakipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappApp.swift; sourceTree = "<group>"; };
 		8842F2A42A785E8D009F316D /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		884513032A80F4B300127D72 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAuthDelegate.swift; path = hatimtakipapp/MyAuthDelegate.swift; sourceTree = SOURCE_ROOT; };
 		884513072A81015D00127D72 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		884513092A8102F100127D72 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = hatimtakipapp/Models/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
-		8845130D2A8106C800127D72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		887E23E62A81268800E65C05 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthService.swift; path = hatimtakipapp/Models/FirebaseAuthService.swift; sourceTree = SOURCE_ROOT; };
 		887E23E82A81971F00E65C05 /* RouterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPage.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				8873CCA82A786FBD00C18995 /* ViewModels */,
 				8873CCA72A786F9300C18995 /* Views */,
 				8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */,
-				8845130D2A8106C800127D72 /* GoogleService-Info.plist */,
+				8838E1C32A866D8B006BA389 /* GoogleService-Info.plist */,
 				8842F2A62A785E8F009F316D /* Assets.xcassets */,
 				8842F2A82A785E8F009F316D /* Preview Content */,
 			);
@@ -386,8 +386,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8842F2AA2A785E8F009F316D /* Preview Assets.xcassets in Resources */,
+				8838E1C42A866D8B006BA389 /* GoogleService-Info.plist in Resources */,
 				8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */,
-				8845130E2A8106C800127D72 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

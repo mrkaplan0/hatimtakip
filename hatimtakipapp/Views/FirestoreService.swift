@@ -27,6 +27,8 @@ struct FirestoreService : MyDatabaseDelegate{
             if let data = doc?.data(){
                 
                  user = MyUser(id: data["id"] as! String, email: data["email"] as! String, username: data["username"] as! String)
+                
+                print(user ?? "user bosssss")
             }
         }
         return user

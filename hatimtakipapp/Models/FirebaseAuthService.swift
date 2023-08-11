@@ -77,14 +77,7 @@ struct FirebaseAuthService : MyAuthenticationDelegate{
         }
        
     }
-    
-    
-  
-  
-    
-    
-    
-    
-    
+
+
     
 }

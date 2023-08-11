@@ -106,11 +106,7 @@ struct LoginPage: View {
     func createUserWithEmail() async {
         
       let user =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
-        
-        if user != nil {
-            isSignedIn = true
-        
-        }
+    
         print(user?.email as Any)
     }
 }

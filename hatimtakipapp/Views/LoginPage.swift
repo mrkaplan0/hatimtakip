@@ -45,8 +45,11 @@ struct LoginPage: View {
                 //Login Button
                 Button {
                     Task{
-                        await createUserWithEmail()
+                        isSignedIn = await createUserWithEmail()
+                        
                     }
+                   
+                                        
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8).stroke(.green)
@@ -61,7 +64,9 @@ struct LoginPage: View {
                     
                     //Google Sign Button
                     Button {
+                        isSignedIn = true
                         
+                        print(isSignedIn)
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8).stroke(.green)
@@ -103,11 +108,14 @@ struct LoginPage: View {
     
    
     
-    func createUserWithEmail() async {
+    func createUserWithEmail() async -> Bool {
         
-      let user =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
-    
-        print(user?.email as Any)
+        let user =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
+        print("login page gelen user \(String(describing: user))")
+        if user != nil {
+            return true
+        } else {return false}
+        
     }
 }
 

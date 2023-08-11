@@ -10,9 +10,9 @@ import Foundation
 
 protocol MyDatabaseDelegate {
     
-    func saveMyUser(user : MyUser) -> Bool
+    func saveMyUser(user : MyUser) async -> Bool
     
-    func readMyUser(userId : String) -> MyUser?
+    func readMyUser(userId : String) async-> MyUser?
     
     func fetchUserList() -> [MyUser]
     

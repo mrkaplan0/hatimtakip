@@ -12,10 +12,14 @@ import Firebase
 struct FirebaseAuthService : MyAuthenticationDelegate{
     let auth = Auth.auth()
     
-    func convertAuthResultToMyUser (user : User) -> MyUser {
-     let  myUser = MyUser(id: user.uid, email: user.email!, username: "")
-        
-        return myUser
+    func convertAuthResultToMyUser (user : User?) -> MyUser? {
+        if user != nil {
+            let  myUser = MyUser(id: user!.uid, email: user!.email!, username: "")
+               
+               return myUser
+        } else {
+            return nil
+        }
         
     }
     

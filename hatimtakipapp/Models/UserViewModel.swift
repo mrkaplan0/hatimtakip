@@ -34,7 +34,8 @@ let authService = FirebaseAuthService()
 
         if user != nil {
             
-            user = firestoreService.readMyUser(userId: user!.id)
+            user = await firestoreService.readMyUser(userId: user!.id)
+            print("userview current gelen user \(String(describing: user))")
             return user
         } else {
             return nil
@@ -46,12 +47,13 @@ let authService = FirebaseAuthService()
     func createUserWithEmailAndPassword(email: String, password: String) async -> MyUser? {
         
         let myuser = await authService.createUserWithEmailAndPassword(email: email, password: password)
-        
+        print("userview createuser gelen user \(String(describing: myuser?.id))")
         if  myuser != nil {
-           let result = firestoreService.saveMyUser(user: myuser!)
-            
+           let result = await firestoreService.saveMyUser(user: myuser!)
+            print("userview createuser gelen ve kaydedilen user \(String(describing: myuser?.id)) ve \(result)")
             if result == true {
-                user = firestoreService.readMyUser(userId: myuser!.id)
+                self.user = await firestoreService.readMyUser(userId: myuser!.id)
+                print("userview createuser db gelen user \(String(describing: user?.id))")
             }
         }
         return user
@@ -76,7 +78,7 @@ let authService = FirebaseAuthService()
             user = nil
 
         }
-            return true
+            return result
     }
     
     

@@ -15,10 +15,11 @@ struct RouterPage: View {
     @StateObject var userViewModel = UserViewModel()
     @StateObject var readingViewModel = ReadingViewModel()
 
-   
+    init (){print("routerdayiz")}
 
     var body: some View {
                 if userViewModel.user == nil {
+                    
             LoginPage()
             
         } else {
@@ -27,9 +28,10 @@ struct RouterPage: View {
             TabviewPage()
             
         }
-        
+           
         
     }
+        
 }
 
 

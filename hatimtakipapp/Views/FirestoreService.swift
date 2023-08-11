@@ -14,23 +14,45 @@ struct FirestoreService : MyDatabaseDelegate{
     
     let db = Firestore.firestore()
     
-    func saveMyUser(user: MyUser) -> Bool {
-        db.collection("Users").document(user.id).setData( ["username": user.username, "email" : user.email, "id" : user.id] , merge: true)
-        return true
+    func saveMyUser(user: MyUser) async ->  Bool {
+       
+        do {
+            try await db.collection("Users").document(user.id).setData( ["username": user.username, "email" : user.email, "id" : user.id] , merge: true)
+            return true
+        } catch {
+            return false
+        }
+        
     }
     
-    func readMyUser(userId: String) -> MyUser? {
+    func readMyUser(userId: String) async -> MyUser? {
         
         var user : MyUser?
-        db.collection("Users").document(userId).getDocument(source: .default){ doc, error  in
+        do{
+         let docRef =   try  await db.collection("Users").document(userId).getDocument()
+            
+            if let data = docRef.data(){
+                
+                 user = MyUser(id: data["id"] as! String, email: data["email"] as! String, username: data["username"] as! String)
+                
+                print("db okunan user \(String(describing: user))")
+            }
+        } catch {
+            print(error)
+        }
+      
+        
+        
+        
+    /*    db.collection("Users").document(userId).getDocument(source: .server){ doc, error  in
            
             if let data = doc?.data(){
                 
                  user = MyUser(id: data["id"] as! String, email: data["email"] as! String, username: data["username"] as! String)
                 
-                print(user ?? "user bosssss")
+                print("db okunan user \(String(describing: user))")
             }
-        }
+        } */
         return user
     }
     

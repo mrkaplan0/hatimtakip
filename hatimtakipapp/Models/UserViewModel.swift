@@ -18,20 +18,20 @@ import Foundation
 
 class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     
-let authService = FirebaseAuthService()
+    let authService = FirebaseAuthService()
     let firestoreService = FirestoreService()
-   var user  : MyUser?
+    @Published var user  : MyUser?
     
     init() {
       Task{
          await currentUser()
       }
     }
-    
+    @MainActor
     func currentUser() async -> MyUser? {
 
        user = await authService.currentUser()
-
+            
         if user != nil {
             
             user = await firestoreService.readMyUser(userId: user!.id)
@@ -43,42 +43,51 @@ let authService = FirebaseAuthService()
         
        
     }
-    
-    func createUserWithEmailAndPassword(email: String, password: String) async -> MyUser? {
         
-        let myuser = await authService.createUserWithEmailAndPassword(email: email, password: password)
-        print("userview createuser gelen user \(String(describing: myuser?.id))")
-        if  myuser != nil {
-           let result = await firestoreService.saveMyUser(user: myuser!)
-            print("userview createuser gelen ve kaydedilen user \(String(describing: myuser?.id)) ve \(result)")
-            if result == true {
-                self.user = await firestoreService.readMyUser(userId: myuser!.id)
-                print("userview createuser db gelen user \(String(describing: user?.id))")
-            }
+    @MainActor
+    func createUserWithEmailAndPassword(email: String, password: String) async -> Result<MyUser?,any Error> {
+        
+       let myuserResultFromFirebaseAuth = await authService.createUserWithEmailAndPassword(email: email, password: password)
+        
+        switch myuserResultFromFirebaseAuth {
+            
+        case .success (let myuser) :
+            let result = await firestoreService.saveMyUser(user: myuser!)
+             print("userview createuser gelen ve kaydedilen user \(String(describing: myuser?.id)) ve \(result)")
+             if result == true {
+                 self.user = await firestoreService.readMyUser(userId: myuser!.id)
+                 print("userview createuser db gelen user \(String(describing: user?.id))")
+             }
+            return .success(user)
+            
+        case .failure(let error) :
+            return .failure(error)
         }
-        return user
+        
+      
     }
     
-    func signInWithEmailAndPassword(email: String, password: String) async -> MyUser? {
+    func signInWithEmailAndPassword(email: String, password: String) async -> Result<MyUser?,any Error> {
         return await authService.signInWithEmailAndPassword(email: email, password: password)
     }
     
-    func signInWithGoogle() async -> MyUser? {
-       return await authService.signInWithGoogle()
+    func signInWithAnonymously() async -> Result<MyUser?,any Error> {
+       return await authService.signInWithAnonymously()
     }
     
-    func signInWithApple() async -> MyUser? {
-        return await authService.signInWithApple()
-    }
     
-    func signOut() async -> Bool {
+    @MainActor
+    func signOut() async -> Result<Bool,any Error> {
         let result = await authService.signOut()
-        
-        if result == true {
-            user = nil
-
+       
+        switch result {
+        case .success(let signedOut) :
+            self.user = nil
+            return .success(signedOut)
+        case .failure(let error) :
+            return .failure(error)
         }
-            return result
+       
     }
     
     

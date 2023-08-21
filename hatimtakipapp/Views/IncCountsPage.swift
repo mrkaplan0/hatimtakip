@@ -18,7 +18,14 @@ struct IncCountsPage: View {
                     Spacer()
                     Button {
                         Task{
-                            isSignout = await userViewModel.signOut()
+                            let signOutResult = await userViewModel.signOut()
+                            
+                            switch signOutResult{
+                            case .success(let signoutConfirmed) :
+                                isSignout = signoutConfirmed
+                            case .failure(let error) :
+                                print(error.localizedDescription)
+                            }
                         }
                         
                         

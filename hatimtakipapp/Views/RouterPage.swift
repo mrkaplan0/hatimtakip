@@ -10,7 +10,6 @@ import SwiftUI
 
 struct RouterPage: View {
     
-    @State var user : MyUser?
     @State var userList = [MyUser]()
     @StateObject var userViewModel = UserViewModel()
     @StateObject var readingViewModel = ReadingViewModel()

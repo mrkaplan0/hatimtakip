@@ -40,6 +40,7 @@
 		887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */; };
 		887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToGroupPage.swift */; };
 		887E79592A799125007FFB1B /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79582A799125007FFB1B /* MyUser.swift */; };
+		88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C195552A93FA3800006F89 /* CustomButtonStyle.swift */; };
 		B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */; };
 		DB60E52E2B37DBE32950B17F /* Pods_hatimtakipapp_hatimtakipappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupPage.swift; sourceTree = "<group>"; };
 		887E79562A795324007FFB1B /* AddUserToGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToGroupPage.swift; sourceTree = "<group>"; };
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		88C195552A93FA3800006F89 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipappTests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipappTests/Pods-hatimtakipappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp_hatimtakipappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 				887E79562A795324007FFB1B /* AddUserToGroupPage.swift */,
 				887E23E82A81971F00E65C05 /* RouterPage.swift */,
 				8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */,
+				88C195552A93FA3800006F89 /* CustomButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			files = (
 				887E79592A799125007FFB1B /* MyUser.swift in Sources */,
 				8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */,
+				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
 				887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */,

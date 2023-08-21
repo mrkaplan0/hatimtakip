@@ -14,21 +14,25 @@ struct LoginPage: View {
     @State var isSignedIn = false
     @State var email = ""
     @State var password = ""
+    @State var headerColor : Color = .green
     let loginText = "Giris Yap"
     let emailtext = "Email"
     let passwordText = "Sifre"
     let haveAccountText = "Hesabiniz yok mu?"
     let signUpButtonText = "Kaydolun"
+    let signInAnonymouslyText = "Üye Olmadan Devam Et"
+    
     var body: some View {
         
         NavigationStack {
             VStack{
                 //Header
                 
-                Header()
+                Header(headerColor: headerColor)
                 
+                Spacer(minLength: 100)
                 //LoginForm
-             
+                
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
                     TextField("\(emailtext)", text: $email).padding(.leading)
@@ -41,80 +45,71 @@ struct LoginPage: View {
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
-            
+                
                 //Login Button
                 Button {
                     Task{
                         isSignedIn = await createUserWithEmail()
                         
                     }
-                   
-                                        
+                    
+                    
                 } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8).stroke(.green)
-                        Text("\(loginText)").foregroundColor(.green)
-                    }.frame(height: 50)
-                        .padding(.horizontal).padding(.top)
+                    CustomButtonStyle(buttonText: loginText, buttonColor: .green)
                 }
-
+                
                 Text("&").font(.headline).padding(.top).foregroundColor(.green)
                 
-                HStack{
+              VStack{
                     
-                    //Google Sign Button
+                    //Sign Anonymously Button
                     Button {
                         isSignedIn = true
                         
                         print(isSignedIn)
                     } label: {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 8).stroke(.green)
-                            Text("Google").foregroundColor(.green)
-                        }.frame(height: 50)
-                            .padding(.horizontal).padding(.top)
+                            CustomButtonStyle(buttonText: signInAnonymouslyText, buttonColor: .green)
+                        }
+                        
                     }
+                       
                     
-                    //Apple Sign Button
-                    Button {
+                    HStack{
+                        Text("\(haveAccountText)")
                         
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8).stroke(.green)
-                            HStack{
-                                
-                                Text("Apple").foregroundColor(.green)}
-                        }.frame(height: 50)
-                            .padding(.horizontal).padding(.top)
-                    }}
-                Spacer(minLength: 20)
-                HStack{
-                    Text("\(haveAccountText)")
-                   
-                    Button {
-                        
-                    } label: {
-                        
-                        Text("\(signUpButtonText)").foregroundColor(Color(uiColor: .green)).bold()
+                        Button {
+                            
+                        } label: {
+                            
+                            Text("\(signUpButtonText)").foregroundColor(Color(uiColor: .green)).bold()
+                        }
                     }
+                    Spacer(minLength: 20)
+                }.navigationDestination(isPresented: $isSignedIn) {
+                    RouterPage()
+                        
                 }
-                Spacer(minLength: 30)
-            }.navigationDestination(isPresented: $isSignedIn) {
-                RouterPage()
+                .navigationBarBackButtonHidden()
+                
             }
-            
         }
     }
-    
    
     
     func createUserWithEmail() async -> Bool {
         
-        let user =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
-        print("login page gelen user \(String(describing: user))")
-        if user != nil {
+        let userResult =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
+        switch userResult {
+        case .success(let user):
+            print("login page gelen user \(String(describing: user))")
             return true
-        } else {return false}
+        case .failure(let error):
+            //if you have an error, u must show a notification.
+            print(error.localizedDescription)
+            return false
+        }
+        
         
     }
 }
@@ -124,3 +119,5 @@ struct ContentView_Previews: PreviewProvider {
         LoginPage()
     }
 }
+
+

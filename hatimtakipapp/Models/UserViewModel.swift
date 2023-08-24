@@ -30,8 +30,10 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     
     init() {
         Task{
+            if user == nil{
+                await currentUser()
+            }
             
-            await currentUser()
         }
     }
     @MainActor
@@ -84,7 +86,7 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
         
         switch myuserResultFromFirebaseAuth {
             
-        case .success (var myuser) :
+        case .success (let myuser) :
             
             let result = await firestoreService.saveMyUser(user: myuser!)
             print("userview createuser ANONYM gelen ve kaydedilen user \(String(describing: myuser?.id)) ve \(result)")

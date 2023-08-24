@@ -24,6 +24,7 @@ struct SignInPage: View {
     let usernameText = "Kullanici Adi"
     let errorAlertTitle = "Hata"
     let usernameNotUsableText = "Bu kullanici adi kullaniliyor!"
+    let usernameCanNotNilText = " Kullanici adi alani bos birakilamaz."
     
     @State private var  usernameList = [String]()
     
@@ -73,7 +74,7 @@ struct SignInPage: View {
                             isSignedIn = await createUserWithEmail()
                         }
                     }else {
-                        errorMessage = usernameNotUsableText
+                        errorMessage = usernameNotUsableText + usernameCanNotNilText
                         iserrorAlertActive = true
                     }
                 } label: {

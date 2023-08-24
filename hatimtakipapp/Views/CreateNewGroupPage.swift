@@ -14,9 +14,9 @@ struct CreateNewGroupPage: View {
     let makePrivatInfoText = "Özel gruplara sadece kurucu katilimci ekleyebilir."
     let timepickerInfoText = "Hatimin bitis tarihini secin."
     let confirmButtonText = "Onayla"
-    @State var isPrivate : Bool
-    @State var groupName : String
-    @State var choosenDate : Date
+    @State var isPrivate : Bool = false
+    @State var groupName : String = ""
+    @State var choosenDate : Date = Date.now
     
     
     

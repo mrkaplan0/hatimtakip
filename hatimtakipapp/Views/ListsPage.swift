@@ -17,7 +17,7 @@ struct ListsPage: View {
                 HStack{
                     Spacer()
                     NavigationLink {
-                        AddUserToGroupPage()
+                        CreateNewGroupPage()
                     } label: {
                         
                         Text("\(addNewGroup)")

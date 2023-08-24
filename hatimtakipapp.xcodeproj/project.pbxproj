@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		113B0982B9FF4B3081CE545E /* Pods_hatimtakipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */; };
+		880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A72CE2A97856800BA56AF /* RouterPage.swift */; };
 		8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */; };
 		8838E1CE2A86C18E006BA389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */; };
 		8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */; };
@@ -66,6 +67,7 @@
 		10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.debug.xcconfig"; sourceTree = "<group>"; };
 		1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.release.xcconfig"; sourceTree = "<group>"; };
 		3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		880A72CE2A97856800BA56AF /* RouterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPage.swift; sourceTree = "<group>"; };
 		8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUsernamePage.swift; sourceTree = "<group>"; };
 		8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8842F29F2A785E8D009F316D /* hatimtakipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hatimtakipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +239,7 @@
 				8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */,
 				88C195552A93FA3800006F89 /* CustomButtonStyle.swift */,
 				8843C0082A96465B0061ACC2 /* SignInPage.swift */,
+				880A72CE2A97856800BA56AF /* RouterPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
+				880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */,
 				887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */,
 				8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */,
 				884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */,

@@ -13,7 +13,8 @@ struct SetUsernamePage: View {
     let setUserNameNavTitle = "Kullanici Adi"
     let usernameTextFieldInfo = " Kullanici Adi Belirleyin."
     let saveButtonText = "Kaydet"
-    let usernameNotUsableText = "Bu kullanici adi kullaniliyor!"
+    let usernameNotUsableText = "Bu kullanici adi kullaniliyor olabilir."
+    let usernameCanNotNilText = " Kullanici adi alani bos birakilamaz."
     @State private var username : String = ""
     @State private var isUsernameUpdated = false
     @State private var isUsernameNotUsable = false
@@ -48,7 +49,7 @@ struct SetUsernamePage: View {
                          isUsernameUpdated = await updateUsername()
                         }
                     }else {
-                        errorMessage = usernameNotUsableText
+                        errorMessage = usernameNotUsableText + usernameCanNotNilText
                         iserrorAlertActive = true
                     }
                 } label: {

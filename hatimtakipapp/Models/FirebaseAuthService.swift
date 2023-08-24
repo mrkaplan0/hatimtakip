@@ -10,11 +10,15 @@ import Firebase
 
 
 struct FirebaseAuthService : MyAuthenticationDelegate{
+   
+    
+  
+    
     let auth = Auth.auth()
     
     func convertAuthResultToMyUser (user : User?) -> MyUser? {
         if user != nil {
-            let  myUser = MyUser(id: user!.uid, email: user!.email!, username: "")
+            let  myUser = MyUser(id: user!.uid, email: user!.email ?? "", username: "", userToken: "")
                
                return myUser
         } else {
@@ -32,9 +36,9 @@ struct FirebaseAuthService : MyAuthenticationDelegate{
   
     }
     
-    func createUserWithEmailAndPassword(email: String, password: String) async -> Result<MyUser?,any Error>{
+    func createUserWithEmailAndPassword(email: String, password: String, username : String ) async -> Result<MyUser?,Error>{
        
-        do {let userResult = try await auth.createUser(withEmail: email, password: password)
+        do { let userResult = try await auth.createUser(withEmail: email, password: password)
             
             return .success(convertAuthResultToMyUser(user: userResult.user))  }
         catch {

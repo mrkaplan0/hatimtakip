@@ -9,6 +9,8 @@ import Foundation
 
 class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     
+    
+    
     let fireStoreService = FirestoreService()
     
     
@@ -18,8 +20,8 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     func readMyUser(userId: String) async -> MyUser? {
         return await fireStoreService.readMyUser(userId: userId)
     }
-    func fetchUserList() -> [MyUser] {
-        return fireStoreService.fetchUserList()
+    func fetchUserList() async -> Result<[MyUser], Error> {
+        return await fireStoreService.fetchUserList()
     }
     
     func saveNewGroup(newGroup: Group) -> Bool {

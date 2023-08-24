@@ -14,7 +14,7 @@ protocol MyDatabaseDelegate {
     
     func readMyUser(userId : String) async-> MyUser?
     
-    func fetchUserList() -> [MyUser]
+    func fetchUserList() async -> Result<[MyUser],Error> 
     
     func saveNewGroup(newGroup : Group) -> Bool
     

@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 struct FirestoreService : MyDatabaseDelegate{
     
@@ -33,7 +34,7 @@ struct FirestoreService : MyDatabaseDelegate{
             
             if let data = docRef.data(){
                 
-                 user = MyUser(id: data["id"] as! String, email: data["email"] as! String, username: data["username"] as! String)
+                user = MyUser(id: data["id"] as! String, email: data["email"] as! String, username: data["username"] as! String, userToken: data["username"] as! String )
                 
                 print("db okunan user \(String(describing: user))")
             }
@@ -41,25 +42,26 @@ struct FirestoreService : MyDatabaseDelegate{
             print(error)
         }
       
-        
-        
-        
-    /*    db.collection("Users").document(userId).getDocument(source: .server){ doc, error  in
-           
-            if let data = doc?.data(){
-                
-                 user = MyUser(id: data["id"] as! String, email: data["email"] as! String, username: data["username"] as! String)
-                
-                print("db okunan user \(String(describing: user))")
-            }
-        } */
         return user
     }
     
-    func fetchUserList() -> [MyUser] {
+    func fetchUserList() async -> Result<[MyUser],Error> {
         
+        var userList = [MyUser]()
         
-        return []
+        do{
+            let docs =   try  await db.collection("Users").getDocuments()
+
+            for user in docs.documents {
+                let u = MyUser(id: user.data()["id"] as! String, email: user.data()["email"] as! String, username: user.data()["username"] as! String, userToken: user.data()["username"] as! String)
+                userList.append(u)
+            }
+            return .success(userList)
+        } catch {
+            print(error)
+            return .failure(error)
+        }
+       
     }
     
     func saveNewGroup(newGroup: Group) -> Bool {

@@ -22,6 +22,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct hatimtakipappApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @StateObject  var userViewModel = UserViewModel()
     
     var body: some Scene {
         
@@ -29,7 +30,16 @@ struct hatimtakipappApp: App {
         
         WindowGroup {
 
-            RouterPage()
+            if userViewModel.user == nil {
+                
+                LoginPage()
+            } else if userViewModel.user != nil && userViewModel.user?.username == "" {
+                SetUsernamePage()
+            }
+            else if userViewModel.user != nil && userViewModel.user?.username != "" {
+                TabviewPage()
+               
+            }
     
         }
     }

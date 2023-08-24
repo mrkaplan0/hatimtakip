@@ -23,6 +23,7 @@ struct IncCountsPage: View {
                             switch signOutResult{
                             case .success(let signoutConfirmed) :
                                 isSignout = signoutConfirmed
+                                print("cikis ok \(isSignout)")
                             case .failure(let error) :
                                 print(error.localizedDescription)
                             }
@@ -38,9 +39,9 @@ struct IncCountsPage: View {
             }
             
         }
-        
+       
         .navigationDestination(isPresented: $isSignout){
-            RouterPage()
+            LoginPage()
         }
     }
 }

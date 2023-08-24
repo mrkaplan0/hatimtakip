@@ -11,13 +11,18 @@ import Firebase
 struct LoginPage: View {
     @StateObject  var userViewModel = UserViewModel()
     @StateObject var readingViewModel = ReadingViewModel()
-    @State var isSignedIn = false
+    @State var isSignedInWithEmail = false
+    @State var isSignedInAnonymusly = false
+    @State var toSignInPage = false
+    @State var iserrorAlertActive = false
     @State var email = ""
     @State var password = ""
     @State var headerColor : Color = .green
+    @State var errorMessage = ""
     let loginText = "Giris Yap"
     let emailtext = "Email"
     let passwordText = "Sifre"
+    let errorAlertTitle = "Hata"
     let haveAccountText = "Hesabiniz yok mu?"
     let signUpButtonText = "Kaydolun"
     let signInAnonymouslyText = "Üye Olmadan Devam Et"
@@ -49,14 +54,16 @@ struct LoginPage: View {
                 //Login Button
                 Button {
                     Task{
-                        isSignedIn = await createUserWithEmail()
-                        
+                        isSignedInWithEmail = await loginUserWithEmail()
                     }
-                    
-                    
                 } label: {
                     CustomButtonStyle(buttonText: loginText, buttonColor: .green)
                 }
+                .alert(errorAlertTitle, isPresented: $iserrorAlertActive) {}
+            message: {
+                    Text(errorMessage)
+                    }
+
                 
                 Text("&").font(.headline).padding(.top).foregroundColor(.green)
                 
@@ -64,9 +71,13 @@ struct LoginPage: View {
                     
                     //Sign Anonymously Button
                     Button {
-                        isSignedIn = true
+                        Task{
+                            
+                            isSignedInAnonymusly = await signInUserAnonymously()
+                            print(isSignedInAnonymusly)
+                        }
                         
-                        print(isSignedIn)
+                        
                     } label: {
                         ZStack {
                             CustomButtonStyle(buttonText: signInAnonymouslyText, buttonColor: .green)
@@ -79,17 +90,25 @@ struct LoginPage: View {
                         Text("\(haveAccountText)")
                         
                         Button {
-                            
+                            toSignInPage = true
                         } label: {
                             
                             Text("\(signUpButtonText)").foregroundColor(Color(uiColor: .green)).bold()
                         }
                     }
                     Spacer(minLength: 20)
-                }.navigationDestination(isPresented: $isSignedIn) {
-                    RouterPage()
-                        
                 }
+              
+              //Navigations
+              .navigationDestination(isPresented: $isSignedInWithEmail) {
+                    TabviewPage()
+                }
+              .navigationDestination(isPresented: $isSignedInAnonymusly, destination: {
+                  SetUsernamePage()
+              })
+                .navigationDestination(isPresented: $toSignInPage, destination: {
+                    SignInPage()
+                })
                 .navigationBarBackButtonHidden()
                 
             }
@@ -97,21 +116,39 @@ struct LoginPage: View {
     }
    
     
-    func createUserWithEmail() async -> Bool {
+   func loginUserWithEmail() async -> Bool {
         
-        let userResult =  await  userViewModel.createUserWithEmailAndPassword(email: email, password: password)
+        let userResult =  await  userViewModel.signInWithEmailAndPassword(email: email, password: password)
         switch userResult {
         case .success(let user):
             print("login page gelen user \(String(describing: user))")
             return true
         case .failure(let error):
             //if you have an error, u must show a notification.
+            self.errorMessage = error.localizedDescription
+            iserrorAlertActive = true
             print(error.localizedDescription)
             return false
         }
-        
-        
     }
+    
+    func signInUserAnonymously() async -> Bool {
+         
+         let userResult =  await  userViewModel.signInWithAnonymously()
+         switch userResult {
+         case .success(let user):
+             print("login page gelen user \(String(describing: user))")
+             return true
+         case .failure(let error):
+             //if you have an error, u must show a notification.
+             self.errorMessage = error.localizedDescription
+             iserrorAlertActive = true
+             print(error.localizedDescription)
+             return false
+         }
+         
+         
+     }
 }
 
 struct ContentView_Previews: PreviewProvider {

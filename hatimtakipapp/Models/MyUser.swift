@@ -10,12 +10,14 @@ import Foundation
 struct MyUser {
     
     let id : String
-    let email : String
-    let username : String
+    var email : String
+    var username : String
+    var userToken : String
     
-    init(id: String, email: String, username: String) {
+    init(id: String, email: String, username: String, userToken : String) {
         self.id = id
         self.email = email
         self.username = username
+        self.userToken = userToken
     }
 }

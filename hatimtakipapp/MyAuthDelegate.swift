@@ -13,7 +13,7 @@ protocol MyAuthenticationDelegate {
     
     func currentUser() async -> MyUser?
     
-    func createUserWithEmailAndPassword(email : String, password : String) async -> Result<MyUser?,any Error>
+    func createUserWithEmailAndPassword(email : String, password : String, username : String) async -> Result<MyUser?,any Error>
     
     func signInWithEmailAndPassword(email :String, password : String) async -> Result<MyUser?,any Error>
     

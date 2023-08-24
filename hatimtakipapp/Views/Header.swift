@@ -15,7 +15,7 @@ struct Header: View {
         VStack {
             
             ZStack {
-                RoundedRectangle(cornerRadius: 0).foregroundColor( headerColor.opacity(0.3))
+                RoundedRectangle(cornerRadius: 0).foregroundColor(headerColor.opacity(0.3))
                     .rotationEffect(Angle(degrees: 30))
                 RoundedRectangle(cornerRadius: 0).foregroundColor(headerColor.opacity(0.9))
                     .rotationEffect(Angle(degrees: -10))

@@ -10,6 +10,8 @@ import FirebaseCore
 import FirebaseFirestore
 
 struct FirestoreService : MyDatabaseDelegate{
+   
+    
     
     
     
@@ -64,10 +66,14 @@ struct FirestoreService : MyDatabaseDelegate{
        
     }
     
-    func saveNewGroup(newGroup: Group) -> Bool {
+    func createNewHatim(newHatim: Hatim) -> Bool {
         return false
     }
     
-    
+    func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {
+        
+       return .success([])
+        
+    }
     
 }

@@ -16,7 +16,9 @@ protocol MyDatabaseDelegate {
     
     func fetchUserList() async -> Result<[MyUser],Error> 
     
-    func saveNewGroup(newGroup : Group) -> Bool
+    func createNewHatim(newHatim : Hatim) -> Bool
+    
+    func readHatimList( user : MyUser) async -> Result<[Hatim],Error>
     
     
 }

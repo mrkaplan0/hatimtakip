@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ListsPage: View {
     var body: some View {
-        let myGroupsText = "Gruplarim"
+        let myGroupsText = "Hatimlerim"
         let myReadings = "Cüzlerim"
-        let addNewGroup = "Yeni Grup Kur"
+        let addNewGroup = "Yeni Hatim Baslat"
         NavigationStack {
             VStack {
                 HStack{
                     Spacer()
                     NavigationLink {
-                        CreateNewGroupPage()
+                        CreateNewHatimPage()
                     } label: {
                         
                         Text("\(addNewGroup)")

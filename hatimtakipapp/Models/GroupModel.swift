@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct Group {
-    let groupID : String
-    let groupName : String
+struct Hatim {
+    let hatimID = UUID().uuidString
+    let hatimName : String
+    let createdBy : MyUser
     var isPrivate : Bool
-    let lastFinishingtime : Date
-
+    let deadline : Date
+    var participantsList : [MyUser]
+    var partsOfHatimList : [HatimPartsModel]
+    
 }

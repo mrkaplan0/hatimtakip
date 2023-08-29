@@ -24,10 +24,13 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
         return await fireStoreService.fetchUserList()
     }
     
-    func saveNewGroup(newGroup: Group) -> Bool {
+    func createNewHatim(newHatim: Hatim) -> Bool {
         return false
     }
     
+    func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {
+        return await fireStoreService.readHatimList(user:   user)
+    }
     
     
     

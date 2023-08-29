@@ -30,6 +30,8 @@
 		884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */; };
 		8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */; };
 		8845131D2A81073D00127D72 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131C2A81073D00127D72 /* FirebaseMessaging */; };
+		886938FB2A9B7D9C00DD9644 /* HatimPartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FA2A9B7D9B00DD9644 /* HatimPartsModel.swift */; };
+		886938FF2A9CE48F00DD9644 /* PartsOfHatimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FE2A9CE48F00DD9644 /* PartsOfHatimView.swift */; };
 		8873CCAC2A78704800C18995 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CCAB2A78704800C18995 /* Header.swift */; };
 		887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23E62A81268800E65C05 /* FirebaseAuthService.swift */; };
 		887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23EA2A81B85900E65C05 /* FirestoreService.swift */; };
@@ -38,8 +40,8 @@
 		887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794E2A791953007FFB1B /* ReadingPage.swift */; };
 		887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79502A791AFA007FFB1B /* IncCountsPage.swift */; };
 		887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79522A791CB6007FFB1B /* ListsPage.swift */; };
-		887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */; };
-		887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToGroupPage.swift */; };
+		887E79552A79273C007FFB1B /* CreateNewHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */; };
+		887E79572A795324007FFB1B /* AddUserToHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToHatimPage.swift */; };
 		887E79592A799125007FFB1B /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79582A799125007FFB1B /* MyUser.swift */; };
 		88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C195552A93FA3800006F89 /* CustomButtonStyle.swift */; };
 		B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */; };
@@ -85,6 +87,8 @@
 		884513032A80F4B300127D72 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAuthDelegate.swift; path = hatimtakipapp/MyAuthDelegate.swift; sourceTree = SOURCE_ROOT; };
 		884513072A81015D00127D72 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 		884513092A8102F100127D72 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = hatimtakipapp/Models/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		886938FA2A9B7D9B00DD9644 /* HatimPartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimPartsModel.swift; sourceTree = "<group>"; };
+		886938FE2A9CE48F00DD9644 /* PartsOfHatimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfHatimView.swift; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		887E23E62A81268800E65C05 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthService.swift; path = hatimtakipapp/Models/FirebaseAuthService.swift; sourceTree = SOURCE_ROOT; };
 		887E23EA2A81B85900E65C05 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = hatimtakipapp/Views/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
@@ -93,8 +97,8 @@
 		887E794E2A791953007FFB1B /* ReadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPage.swift; sourceTree = "<group>"; };
 		887E79502A791AFA007FFB1B /* IncCountsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncCountsPage.swift; sourceTree = "<group>"; };
 		887E79522A791CB6007FFB1B /* ListsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsPage.swift; sourceTree = "<group>"; };
-		887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewGroupPage.swift; sourceTree = "<group>"; };
-		887E79562A795324007FFB1B /* AddUserToGroupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToGroupPage.swift; sourceTree = "<group>"; };
+		887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewHatimPage.swift; sourceTree = "<group>"; };
+		887E79562A795324007FFB1B /* AddUserToHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToHatimPage.swift; sourceTree = "<group>"; };
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
 		88C195552A93FA3800006F89 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,12 +238,13 @@
 				887E794E2A791953007FFB1B /* ReadingPage.swift */,
 				887E79502A791AFA007FFB1B /* IncCountsPage.swift */,
 				887E79522A791CB6007FFB1B /* ListsPage.swift */,
-				887E79542A79273C007FFB1B /* CreateNewGroupPage.swift */,
-				887E79562A795324007FFB1B /* AddUserToGroupPage.swift */,
+				887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */,
+				887E79562A795324007FFB1B /* AddUserToHatimPage.swift */,
 				8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */,
 				88C195552A93FA3800006F89 /* CustomButtonStyle.swift */,
 				8843C0082A96465B0061ACC2 /* SignInPage.swift */,
 				880A72CE2A97856800BA56AF /* RouterPage.swift */,
+				886938FE2A9CE48F00DD9644 /* PartsOfHatimView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			children = (
 				887E79582A799125007FFB1B /* MyUser.swift */,
 				884513072A81015D00127D72 /* GroupModel.swift */,
+				886938FA2A9B7D9B00DD9644 /* HatimPartsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -528,14 +534,16 @@
 				8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */,
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
+				886938FB2A9B7D9C00DD9644 /* HatimPartsModel.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
 				880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */,
-				887E79572A795324007FFB1B /* AddUserToGroupPage.swift in Sources */,
+				886938FF2A9CE48F00DD9644 /* PartsOfHatimView.swift in Sources */,
+				887E79572A795324007FFB1B /* AddUserToHatimPage.swift in Sources */,
 				8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */,
 				884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */,
 				8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */,
 				884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */,
-				887E79552A79273C007FFB1B /* CreateNewGroupPage.swift in Sources */,
+				887E79552A79273C007FFB1B /* CreateNewHatimPage.swift in Sources */,
 				8843C0092A96465B0061ACC2 /* SignInPage.swift in Sources */,
 				887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */,
 				8873CCAC2A78704800C18995 /* Header.swift in Sources */,

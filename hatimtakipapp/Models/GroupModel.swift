@@ -9,10 +9,11 @@ import Foundation
 
 struct Hatim {
     let hatimID = UUID().uuidString
-    let hatimName : String
-    let createdBy : MyUser
+    var hatimName : String
+    var createdBy : MyUser
+    var isIndividual : Bool
     var isPrivate : Bool
-    let deadline : Date
+    var deadline : Date
     var participantsList : [MyUser]
     var partsOfHatimList : [HatimPartsModel]
     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddUserToHatimPage: View {
-        @Binding var newHatim : Hatim?
+        var newHatim : Hatim
     var navigationTitle = "Kisi Ekle"
         let searchFieldInfoText = "Kisi bul ve ekle"
         let names = ["Holly", "Josh", "Rhonda", "Ted","Hasan"]
@@ -52,7 +52,7 @@ struct AddUserToHatimPage: View {
 struct AddUserToGroupPage_Previews: PreviewProvider {
     static var previews: some View {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
-       @State var hat : Hatim? = Hatim(hatimName: "hat", createdBy: user, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
-        AddUserToHatimPage(newHatim: $hat)
+      var hat : Hatim = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
+        AddUserToHatimPage(newHatim: hat)
     }
 }

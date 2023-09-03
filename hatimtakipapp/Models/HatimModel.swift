@@ -15,6 +15,6 @@ struct Hatim {
     var isPrivate : Bool
     var deadline : Date
     var participantsList : [MyUser]
-    var partsOfHatimList : [HatimPartsModel]
+    var partsOfHatimList : [HatimPartModel]
     
 }

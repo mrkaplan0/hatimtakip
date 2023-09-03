@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SplitCuzTwoPartView: View {
-    @StateObject var partOfHatimViewModel = partsOFHatimViewModel()
-    @Binding var allParts : [[Int]]
-    @Binding var selectedCuz : [Int]
+    @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
+    @Binding var allParts : [HatimPartModel]
+    @Binding var selectedCuz : HatimPartModel
+    @State var newCuz : HatimPartModel?
     @Environment(\.dismiss) var dismiss
     @State private var splitPage: Double = 0
     let splitPagestext = "sayfadan bölünecek"
@@ -20,8 +21,8 @@ struct SplitCuzTwoPartView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text(partOfHatimViewModel.setPartName(part: selectedCuz))
-            Slider(value: $splitPage, in: 0...Double(selectedCuz.count)).padding(.horizontal)
+            Text(partOfHatimViewModel.setPartName(part: selectedCuz.pages))
+            Slider(value: $splitPage, in: 0...Double(selectedCuz.pages.count)).padding(.horizontal)
             Text("\(Int(splitPage)).")
             Text("\(splitPagestext)")
             
@@ -29,22 +30,33 @@ struct SplitCuzTwoPartView: View {
             HStack {
                 Button {
                     var newList = [Int]()
-                    let indexOfSelectedCuz = allParts.firstIndex(of: selectedCuz)
-                    selectedCuz.sort{
+                    
+                    if let indexOfSelectedCuz = allParts.firstIndex(where: { $0.pages == selectedCuz.pages }) {
+                        allParts.remove(at: indexOfSelectedCuz )
+                    }
+                    
+                    newCuz = selectedCuz
+                  
+                    selectedCuz.pages.sort{
                         $0<$1
                     }
                     for i in 0..<Int(splitPage) {
-                        newList.append(selectedCuz[i])
+                        newList.append(selectedCuz.pages[i])
                         
                     }
                     for _ in 0..<Int(splitPage) {
-                        selectedCuz.removeFirst()
+                        selectedCuz.remainingPages.removeFirst()
+                        selectedCuz.pages.removeFirst()
                     }
-                    if newList.isEmpty || selectedCuz.isEmpty {
+                    if newList.isEmpty || selectedCuz.remainingPages.isEmpty {
                         dismiss()
                     }else {
-                        allParts.insert(newList, at: indexOfSelectedCuz!)
-                        allParts[indexOfSelectedCuz! + 1] = selectedCuz
+                       
+                        newCuz?.pages = newList
+                        newCuz?.remainingPages = newList
+                        
+                        allParts.append(newCuz!)
+                        allParts.append(selectedCuz)
                     }
                     print(newList)
                     print(selectedCuz)
@@ -68,7 +80,7 @@ struct SplitCuzTwoPartView: View {
 
 struct SplitCuzTwoPart_Previews: PreviewProvider {
     static var previews: some View {
-        @StateObject var partOfHatimViewModel = partsOFHatimViewModel()
+        @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
         SplitCuzTwoPartView(allParts: $partOfHatimViewModel.allParts, selectedCuz: $partOfHatimViewModel.allParts[0])
     }
 }

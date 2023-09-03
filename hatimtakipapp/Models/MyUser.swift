@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct MyUser {
+struct MyUser : Identifiable, Codable, Hashable {
     
     let id : String
     var email : String
     var username : String
     var userToken : String
+    var favoritesPeople : [MyUser]?
     
     init(id: String, email: String, username: String, userToken : String) {
         self.id = id

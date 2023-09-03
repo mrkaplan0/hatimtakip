@@ -8,99 +8,135 @@
 import SwiftUI
 
 struct PartsOfHatimView: View {
-    @StateObject var partOfHatimViewModel = partsOFHatimViewModel()
-    var newHatim : Hatim?
+    @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
+    @StateObject var readingViewModel = ReadingViewModel()
+    @State var newHatim : Hatim?
+    let partsOfHatimNavTitle = "Cüz Ayarlari"
     let parttext = "Cüz"
     let splitButtontext = "Böl"
-    @State private var showingSheet = false
-    @State var selectedCuz = [Int]()
+    let addPerson = "Kisi Ekle"
+    @State private var showSplitView = false
+    @State private var showAddUserToHatimView = false
+    @State private var isIndividual = false
+    @State private var usrsList = [MyUser]()
+    @State private var participantList : Set<MyUser> = []
+    @State private var indexOfSelectedCuz = 0
+    @State var selectedCuz = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : .init(id: "", email: "", username: "", userToken: ""), remainingPages : [Int](), deadline: nil)
     
     
     var body: some View {
       
-        List{
-            ForEach(0..<partOfHatimViewModel.allParts.count, id: \.self) { i in
-                let element = partOfHatimViewModel.allParts[i]
-                
-                RoundedRectangle(cornerRadius: 8).stroke()
-                    .frame(height: 50).padding(.horizontal)
+        NavigationStack {
+            List{
+                ForEach(0..<partOfHatimViewModel.allParts.count, id: \.self) { i in
+                    let part = partOfHatimViewModel.allParts[i]
                     
-                    .overlay {
-                        
-                        HStack (alignment: .bottom, spacing: 30){
-                            Text("\(i + 1)")
-                            Text(partOfHatimViewModel.setPartName(part: element))
+            
+                            HStack (alignment: .bottom, spacing: 30){
+                                Text("\(i + 1)")
+                                Spacer()
+                                Text(partOfHatimViewModel.setPartName(part: part.pages))
+                                Spacer()
+                                Button(part.ownerOfPart != nil ? part.ownerOfPart?.username ?? "" : addPerson) {
+                                    indexOfSelectedCuz = i
+                                    showAddUserToHatimView.toggle()
+                                }.padding(.trailing)
+                                
                             
                         }
-                    }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(splitButtontext) {
-                            selectedCuz = partOfHatimViewModel.allParts[i]
-                            showingSheet.toggle()
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(splitButtontext) {
+                                selectedCuz = partOfHatimViewModel.allParts[i]
+                                showSplitView.toggle()
+                            }
+                            
                         }
+                }
+              
+                .listStyle(.plain)
+                .navigationTitle(partsOfHatimNavTitle)
+                
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden()
+                
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button("Olustur") {
                         
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading ) {
+                    Button("iptal") {
+                        
+                    }
+                }
             }
-            .listRowSeparator(.hidden)
-        }
-     
-        .sheet(isPresented: $showingSheet) {
-            SplitCuzTwoPartView(allParts: $partOfHatimViewModel.allParts, selectedCuz: $selectedCuz)
-           
-        }
-        .listStyle(.plain)
-        
-        .onAppear(){print(newHatim as Any)}
-        
-        
-   
+            .onChange(of: partOfHatimViewModel.allParts.count, perform: { newValue in
+              sortList()
+              createParticipantList()
+            })
+        //Navigations
+            .navigationDestination(isPresented: $isIndividual, destination: {
+                TabviewPage()
+            })
+        //Sheets
+            .sheet(isPresented: $showSplitView) {
+                SplitCuzTwoPartView(allParts: $partOfHatimViewModel.allParts, selectedCuz: $selectedCuz)
+            }
+            
+            .sheet(isPresented: $showAddUserToHatimView, content: {
+                AddUserToHatimPage(names: $usrsList, allParts: $partOfHatimViewModel.allParts, indexOfselectedCuz: $indexOfSelectedCuz)
+            })
     }
+        .onAppear(){
+         //   isIndividual = ((newHatim?.isIndividual) != nil)
+            Task {
+                partOfHatimViewModel.updateAllPartsWithOwnersList(hatim: newHatim!,  ownerOfPart: nil )
+                await fetchUserList()
+            }
+       }
+  }
     
-  
-}
-
-
-
-
-enum cuz  : String {
-    case cuz1 = "1 - 20"
-    case two = "21 - 40"
-    case three = "41 - 60"
-    case four = "61 - 80"
-    case five = "81 - 100"
-    case six  = "101 - 120"
-    case seven = "121 - 140"
-    case eight = "141 - 160"
-    case nine = "161 - 180"
-    case ten = "181 - 200"
-    case eleven = "201 - 220"
-    case twelve = "221 - 240"
-    case thirteen = "241 - 260"
-    case fourteen = "261 - 280"
-    case fifteen = "281 - 300"
-    case sixteen = "301 - 320"
-    case seventeen = "321 - 340"
-    case eighteen = "341 - 360"
-    case nineteen = "361 - 380"
-    case twenty = "381 - 400"
-    case twentyone = "401 - 420"
-    case twentytwo = "421 - 440"
-    case twentythree = "441 - 460"
-    case twentyfour = "461 - 480"
-    case twentyfive = "481 - 500"
-    case twentysix = "501 - 520"
-    case twentyseven = "521 - 540"
-    case twentyeight = "541 - 560"
-    case twentynine = "561 - 580"
-    case thirty = "581 - 602"
+    func fetchUserList() async {
+        let fetchResult = await readingViewModel.fetchUserList()
+        
+        switch fetchResult {
+        case .success(let userList) :
+            usrsList = userList
+        case .failure(let error) :
+            print(error)
+            
+        }
+    }
+    func sortList (){
+            partOfHatimViewModel.allParts.sort{
+                $0.pages.first! <  $1.pages.first!
+            }
+    }
+   func createParticipantList(){
+        for item in partOfHatimViewModel.allParts {
+            if let user = item.ownerOfPart {
+                participantList.insert(user)
+            }
+        }
+            newHatim?.participantsList = Array(participantList)
+       
+       print(newHatim?.participantsList as Any)
+     }
+        
    
-    
 }
+
+
+
+
 
 struct PartsOfHatimView_Previews: PreviewProvider {
     static var previews: some View {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
-       var hat : Hatim? = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
-        PartsOfHatimView(newHatim: hat)
+        let hat : Hatim? = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
+        let a = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : user, remainingPages : [Int](), deadline: .now)
+        PartsOfHatimView(newHatim: hat, selectedCuz: a)
     }
 }

@@ -44,10 +44,7 @@ struct CreateNewHatimPage: View {
                     
                 }
         }
-        
-        
-        
-        
+ 
     }
     
     func goNext() {

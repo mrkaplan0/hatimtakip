@@ -7,23 +7,46 @@
 
 import Foundation
 
-class partsOFHatimViewModel: ObservableObject {
+class partsOfHatimViewModel: ObservableObject {
     
-    @Published var allParts = [cuz1, cuz2, cuz3, cuz4, cuz5, cuz6, cuz7, cuz8, cuz9, cuz10, cuz11, cuz12, cuz13, cuz14, cuz15, cuz16, cuz17,cuz18, cuz19, cuz20, cuz21, cuz22, cuz23, cuz24, cuz25, cuz26, cuz27,cuz28, cuz29, cuz30 ]
+    var parts = [cuz1, cuz2, cuz3, cuz4, cuz5, cuz6, cuz7, cuz8, cuz9, cuz10, cuz11, cuz12, cuz13, cuz14, cuz15, cuz16, cuz17,cuz18, cuz19, cuz20, cuz21, cuz22, cuz23, cuz24, cuz25, cuz26, cuz27,cuz28, cuz29, cuz30 ]
+    @Published var allParts = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30]
     let partText = "Cüz"
     let pageBetweenText = "sayfalari arasi"
     let pageText = "sayfa"
     
+   
+    
+    func updateAllPartsWithOwnersList (hatim : Hatim, ownerOfPart : MyUser?)  {
+        
+        for i in 0...29 {
+            allParts[i].hatimID = hatim.hatimID
+            allParts[i].hatimName = hatim.hatimName
+            allParts[i].ownerOfPart = ownerOfPart
+        }
+    }
+    func setIndividualHatim(hatim : Hatim,  ownerOfPart : MyUser, isIndividual : Bool) -> [HatimPartModel] {
+        
+            allParts.removeAll()
+        
+            for i in 0...29 {
+             let a = HatimPartModel(hatimID : hatim.hatimID, hatimName : hatim.hatimName, pages : parts[i], ownerOfPart : ownerOfPart, remainingPages : parts[i], deadline: hatim.deadline)
+             allParts.append(a)
+            }
+        return allParts
+    }
+    
+    func updateOwnerOfPart ( indexOfselectedPart : Int, ownerOfPart : MyUser) {
+        allParts[indexOfselectedPart].ownerOfPart = ownerOfPart
+    }
     
     func setPartName(part : [Int]) -> String {
         
         if part.first == 1 && part.last == 20 {
             return "\(partText) 1"
-        }
-        else if part.first == 21 && part.last == 40 {
+        }else if part.first == 21 && part.last == 40 {
             return "\(partText) 2"
-        }
-        else if part.first == 41 && part.last == 60 {
+        }else if part.first == 41 && part.last == 60 {
             return "\(partText) 3"
         }else if part.first == 61 && part.last == 80 {
             return "\(partText) 4"
@@ -123,3 +146,34 @@ class partsOFHatimViewModel: ObservableObject {
     var cuz29 = [ 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, ]
     var cuz30 = [581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602]
 
+    var c1 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz1, ownerOfPart : nil, remainingPages : cuz1, deadline: nil)
+    var c2 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz2, ownerOfPart : nil, remainingPages : cuz2, deadline: nil)
+    var c3 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz3, ownerOfPart : nil, remainingPages : cuz3, deadline: nil)
+    var c4 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz4, ownerOfPart : nil, remainingPages : cuz4, deadline: nil)
+    var c5 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz5, ownerOfPart : nil, remainingPages : cuz5, deadline: nil)
+    var c6 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz6, ownerOfPart : nil, remainingPages : cuz6, deadline: nil)
+    var c7 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz7, ownerOfPart : nil, remainingPages : cuz7, deadline: nil)
+    var c8 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz8, ownerOfPart : nil, remainingPages : cuz8, deadline: nil)
+    var c9 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz9, ownerOfPart : nil, remainingPages : cuz9, deadline: nil)
+    var c10 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz10, ownerOfPart : nil, remainingPages : cuz10, deadline: nil)
+    var c11 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz11, ownerOfPart : nil, remainingPages : cuz11, deadline: nil)
+    var c12 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz12, ownerOfPart : nil, remainingPages : cuz12, deadline: nil)
+    var c13 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz13, ownerOfPart : nil, remainingPages : cuz13, deadline: nil)
+    var c14 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz14, ownerOfPart : nil, remainingPages : cuz14, deadline: nil)
+    var c15 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz15, ownerOfPart : nil, remainingPages : cuz15, deadline: nil)
+    var c16 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz16, ownerOfPart : nil, remainingPages : cuz16, deadline: nil)
+    var c17 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz17, ownerOfPart : nil, remainingPages : cuz17, deadline: nil)
+    var c18 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz18, ownerOfPart : nil, remainingPages : cuz18, deadline: nil)
+    var c19 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz19, ownerOfPart : nil, remainingPages : cuz19, deadline: nil)
+    var c20 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz20, ownerOfPart : nil, remainingPages : cuz20, deadline: nil)
+    var c21 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz21, ownerOfPart : nil, remainingPages : cuz21, deadline: nil)
+    var c22 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz22, ownerOfPart : nil, remainingPages : cuz22, deadline: nil)
+    var c23 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz23, ownerOfPart : nil, remainingPages : cuz23, deadline: nil)
+    var c24 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz24, ownerOfPart : nil, remainingPages : cuz24, deadline: nil)
+    var c25 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz25, ownerOfPart : nil, remainingPages : cuz25, deadline: nil)
+    var c26 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz26, ownerOfPart : nil, remainingPages : cuz26, deadline: nil)
+    var c27 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz27, ownerOfPart : nil, remainingPages : cuz27, deadline: nil)
+    var c28 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz28, ownerOfPart : nil, remainingPages : cuz28, deadline: nil)
+    var c29 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz29, ownerOfPart : nil, remainingPages : cuz29, deadline: nil)
+    var c30 = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : cuz30, ownerOfPart : nil, remainingPages : cuz30, deadline: nil)
+        

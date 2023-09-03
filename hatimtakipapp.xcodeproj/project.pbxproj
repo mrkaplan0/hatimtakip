@@ -21,7 +21,7 @@
 		8843C0092A96465B0061ACC2 /* SignInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843C0082A96465B0061ACC2 /* SignInPage.swift */; };
 		884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513012A80F44600127D72 /* MyDatabaseDelegate.swift */; };
 		884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513032A80F4B300127D72 /* MyAuthDelegate.swift */; };
-		884513082A81015D00127D72 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513072A81015D00127D72 /* GroupModel.swift */; };
+		884513082A81015D00127D72 /* HatimModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513072A81015D00127D72 /* HatimModel.swift */; };
 		8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884513092A8102F100127D72 /* UserViewModel.swift */; };
 		884513112A81073D00127D72 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 884513102A81073D00127D72 /* FirebaseAnalytics */; };
 		884513132A81073D00127D72 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 884513122A81073D00127D72 /* FirebaseAnalyticsSwift */; };
@@ -30,7 +30,7 @@
 		884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */; };
 		8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */; };
 		8845131D2A81073D00127D72 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131C2A81073D00127D72 /* FirebaseMessaging */; };
-		886938FB2A9B7D9C00DD9644 /* HatimPartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FA2A9B7D9B00DD9644 /* HatimPartsModel.swift */; };
+		886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FA2A9B7D9B00DD9644 /* HatimPartModel.swift */; };
 		886938FF2A9CE48F00DD9644 /* PartsOfHatimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FE2A9CE48F00DD9644 /* PartsOfHatimView.swift */; };
 		8873CCAC2A78704800C18995 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CCAB2A78704800C18995 /* Header.swift */; };
 		887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23E62A81268800E65C05 /* FirebaseAuthService.swift */; };
@@ -87,9 +87,9 @@
 		8843C0082A96465B0061ACC2 /* SignInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPage.swift; sourceTree = "<group>"; };
 		884513012A80F44600127D72 /* MyDatabaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyDatabaseDelegate.swift; path = hatimtakipapp/MyDatabaseDelegate.swift; sourceTree = SOURCE_ROOT; };
 		884513032A80F4B300127D72 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAuthDelegate.swift; path = hatimtakipapp/MyAuthDelegate.swift; sourceTree = SOURCE_ROOT; };
-		884513072A81015D00127D72 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		884513072A81015D00127D72 /* HatimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimModel.swift; sourceTree = "<group>"; };
 		884513092A8102F100127D72 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = hatimtakipapp/Models/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
-		886938FA2A9B7D9B00DD9644 /* HatimPartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimPartsModel.swift; sourceTree = "<group>"; };
+		886938FA2A9B7D9B00DD9644 /* HatimPartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimPartModel.swift; sourceTree = "<group>"; };
 		886938FE2A9CE48F00DD9644 /* PartsOfHatimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfHatimView.swift; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		887E23E62A81268800E65C05 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthService.swift; path = hatimtakipapp/Models/FirebaseAuthService.swift; sourceTree = SOURCE_ROOT; };
@@ -265,8 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				887E79582A799125007FFB1B /* MyUser.swift */,
-				884513072A81015D00127D72 /* GroupModel.swift */,
-				886938FA2A9B7D9B00DD9644 /* HatimPartsModel.swift */,
+				884513072A81015D00127D72 /* HatimModel.swift */,
+				886938FA2A9B7D9B00DD9644 /* HatimPartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
 				8899D4612A9F5C43001EBB6E /* partsOfHatimViewModel.swift in Sources */,
-				886938FB2A9B7D9C00DD9644 /* HatimPartsModel.swift in Sources */,
+				886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
 				880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */,
 				886938FF2A9CE48F00DD9644 /* PartsOfHatimView.swift in Sources */,
@@ -563,7 +563,7 @@
 				887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */,
 				8873CCAC2A78704800C18995 /* Header.swift in Sources */,
 				887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */,
-				884513082A81015D00127D72 /* GroupModel.swift in Sources */,
+				884513082A81015D00127D72 /* HatimModel.swift in Sources */,
 				8899D4642A9F790B001EBB6E /* SplitCuzTwoPartView.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
 				887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */,

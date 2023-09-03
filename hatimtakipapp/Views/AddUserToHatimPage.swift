@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct AddUserToHatimPage: View {
-        var newHatim : Hatim
+    @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
     var navigationTitle = "Kisi Ekle"
-        let searchFieldInfoText = "Kisi bul ve ekle"
-        let names = ["Holly", "Josh", "Rhonda", "Ted","Hasan"]
-        @State private var searchText = ""
-        @State var selectedView = 0
+    let searchFieldInfoText = "Kisi bul ve ekle"
+    @Binding var names : [MyUser]
+    @Binding var allParts : [HatimPartModel]
+    @Binding var indexOfselectedCuz : Int
+    @State private var searchText = ""
+    @Environment(\.dismiss) var dismiss
+    
+   
    
            var body: some View {
                NavigationStack {
@@ -23,10 +27,14 @@ struct AddUserToHatimPage: View {
                    VStack {
                      
                        List {
-                               ForEach(searchResults, id: \.self) { name in
-                                   Text(name).onTapGesture {
-                                       print("Hallo")
-                                   }
+                           ForEach(searchResults) { user in
+                               Text(user.username).onTapGesture {
+                                   print("tik \(indexOfselectedCuz)")
+                                  
+                                   allParts[indexOfselectedCuz].ownerOfPart = user
+                                   
+                                   dismiss()
+                               }
                                }
                            }
                        .searchable(text: $searchText, prompt: Text("\(searchFieldInfoText)"))
@@ -34,25 +42,36 @@ struct AddUserToHatimPage: View {
                    }
                
                }
+              
              
            }
 
-           var searchResults: [String] {
+           var searchResults: [MyUser] {
                if searchText.isEmpty {
                    return []
                } else {
-                   return names.filter { $0.contains(searchText) }
+                   
+                   return names.filter { $0.username.localizedStandardContains(searchText) }
                }
            }
-    
+
   
+    func addUserToSelectedCuz(user : MyUser) {
+       
+     
+        
+        dismiss()
+    }
+    
        }
 
 
 struct AddUserToGroupPage_Previews: PreviewProvider {
     static var previews: some View {
-        let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
-      var hat : Hatim = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
-        AddUserToHatimPage(newHatim: hat)
+       @State var names = [MyUser(id: "s", email: "ss", username: "Harry", userToken: "www"),MyUser(id: "ssf", email: "ss", username: "hasan", userToken: "www"),MyUser(id: "ssh", email: "ss", username: "Ahmet", userToken: "www"),MyUser(id: "ssj", email: "ss", username: "Veli", userToken: "www"),MyUser(id: "ssk", email: "ss", username: "Ali", userToken: "www"),MyUser(id: "ssq", email: "ss", username: "Ahmet22", userToken: "www")]
+     @State var a = 0
+        @State var b = [HatimPartModel]()
+       
+        AddUserToHatimPage( names: $names, allParts: $b, indexOfselectedCuz: $a)
     }
 }

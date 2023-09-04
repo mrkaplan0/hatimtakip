@@ -1,5 +1,5 @@
 //
-//  PartsOfHatimView.swift
+//  PartsOfHatimPage.swift
 //  hatimtakipapp
 //
 //  Created by MrKaplan on 28.08.23.
@@ -7,22 +7,28 @@
 
 import SwiftUI
 
-struct PartsOfHatimView: View {
-    @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
+struct PartsOfHatimPage: View {
+    @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
     @StateObject var readingViewModel = ReadingViewModel()
-    @State var newHatim : Hatim?
+    @State var hatim : Hatim?
     let partsOfHatimNavTitle = "Cüz Ayarlari"
     let parttext = "Cüz"
     let splitButtontext = "Böl"
     let addPerson = "Kisi Ekle"
+    let createButtonText = "Olustur"
+    let cancelButtonText = "Iptal"
     @State private var showSplitView = false
     @State private var showAddUserToHatimView = false
     @State private var isIndividual = false
+    @State private var toGoNextPage = false
     @State private var usrsList = [MyUser]()
-    @State private var participantList : Set<MyUser> = []
     @State private var indexOfSelectedCuz = 0
+    @State private var nonAddedPersonToCuzIndexArray = [Int]()
     @State var selectedCuz = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : .init(id: "", email: "", username: "", userToken: ""), remainingPages : [Int](), deadline: nil)
-    
+    let alertTitle = "Uyari"
+    let alertMessage1 = "Kisi eklenmeyen cüz sayisi: "
+    let alertMessage2 = ". Lütfen kontrol edin."
+    @State var showAlert = false
     
     var body: some View {
       
@@ -41,6 +47,8 @@ struct PartsOfHatimView: View {
                                     indexOfSelectedCuz = i
                                     showAddUserToHatimView.toggle()
                                 }.padding(.trailing)
+                                    .foregroundColor(.black)
+                                    .bold()
                                 
                             
                         }
@@ -62,27 +70,51 @@ struct PartsOfHatimView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    Button("Olustur") {
-                        
+                    Button(createButtonText) {
+                        Task {
+                            hatim?.participantsList = partOfHatimViewModel.createParticipantList()
+                            if hatim?.isPrivate == true {
+                              nonAddedPersonToCuzIndexArray = partOfHatimViewModel.controlNonAddedPersonToCuz()
+                            }
+                            if nonAddedPersonToCuzIndexArray.count > 0 {
+                                showAlert = true
+                            } else {
+                                hatim?.partsOfHatimList = partOfHatimViewModel.allParts
+                                
+                             toGoNextPage = await saveHatim()
+                                
+                            }
+                            
+                        }
                     }
+                    .foregroundColor(.orange)
+                    .alert(alertTitle, isPresented: $showAlert) {}
+                message: {
+                        Text(alertMessage1 + String(nonAddedPersonToCuzIndexArray.count) + alertMessage2)
+                        }
+
                 }
                 ToolbarItem(placement: .navigationBarLeading ) {
-                    Button("iptal") {
+                    Button(cancelButtonText) {
                         
                     }
+                    .foregroundColor(.orange)
                 }
             }
             .onChange(of: partOfHatimViewModel.allParts.count, perform: { newValue in
-              sortList()
-              createParticipantList()
+                partOfHatimViewModel.sortList()
+              
             })
         //Navigations
             .navigationDestination(isPresented: $isIndividual, destination: {
                 TabviewPage()
             })
+            .navigationDestination(isPresented: $toGoNextPage, destination: {
+                TabviewPage()
+            })
         //Sheets
             .sheet(isPresented: $showSplitView) {
-                SplitCuzTwoPartView(allParts: $partOfHatimViewModel.allParts, selectedCuz: $selectedCuz)
+                SplitCuzTwoPartPage(allParts: $partOfHatimViewModel.allParts, selectedCuz: $selectedCuz)
             }
             
             .sheet(isPresented: $showAddUserToHatimView, content: {
@@ -90,9 +122,14 @@ struct PartsOfHatimView: View {
             })
     }
         .onAppear(){
-         //   isIndividual = ((newHatim?.isIndividual) != nil)
+          
             Task {
-                partOfHatimViewModel.updateAllPartsWithOwnersList(hatim: newHatim!,  ownerOfPart: nil )
+                if hatim?.isIndividual == true {
+                    partOfHatimViewModel.setIndividualHatim(hatim: hatim!)
+                }else {
+                    partOfHatimViewModel.updateAllPartsWithOwnersList(hatim: hatim!,  ownerOfPart: nil )
+                }
+              
                 await fetchUserList()
             }
        }
@@ -109,21 +146,21 @@ struct PartsOfHatimView: View {
             
         }
     }
-    func sortList (){
-            partOfHatimViewModel.allParts.sort{
-                $0.pages.first! <  $1.pages.first!
-            }
-    }
-   func createParticipantList(){
-        for item in partOfHatimViewModel.allParts {
-            if let user = item.ownerOfPart {
-                participantList.insert(user)
-            }
+    
+  
+    
+   
+    
+    func saveHatim() async -> Bool {
+        if let hatim = hatim {
+            let r =  await  readingViewModel.createNewHatim(newHatim: hatim)
+            
+            
         }
-            newHatim?.participantsList = Array(participantList)
-       
-       print(newHatim?.participantsList as Any)
-     }
+     
+        
+        return true
+    }
         
    
 }
@@ -137,6 +174,6 @@ struct PartsOfHatimView_Previews: PreviewProvider {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
         let hat : Hatim? = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
         let a = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : user, remainingPages : [Int](), deadline: .now)
-        PartsOfHatimView(newHatim: hat, selectedCuz: a)
+        PartsOfHatimPage(hatim: hat, selectedCuz: a)
     }
 }

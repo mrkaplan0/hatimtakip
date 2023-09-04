@@ -17,7 +17,7 @@ struct CreateNewHatimPage: View {
     let timepickerInfoText = "Hatimin bitis tarihini secin."
     let deadlineChosenToggleText = "Hatim bitis tarihi ayarla."
     let confirmButtonText = "Onayla"
-    @State var isIndividual : Bool = true
+    @State var isIndividual : Bool = false
     @State var isPrivate : Bool = false
     @State var isDeadLineChosen : Bool = false
     @State var hatimName : String = ""
@@ -196,13 +196,7 @@ struct SelectDateView: View {
     @State var toGoNextPage = false
     @State var showAlert = false
     
-    func createDefaultDate() -> Date {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let someDateTime = formatter.date(from: "2000/01/01 00:00")
-        
-        return someDateTime!
-    }
+   
     
     var body: some View {
         VStack {
@@ -232,7 +226,7 @@ struct SelectDateView: View {
                     }
 
                 Button {
-                    hatim.deadline = createDefaultDate()
+                    hatim.deadline = nil
                     toGoNextPage = true
                 } label: {
                     CustomButtonStyle(buttonText: cancelSelectAndContiueButtonText, buttonColor: .orange)
@@ -250,7 +244,7 @@ struct SelectDateView: View {
                         CustomButtonStyle(buttonText: yesButtonText, buttonColor: .orange)
                     }
                     Button {
-                        hatim.deadline = createDefaultDate()
+                        hatim.deadline = nil
                         toGoNextPage = true
                 } label: {
                         CustomButtonStyle(buttonText: noButtonText, buttonColor: .orange)
@@ -260,7 +254,7 @@ struct SelectDateView: View {
             Spacer(minLength: 300)
         }
         .navigationDestination(isPresented: $toGoNextPage) {
-            PartsOfHatimView(newHatim: hatim)
+            PartsOfHatimPage(hatim: hatim)
         }
     }
     

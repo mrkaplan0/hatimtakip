@@ -14,6 +14,7 @@ struct MyUser : Identifiable, Codable, Hashable {
     var username : String
     var userToken : String
     var favoritesPeople : [MyUser]?
+    var includedHatimIDs : [String]?
     
     init(id: String, email: String, username: String, userToken : String) {
         self.id = id

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class partsOfHatimViewModel: ObservableObject {
+class PartsOfHatimViewModel: ObservableObject {
     
     var parts = [cuz1, cuz2, cuz3, cuz4, cuz5, cuz6, cuz7, cuz8, cuz9, cuz10, cuz11, cuz12, cuz13, cuz14, cuz15, cuz16, cuz17,cuz18, cuz19, cuz20, cuz21, cuz22, cuz23, cuz24, cuz25, cuz26, cuz27,cuz28, cuz29, cuz30 ]
     @Published var allParts = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30]
@@ -25,19 +25,45 @@ class partsOfHatimViewModel: ObservableObject {
             allParts[i].ownerOfPart = ownerOfPart
         }
     }
-    func setIndividualHatim(hatim : Hatim,  ownerOfPart : MyUser, isIndividual : Bool) -> [HatimPartModel] {
+    func setIndividualHatim(hatim : Hatim) {
         
             allParts.removeAll()
         
             for i in 0...29 {
-             let a = HatimPartModel(hatimID : hatim.hatimID, hatimName : hatim.hatimName, pages : parts[i], ownerOfPart : ownerOfPart, remainingPages : parts[i], deadline: hatim.deadline)
+                let a = HatimPartModel(hatimID : hatim.hatimID, hatimName : hatim.hatimName, pages : parts[i], ownerOfPart : hatim.createdBy, remainingPages : parts[i], deadline: hatim.deadline)
              allParts.append(a)
             }
-        return allParts
     }
     
     func updateOwnerOfPart ( indexOfselectedPart : Int, ownerOfPart : MyUser) {
         allParts[indexOfselectedPart].ownerOfPart = ownerOfPart
+    }
+    
+    func sortList (){
+            allParts.sort{
+                $0.pages.first! <  $1.pages.first!
+            }
+    }
+    
+    func createParticipantList() -> [MyUser] {
+        var participantList : Set<MyUser> = []
+         for item in allParts {
+             if let user = item.ownerOfPart {
+                 participantList.insert(user)
+             }
+         }
+             return Array(participantList)
+      }
+    
+    func controlNonAddedPersonToCuz() -> [Int] {
+        var nonAddedPersonToCuzIndexArray = [Int]()
+            for i in 0..<allParts.count {
+                
+                if allParts[i].ownerOfPart == nil {
+                    nonAddedPersonToCuzIndexArray.append(i)
+                }
+            }
+       return nonAddedPersonToCuzIndexArray
     }
     
     func setPartName(part : [Int]) -> String {

@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct FirestoreService : MyDatabaseDelegate{
    
@@ -66,8 +67,21 @@ struct FirestoreService : MyDatabaseDelegate{
        
     }
     
-    func createNewHatim(newHatim: Hatim) -> Bool {
-        return false
+    func createNewHatim(newHatim: Hatim) async -> Result<Bool,Error> {
+        let docRefMainList = db.collection("Hatimler").document("MainLists").collection("MainLists").document(newHatim.hatimID)
+        let docRefUserList = db.collection("Hatimler").document("UserLists").collection("UserLists")
+        do {
+            try docRefMainList.setData(from: newHatim, merge: true)
+            for usr in newHatim.participantsList {
+                try docRefMainList.collection("Participants").document(usr.id).setData(from: usr, merge: true)
+            }
+            for part in newHatim.partsOfHatimList {
+                try  docRefUserList.document(part.ownerOfPart!.id).collection("parts").document(part.pages.first!.description).setData(from: part, merge: true)
+            }
+            
+        } catch {}
+        
+        return .success(true)
     }
     
     func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {

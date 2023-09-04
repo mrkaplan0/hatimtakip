@@ -24,8 +24,8 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
         return await fireStoreService.fetchUserList()
     }
     
-    func createNewHatim(newHatim: Hatim) -> Bool {
-        return false
+    func createNewHatim(newHatim: Hatim) async -> Result<Bool,Error> {
+        return await fireStoreService.createNewHatim(newHatim: newHatim)
     }
     
     func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {

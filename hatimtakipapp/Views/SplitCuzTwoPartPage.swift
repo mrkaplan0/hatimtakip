@@ -1,5 +1,5 @@
 //
-//  SplitCuzTwoPartView.swift
+//  SplitCuzTwoPartPage.swift
 //  hatimtakipapp
 //
 //  Created by MrKaplan on 30.08.23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SplitCuzTwoPartView: View {
-    @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
+struct SplitCuzTwoPartPage: View {
+    @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
     @Binding var allParts : [HatimPartModel]
     @Binding var selectedCuz : HatimPartModel
     @State var newCuz : HatimPartModel?
@@ -80,7 +80,7 @@ struct SplitCuzTwoPartView: View {
 
 struct SplitCuzTwoPart_Previews: PreviewProvider {
     static var previews: some View {
-        @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
-        SplitCuzTwoPartView(allParts: $partOfHatimViewModel.allParts, selectedCuz: $partOfHatimViewModel.allParts[0])
+        @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
+        SplitCuzTwoPartPage(allParts: $partOfHatimViewModel.allParts, selectedCuz: $partOfHatimViewModel.allParts[0])
     }
 }

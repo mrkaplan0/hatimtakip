@@ -8,62 +8,63 @@
 import SwiftUI
 
 struct AddUserToHatimPage: View {
-    @StateObject var partOfHatimViewModel = partsOfHatimViewModel()
-    var navigationTitle = "Kisi Ekle"
+    let navigationTitle = "Kisi Ekle"
     let searchFieldInfoText = "Kisi bul ve ekle"
+    let cancelButtonText = "Iptal"
     @Binding var names : [MyUser]
     @Binding var allParts : [HatimPartModel]
     @Binding var indexOfselectedCuz : Int
     @State private var searchText = ""
     @Environment(\.dismiss) var dismiss
     
-   
-   
-           var body: some View {
-               NavigationStack {
-              
-                       // search user, click and add
-                       
-                   VStack {
-                     
-                       List {
-                           ForEach(searchResults) { user in
-                               Text(user.username).onTapGesture {
-                                   print("tik \(indexOfselectedCuz)")
-                                  
-                                   allParts[indexOfselectedCuz].ownerOfPart = user
-                                   
-                                   dismiss()
-                               }
-                               }
-                           }
-                       .searchable(text: $searchText, prompt: Text("\(searchFieldInfoText)"))
-                       .navigationTitle("\(navigationTitle)")
-                   }
-               
-               }
-              
-             
-           }
-
-           var searchResults: [MyUser] {
-               if searchText.isEmpty {
-                   return []
-               } else {
-                   
-                   return names.filter { $0.username.localizedStandardContains(searchText) }
-               }
-           }
-
-  
-    func addUserToSelectedCuz(user : MyUser) {
-       
-     
+    
+    
+    var body: some View {
+        NavigationStack {
+            
+            // search user, click and add
+            
+            VStack {
+                
+                List {
+                    ForEach(searchResults) { user in
+                        Text(user.username).onTapGesture {
+                            
+                            allParts[indexOfselectedCuz].ownerOfPart = user
+                            
+                            dismiss()
+                        }
+                    }
+                }
+                .searchable(text: $searchText, prompt: Text("\(searchFieldInfoText)"))
+                
+            }
+            .navigationTitle("\(navigationTitle)")
+            .toolbar {
+                
+                Button(cancelButtonText) {
+                    dismiss()
+                }
+                .foregroundColor(.orange)
+                
+            }
+            
+        }
         
-        dismiss()
+        
     }
     
-       }
+    var searchResults: [MyUser] {
+        if searchText.isEmpty {
+            return []
+        } else {
+            
+            return names.filter { $0.username.localizedStandardContains(searchText) }
+        }
+    }
+    
+}
+  
 
 
 struct AddUserToGroupPage_Previews: PreviewProvider {

@@ -5,111 +5,15 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.RuntimeIssueBreakpoint">
          <BreakpointContent
-            uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60"
-            shouldBeEnabled = "No"
+            uuid = "BF37FDFA-3E1D-4DB4-8093-2EA782DF46FE"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "hatimtakipapp/Views/RouterPage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "RouterPage"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60 - b799b7cbaf0c0f26"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of hatimtakipapp.RouterPage.userViewModel : hatimtakipapp.UserViewModel"
-                  moduleName = "hatimtakipapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrkaplan/Desktop/projects/hatimtakipapp/hatimtakipapp/Views/RouterPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "38">
-               </Location>
-               <Location
-                  uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60 - c32ad77afe53050e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hatimtakipapp.RouterPage.userViewModel.getter : hatimtakipapp.UserViewModel"
-                  moduleName = "hatimtakipapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrkaplan/Desktop/projects/hatimtakipapp/hatimtakipapp/Views/RouterPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "105">
-               </Location>
-               <Location
-                  uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60 - 2d06f18de5e92b8f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hatimtakipapp.RouterPage.$userViewModel.getter : SwiftUI.ObservedObject&lt;hatimtakipapp.UserViewModel&gt;.Wrapper"
-                  moduleName = "hatimtakipapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrkaplan/Desktop/projects/hatimtakipapp/hatimtakipapp/Views/RouterPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "105">
-               </Location>
-               <Location
-                  uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60 - 3b8d99e01a4c1113"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hatimtakipapp.RouterPage.init() -&gt; hatimtakipapp.RouterPage"
-                  moduleName = "hatimtakipapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrkaplan/Desktop/projects/hatimtakipapp/hatimtakipapp/Views/RouterPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "45">
-               </Location>
-               <Location
-                  uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60 - fa86e7166bb8ec4a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hatimtakipapp.RouterPage.init(userViewModel: hatimtakipapp.UserViewModel, isUserNil: Swift.Bool, isUserNameNil: Swift.Bool, goToTabView: Swift.Bool) -&gt; hatimtakipapp.RouterPage"
-                  moduleName = "hatimtakipapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrkaplan/Desktop/projects/hatimtakipapp/hatimtakipapp/Views/RouterPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "162">
-               </Location>
-               <Location
-                  uuid = "79C8E244-82E5-46C8-BE16-4CF2E34DCC60 - 3b8d99e01a4c1113"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "hatimtakipapp.RouterPage.init() -&gt; hatimtakipapp.RouterPage"
-                  moduleName = "hatimtakipapp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrkaplan/Desktop/projects/hatimtakipapp/hatimtakipapp/Views/RouterPage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
+            breakpointStackSelectionBehavior = "1"
+            type = "8"
+            categories = "SwiftUI">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

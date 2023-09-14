@@ -9,8 +9,7 @@ import SwiftUI
 import Firebase
 
 struct LoginPage: View {
-    @StateObject  var userViewModel = UserViewModel()
-    @StateObject var readingViewModel = ReadingViewModel()
+    @EnvironmentObject var userViewModel : UserViewModel
     @State var isSignedInWithEmail = false
     @State var isSignedInAnonymusly = false
     @State var toSignInPage = false

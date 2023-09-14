@@ -8,15 +8,8 @@
 import SwiftUI
 
 struct CreateNewHatimPage: View {
-    @StateObject  var userViewModel = UserViewModel()
+    @EnvironmentObject var userViewModel : UserViewModel
     @State private var newHatim = Hatim(hatimName: "", createdBy: .init(id: "", email: "", username: "", userToken: ""), isIndividual: true, isPrivate: false, deadline: .now, participantsList: [], partsOfHatimList: [])
-    let hatimNametitle = "Hatim adini giriniz"
-    let newHatSetViewNavTitle = "Hatim Ayarlari"
-    let makePrivateTitle = "Hatimi katilimcilara özel yap"
-    let makePrivatInfoText = "Özel hatimlere, sadece kurucu katilimci ekleyebilir."
-    let timepickerInfoText = "Hatimin bitis tarihini secin."
-    let deadlineChosenToggleText = "Hatim bitis tarihi ayarla."
-    let confirmButtonText = "Onayla"
     @State var isIndividual : Bool = false
     @State var isPrivate : Bool = false
     @State var isDeadLineChosen : Bool = false
@@ -55,7 +48,7 @@ struct CreateNewHatimPage: View {
 }
 
     struct HatimNameView: View {
-        @StateObject  var userViewModel = UserViewModel()
+        @EnvironmentObject var userViewModel : UserViewModel
         let hatimNametitle = "Hatminize bir isim verin."
         let hatimNameexample = "Örnek: Ramazan Hatmi"
         let hatimNameNavTitle = "Hatim Ayarlari"
@@ -175,6 +168,7 @@ struct HatimPrivacyView: View {
         }
         .onAppear(){
             if isIndividual == true {
+                hatim.isPrivate = true
                 nextAction()
             }
         }

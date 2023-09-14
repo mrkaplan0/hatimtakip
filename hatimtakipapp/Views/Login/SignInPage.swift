@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SignInPage: View {
-    @StateObject  var userViewModel = UserViewModel()
-    @StateObject var readingViewModel = ReadingViewModel()
+    @EnvironmentObject var userViewModel : UserViewModel
+    @EnvironmentObject var readingViewModel : ReadingViewModel
     @State private var isSignedIn = false
     @State private var isUsernameNotUsable = false
     @State private var iserrorAlertActive = false

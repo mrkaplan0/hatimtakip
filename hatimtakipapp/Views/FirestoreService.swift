@@ -11,17 +11,13 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct FirestoreService : MyDatabaseDelegate{
-   
-    
-    
-    
-    
+ 
     let db = Firestore.firestore()
     
     func saveMyUser(user: MyUser) async ->  Bool {
-       
+        
         do {
-            try await db.collection("Users").document(user.id).setData( ["username": user.username, "email" : user.email, "id" : user.id] , merge: true)
+            try await db.collection("Users").document(user.id).setData( ["username": user.username, "email" : user.email ?? "", "id" : user.id] , merge: true)
             return true
         } catch {
             return false
@@ -33,7 +29,7 @@ struct FirestoreService : MyDatabaseDelegate{
         
         var user : MyUser?
         do{
-         let docRef =   try  await db.collection("Users").document(userId).getDocument()
+            let docRef =   try  await db.collection("Users").document(userId).getDocument()
             
             if let data = docRef.data(){
                 
@@ -44,7 +40,7 @@ struct FirestoreService : MyDatabaseDelegate{
         } catch {
             print(error)
         }
-      
+        
         return user
     }
     
@@ -54,7 +50,7 @@ struct FirestoreService : MyDatabaseDelegate{
         
         do{
             let docs =   try  await db.collection("Users").getDocuments()
-
+            
             for user in docs.documents {
                 let u = MyUser(id: user.data()["id"] as! String, email: user.data()["email"] as! String, username: user.data()["username"] as! String, userToken: user.data()["username"] as! String)
                 userList.append(u)
@@ -64,30 +60,78 @@ struct FirestoreService : MyDatabaseDelegate{
             print(error)
             return .failure(error)
         }
-       
+        
     }
     
     func createNewHatim(newHatim: Hatim) async -> Result<Bool,Error> {
-        let docRefMainList = db.collection("Hatimler").document("MainLists").collection("MainLists").document(newHatim.hatimID)
+        let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
         let docRefUserList = db.collection("Hatimler").document("UserLists").collection("UserLists")
+        
         do {
-            try docRefMainList.setData(from: newHatim, merge: true)
-            for usr in newHatim.participantsList {
-                try docRefMainList.collection("Participants").document(usr.id).setData(from: usr, merge: true)
-            }
-            for part in newHatim.partsOfHatimList {
-                try  docRefUserList.document(part.ownerOfPart!.id).collection("parts").document(part.pages.first!.description).setData(from: part, merge: true)
+            if newHatim.isPrivate == true {
+                try docRefPrivateList.document(newHatim.id).setData(from: newHatim, merge: true)
+                for usr in newHatim.participantsList {
+                    try docRefPrivateList.document(newHatim.id).collection("Participants").document(usr.id).setData(from: usr, merge: true)
+                }
+            } else {
+                try docRefPublicList.document(newHatim.id).setData(from: newHatim, merge: true)
+                for usr in newHatim.participantsList {
+                    try docRefPublicList.document(newHatim.id).collection("Participants").document(usr.id).setData(from: usr, merge: true)
+                }
             }
             
-        } catch {}
-        
+            for part in newHatim.partsOfHatimList {
+                if part.ownerOfPart != nil {
+                    try  docRefUserList.document(part.ownerOfPart!.id).setData(from: part.ownerOfPart, merge: true)
+                    try docRefUserList.document(part.ownerOfPart!.id).collection("parts").document(part.hatimID + part.pages.first!.description).setData(from: part, merge: true)
+                }
+            }
+            
+        } catch {
+            return .failure(error)
+        }
+       
         return .success(true)
     }
     
     func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {
+        var hatimList : Set<Hatim> = []
+        let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
+       
+       
+        guard let userDict = user.dictionary else { return .failure(print(" JSON ENCodable error") as! Error)}
+       
+        do {
+            
+            let querySnap = try await docRefPrivateList.whereField("participantsList", arrayContains: userDict).getDocuments()
+            
+            for doc in querySnap.documents {
+                let hatim = try doc.data(as: Hatim.self)
+                hatimList.insert(hatim)
+            }}catch {
+                print(error)
+                return .failure(error) }
+           
+        do {
+            
+            let querySnap = try await docRefPublicList.whereField("participantsList", arrayContains: userDict).getDocuments()
+            
+            for doc in querySnap.documents {
+                let hatim = try doc.data(as: Hatim.self)
+                hatimList.insert(hatim)
+            } } catch {
+                    print(error)
+                    return .failure(error) }
+          
+            return .success(Array(hatimList))
+        }
+       
         
-       return .success([])
         
-    }
+  
+    
+   
     
 }

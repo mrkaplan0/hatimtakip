@@ -21,4 +21,6 @@ protocol MyDatabaseDelegate {
     func readHatimList( user : MyUser) async -> Result<[Hatim],Error>
     
     
+    
+    
 }

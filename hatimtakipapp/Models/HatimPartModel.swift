@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct HatimPartModel : Codable {
+struct HatimPartModel : Codable, Hashable {
     var hatimID : String
     var hatimName : String
     var pages : [Int]
     var ownerOfPart : MyUser?
     var remainingPages : [Int]
     var deadline : Date?
+    var isPrivate : Bool
     
 }

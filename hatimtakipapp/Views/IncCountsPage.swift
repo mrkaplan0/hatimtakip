@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct IncCountsPage: View {
-    @StateObject var userViewModel = UserViewModel()
+    @EnvironmentObject var userViewModel : UserViewModel
+    @State var hatimList : [Hatim]
     @State var isSignout = false
     let signoutText = "Cikis Yap"
     var body: some View {
@@ -47,6 +48,8 @@ struct IncCountsPage: View {
 }
 struct IncCountsPage_Previews: PreviewProvider {
     static var previews: some View {
-        IncCountsPage()
+        @State var hatimList = [Hatim]()
+        @State var error : Error?
+        IncCountsPage(hatimList: hatimList)
     }
 }

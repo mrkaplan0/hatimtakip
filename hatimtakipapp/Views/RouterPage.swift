@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouterPage: View {
-    @StateObject var userViewModel = UserViewModel()
+    @EnvironmentObject var userViewModel : UserViewModel
     @State var isUserNil = false
     @State var isUserNameNil = false
     @State var goToTabView = false

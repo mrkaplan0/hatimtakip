@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PartsOfHatimPage: View {
     @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
-    @StateObject var readingViewModel = ReadingViewModel()
+    @EnvironmentObject var readingViewModel : ReadingViewModel
     @State var hatim : Hatim?
     let partsOfHatimNavTitle = "Cüz Ayarlari"
     let parttext = "Cüz"
@@ -17,6 +17,10 @@ struct PartsOfHatimPage: View {
     let addPerson = "Kisi Ekle"
     let createButtonText = "Olustur"
     let cancelButtonText = "Iptal"
+    let alertTitle = "Uyari"
+    let alertMessage1 = "Kisi eklenmeyen cüz sayisi: "
+    let alertMessage2 = ". Lütfen kontrol edin."
+    @State var showAlert = false
     @State private var showSplitView = false
     @State private var showAddUserToHatimView = false
     @State private var isIndividual = false
@@ -24,11 +28,8 @@ struct PartsOfHatimPage: View {
     @State private var usrsList = [MyUser]()
     @State private var indexOfSelectedCuz = 0
     @State private var nonAddedPersonToCuzIndexArray = [Int]()
-    @State var selectedCuz = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : .init(id: "", email: "", username: "", userToken: ""), remainingPages : [Int](), deadline: nil)
-    let alertTitle = "Uyari"
-    let alertMessage1 = "Kisi eklenmeyen cüz sayisi: "
-    let alertMessage2 = ". Lütfen kontrol edin."
-    @State var showAlert = false
+    @State var selectedCuz = HatimPartModel(hatimID : "hatim.id", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : .init(id: "", email: "", username: "", userToken: ""), remainingPages : [Int](), deadline: nil, isPrivate: false)
+  
     
     var body: some View {
       
@@ -69,10 +70,14 @@ struct PartsOfHatimPage: View {
                 
             }
             .toolbar {
+                
+                // Create and save Button
+                
                 ToolbarItem {
                     Button(createButtonText) {
                         Task {
                             hatim?.participantsList = partOfHatimViewModel.createParticipantList()
+                            //if hatim is private, you must to add person
                             if hatim?.isPrivate == true {
                               nonAddedPersonToCuzIndexArray = partOfHatimViewModel.controlNonAddedPersonToCuz()
                             }
@@ -96,12 +101,12 @@ struct PartsOfHatimPage: View {
                 }
                 ToolbarItem(placement: .navigationBarLeading ) {
                     Button(cancelButtonText) {
-                        
+                     toGoNextPage = true
                     }
                     .foregroundColor(.orange)
                 }
             }
-            .onChange(of: partOfHatimViewModel.allParts.count, perform: { newValue in
+            .onChange(of: $partOfHatimViewModel.allParts.count, perform: { newValue in
                 partOfHatimViewModel.sortList()
               
             })
@@ -153,7 +158,7 @@ struct PartsOfHatimPage: View {
     
     func saveHatim() async -> Bool {
         if let hatim = hatim {
-            let r =  await  readingViewModel.createNewHatim(newHatim: hatim)
+            _ =  await  readingViewModel.createNewHatim(newHatim: hatim)
             
             
         }
@@ -173,7 +178,7 @@ struct PartsOfHatimView_Previews: PreviewProvider {
     static var previews: some View {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
         let hat : Hatim? = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
-        let a = HatimPartModel(hatimID : "hatim.hatimID", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : user, remainingPages : [Int](), deadline: .now)
+        let a = HatimPartModel(hatimID : "hatim.id", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : user, remainingPages : [Int](), deadline: .now, isPrivate: false)
         PartsOfHatimPage(hatim: hat, selectedCuz: a)
     }
 }

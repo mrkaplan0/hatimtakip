@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SetUsernamePage: View {
-    @StateObject  var userViewModel = UserViewModel()
-    @StateObject var readingViewModel = ReadingViewModel()
+    @EnvironmentObject var userViewModel : UserViewModel
+    @EnvironmentObject var readingViewModel : ReadingViewModel
     let setUserNameNavTitle = "Kullanici Adi"
     let usernameTextFieldInfo = " Kullanici Adi Belirleyin."
     let saveButtonText = "Kaydet"

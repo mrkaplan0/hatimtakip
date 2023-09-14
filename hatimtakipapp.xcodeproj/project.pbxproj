@@ -46,6 +46,10 @@
 		8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */; };
 		8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */; };
 		88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C195552A93FA3800006F89 /* CustomButtonStyle.swift */; };
+		88D6D2922AB20FE400B54AF8 /* HatimCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */; };
+		88D6D2942AB22DEF00B54AF8 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */; };
+		88D6D2962AB2398100B54AF8 /* PartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2952AB2398100B54AF8 /* PartCellView.swift */; };
+		88D6D29A2AB280CD00B54AF8 /* Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2992AB280CD00B54AF8 /* Circular.swift */; };
 		B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */; };
 		DB60E52E2B37DBE32950B17F /* Pods_hatimtakipapp_hatimtakipappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +109,10 @@
 		8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartsOfHatimViewModel.swift; path = hatimtakipapp/Views/PartsOfHatimViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCuzTwoPartPage.swift; sourceTree = "<group>"; };
 		88C195552A93FA3800006F89 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimCellView.swift; sourceTree = "<group>"; };
+		88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
+		88D6D2952AB2398100B54AF8 /* PartCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCellView.swift; sourceTree = "<group>"; };
+		88D6D2992AB280CD00B54AF8 /* Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circular.swift; sourceTree = "<group>"; };
 		891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipappTests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipappTests/Pods-hatimtakipappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp_hatimtakipappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,17 +244,11 @@
 		8873CCA72A786F9300C18995 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88D6D2902AB20ADE00B54AF8 /* Components */,
+				88D6D28F2AB20A8F00B54AF8 /* NavTabs */,
+				888E31A32AB205C6006DCDE4 /* Login */,
 				8899D4622A9F78A7001EBB6E /* CreateNewHatim */,
-				8842F2A42A785E8D009F316D /* LoginPage.swift */,
-				8873CCAB2A78704800C18995 /* Header.swift */,
-				887E794C2A791717007FFB1B /* TabviewPage.swift */,
-				887E794E2A791953007FFB1B /* ReadingPage.swift */,
-				887E79502A791AFA007FFB1B /* IncCountsPage.swift */,
-				887E79522A791CB6007FFB1B /* ListsPage.swift */,
-				8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */,
-				88C195552A93FA3800006F89 /* CustomButtonStyle.swift */,
-				8843C0082A96465B0061ACC2 /* SignInPage.swift */,
-				880A72CE2A97856800BA56AF /* RouterPage.swift */,
+				88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +284,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		888E31A32AB205C6006DCDE4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */,
+				8843C0082A96465B0061ACC2 /* SignInPage.swift */,
+				8842F2A42A785E8D009F316D /* LoginPage.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		8899D4622A9F78A7001EBB6E /* CreateNewHatim */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +303,30 @@
 				8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */,
 			);
 			name = CreateNewHatim;
+			sourceTree = "<group>";
+		};
+		88D6D28F2AB20A8F00B54AF8 /* NavTabs */ = {
+			isa = PBXGroup;
+			children = (
+				880A72CE2A97856800BA56AF /* RouterPage.swift */,
+				887E794C2A791717007FFB1B /* TabviewPage.swift */,
+				887E794E2A791953007FFB1B /* ReadingPage.swift */,
+				887E79522A791CB6007FFB1B /* ListsPage.swift */,
+				887E79502A791AFA007FFB1B /* IncCountsPage.swift */,
+			);
+			name = NavTabs;
+			sourceTree = "<group>";
+		};
+		88D6D2902AB20ADE00B54AF8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				88C195552A93FA3800006F89 /* CustomButtonStyle.swift */,
+				8873CCAB2A78704800C18995 /* Header.swift */,
+				88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */,
+				88D6D2952AB2398100B54AF8 /* PartCellView.swift */,
+				88D6D2992AB280CD00B54AF8 /* Circular.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +585,7 @@
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
 				8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */,
+				88D6D2922AB20FE400B54AF8 /* HatimCellView.swift in Sources */,
 				886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
 				880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */,
@@ -558,6 +595,9 @@
 				884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */,
 				8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */,
 				884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */,
+				88D6D2962AB2398100B54AF8 /* PartCellView.swift in Sources */,
+				88D6D2942AB22DEF00B54AF8 /* DetailPage.swift in Sources */,
+				88D6D29A2AB280CD00B54AF8 /* Circular.swift in Sources */,
 				887E79552A79273C007FFB1B /* CreateNewHatimPage.swift in Sources */,
 				8843C0092A96465B0061ACC2 /* SignInPage.swift in Sources */,
 				887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */,

@@ -8,10 +8,9 @@
 import Foundation
 
 class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
-    
-    
-    
+   
     let fireStoreService = FirestoreService()
+    
     
     
     func saveMyUser(user: MyUser) async -> Bool {
@@ -29,9 +28,16 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     }
     
     func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {
-        return await fireStoreService.readHatimList(user:   user)
+        let result = await fireStoreService.readHatimList(user: user)
+        
+        switch result {
+        case .success(let hatLists):
+            return .success(hatLists)
+        case .failure(let error):
+            print(error)
+            return .failure(error)
+        }
     }
-    
     
     
     

@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Hatim : Codable{
-    var hatimID = UUID().uuidString
+struct Hatim : Identifiable, Codable, Hashable {
+    
+    var id = UUID().uuidString
     var hatimName : String
     var createdBy : MyUser
     var isIndividual : Bool

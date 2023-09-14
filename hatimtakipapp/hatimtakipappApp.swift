@@ -22,14 +22,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct hatimtakipappApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-  
+    
     
     var body: some Scene {
-    
+     
         WindowGroup {
             
             RouterPage()
-           
+                .environmentObject(UserViewModel())
+                .environmentObject(ReadingViewModel())
         }
     }
 }

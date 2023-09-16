@@ -39,6 +39,14 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
         }
     }
     
+    func fetchHatimParts(hatim: Hatim) async -> Result<[HatimPartModel], Error> {
+        return await fireStoreService.fetchHatimParts(hatim: hatim)
+    }
+    
+    
+    func updateOwnerOfPart(newOwner: MyUser, indexOfPart : Int, hatim: Hatim) async -> Result<Bool, Error> {
+        return await fireStoreService.updateOwnerOfPart(newOwner: newOwner, indexOfPart: indexOfPart, hatim: hatim)
+    }
     
     
 }

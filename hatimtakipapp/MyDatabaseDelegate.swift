@@ -20,7 +20,9 @@ protocol MyDatabaseDelegate {
     
     func readHatimList( user : MyUser) async -> Result<[Hatim],Error>
     
+    func fetchHatimParts(hatim : Hatim) async -> Result<[HatimPartModel],Error>
     
+    func updateOwnerOfPart(newOwner: MyUser, indexOfPart : Int, hatim : Hatim) async -> Result<Bool,Error>
     
     
 }

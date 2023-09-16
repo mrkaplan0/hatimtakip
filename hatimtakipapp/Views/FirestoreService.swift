@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct FirestoreService : MyDatabaseDelegate{
+   
  
     let db = Firestore.firestore()
     
@@ -74,6 +75,9 @@ struct FirestoreService : MyDatabaseDelegate{
                 for usr in newHatim.participantsList {
                     try docRefPrivateList.document(newHatim.id).collection("Participants").document(usr.id).setData(from: usr, merge: true)
                 }
+                for i in 0..<newHatim.partsOfHatimList.count {
+                    try docRefPrivateList.document(newHatim.id).collection("Parts").document(i.description).setData(from: newHatim.partsOfHatimList[i])
+                }
             } else {
                 try docRefPublicList.document(newHatim.id).setData(from: newHatim, merge: true)
                 for usr in newHatim.participantsList {
@@ -102,7 +106,7 @@ struct FirestoreService : MyDatabaseDelegate{
        
        
         guard let userDict = user.dictionary else { return .failure(print(" JSON ENCodable error") as! Error)}
-       
+      
         do {
             
             let querySnap = try await docRefPrivateList.whereField("participantsList", arrayContains: userDict).getDocuments()
@@ -124,14 +128,60 @@ struct FirestoreService : MyDatabaseDelegate{
             } } catch {
                     print(error)
                     return .failure(error) }
-          
             return .success(Array(hatimList))
         }
        
+    func fetchHatimParts(hatim: Hatim) async -> Result<[HatimPartModel], Error> {
+        var partslist = [HatimPartModel]()
+        let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
         
-        
-  
+        do {
+            if hatim.isPrivate == true {
+                let querySnap = try await docRefPrivateList.document(hatim.id).collection("Parts").getDocuments()
+                for doc in querySnap.documents {
+                    let part = try doc.data(as: HatimPartModel.self)
+                    partslist.append(part)
+                }
+                
+            } else {
+                let querySnap = try await docRefPublicList.document(hatim.id).collection("Parts").getDocuments()
+                for doc in querySnap.documents {
+                    let part = try doc.data(as: HatimPartModel.self)
+                    partslist.append(part)
+                }
+            }
+        } catch {
+            return .failure(error)
+        }
+       
+        return .success(partslist)
+    }
+    
+    
+    func updateOwnerOfPart(newOwner: MyUser, indexOfPart : Int, hatim: Hatim) async -> Result<Bool, Error> {
+        let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
+        do {
+            guard let userDict = newOwner.dictionary else { return .failure(print(" JSON ENCodable error") as! Error)}
+            
+            if hatim.isPrivate == true {
+                try await docRefPrivateList.document(hatim.id).collection("Parts").document(indexOfPart.description).updateData(["ownerOfPart" : userDict])
+                
+                
+            } else {
+                try await docRefPublicList.document(hatim.id).collection("Parts").document(indexOfPart.description).updateData(["ownerOfPart" : userDict])
+                
+
+            }
+        } catch {
+            return .failure(error)
+        }
+       
+        return .success(true)
+    }
     
    
+    
     
 }

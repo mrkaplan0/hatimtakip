@@ -10,8 +10,10 @@ import SwiftUI
 struct PartCellView: View {
     @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
     @Binding var cuz : HatimPartModel
+    @Binding var isEditActive : Bool
     let readingByText = "Okuyan: "
     @State var percentage : Double = 0.1
+    
     var body: some View {
      
        
@@ -43,9 +45,11 @@ struct PartCellView: View {
                            Spacer()
                            
                            */
-                      
-                    
                     Spacer()
+                   
+                    if isEditActive {
+                        Image(systemName: "ellipsis").rotationEffect(Angle(degrees: 90))
+                    }
                 }
             }
          
@@ -64,6 +68,7 @@ struct PartCellView_Previews: PreviewProvider {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
         @State var a = HatimPartModel(hatimID : "hatim.id", hatimName : "hatim.hatimName", pages : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], ownerOfPart : user, remainingPages : [15,16,17,18,19,20], deadline: .now, isPrivate: false)
         @State var percentage : Double = 20.0
-        PartCellView(cuz: $a, percentage: percentage)
+        @State var isEditActive : Bool = true
+        PartCellView(cuz: $a, isEditActive: $isEditActive, percentage: percentage)
     }
 }

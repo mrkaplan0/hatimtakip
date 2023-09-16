@@ -45,6 +45,7 @@
 		887E79592A799125007FFB1B /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79582A799125007FFB1B /* MyUser.swift */; };
 		8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */; };
 		8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */; };
+		88A223FC2AB51E920016F300 /* UpdateOwnerOfPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */; };
 		88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C195552A93FA3800006F89 /* CustomButtonStyle.swift */; };
 		88D6D2922AB20FE400B54AF8 /* HatimCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */; };
 		88D6D2942AB22DEF00B54AF8 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */; };
@@ -108,6 +109,7 @@
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
 		8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartsOfHatimViewModel.swift; path = hatimtakipapp/Views/PartsOfHatimViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCuzTwoPartPage.swift; sourceTree = "<group>"; };
+		88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOwnerOfPartPage.swift; sourceTree = "<group>"; };
 		88C195552A93FA3800006F89 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimCellView.swift; sourceTree = "<group>"; };
 		88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				888E31A32AB205C6006DCDE4 /* Login */,
 				8899D4622A9F78A7001EBB6E /* CreateNewHatim */,
 				88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */,
+				88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				8843C0092A96465B0061ACC2 /* SignInPage.swift in Sources */,
 				887E23EB2A81B85900E65C05 /* FirestoreService.swift in Sources */,
 				8873CCAC2A78704800C18995 /* Header.swift in Sources */,
+				88A223FC2AB51E920016F300 /* UpdateOwnerOfPartPage.swift in Sources */,
 				887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */,
 				884513082A81015D00127D72 /* HatimModel.swift in Sources */,
 				8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */,

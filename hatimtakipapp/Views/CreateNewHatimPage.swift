@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateNewHatimPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
-    @State private var newHatim = Hatim(hatimName: "", createdBy: .init(id: "", email: "", username: "", userToken: ""), isIndividual: true, isPrivate: false, deadline: .now, participantsList: [], partsOfHatimList: [])
+    @State private var newHatim = Hatim(hatimName: "", createdBy: .init(id: "", email: "", username: "", userToken: ""), isIndividual: true, isPrivate: false, deadline: .now, participantsList: [], partsOfHatimList: [], createdTime: .now)
     @State var isIndividual : Bool = false
     @State var isPrivate : Bool = false
     @State var isDeadLineChosen : Bool = false

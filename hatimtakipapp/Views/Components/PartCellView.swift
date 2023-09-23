@@ -38,13 +38,7 @@ struct PartCellView: View {
                                 
                 }
                        
-                          /*  ZStack(alignment: .leading) {
-                                RoundedRectangle(cornerRadius: 1).fill(.gray).frame(width: Double(cuz.pages.count) * 8.0, height: 2)
-                                RoundedRectangle(cornerRadius: 2).fill(.orange).frame(width: Double(cuz.remainingPages.count) * 8.0, height: 3)
-                            }
-                           Spacer()
-                           
-                           */
+                         
                     Spacer()
                    
                     if isEditActive {

@@ -33,7 +33,7 @@ struct ListsPage: View {
                             NavigationLink {
                                 DetailPage(hatim: hatim)
                             } label: {
-                                HatimCellView(hatimName: hatim.hatimName, deadLine: hatim.deadline)
+                                HatimCellView(hatimName: hatim.hatimName, deadLine: hatim.deadline,createdTime: hatim.createdTime)
                             }
 
                             
@@ -44,7 +44,6 @@ struct ListsPage: View {
                    
                     .onAppear(){
                         if hatimList.isEmpty {
-                            print("Calisti")
                             Task{
                                 let result = await readingViewModel.readHatimList(user: userViewModel.user!)
                                 
@@ -59,6 +58,7 @@ struct ListsPage: View {
                         }
                 }
             }
+            
         }
        
            
@@ -68,7 +68,7 @@ struct ListsPage: View {
 
 struct Lists_Previews: PreviewProvider {
     static var previews: some View {
-        @State var hatimList = [Hatim(id: "asdads", hatimName: "aaa", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel]()), Hatim(id: "asdaafds", hatimName: "dd", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel]()), Hatim(id: "asdgfdads", hatimName: "aagffha", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel]())]
+        @State var hatimList = [Hatim(id: "asdads", hatimName: "aaa", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now), Hatim(id: "asdaafds", hatimName: "dd", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now), Hatim(id: "asdgfdads", hatimName: "aagffha", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now)]
         @State var error : Error?
         ListsPage(hatimList: $hatimList, error: $error)
     }

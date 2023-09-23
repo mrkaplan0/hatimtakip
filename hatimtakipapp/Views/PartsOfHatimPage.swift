@@ -157,6 +157,7 @@ struct PartsOfHatimPage: View {
    
     
     func saveHatim() async -> Bool {
+        hatim?.createdTime = .now
         if let hatim = hatim {
             _ =  await  readingViewModel.createNewHatim(newHatim: hatim)
             
@@ -177,7 +178,7 @@ struct PartsOfHatimPage: View {
 struct PartsOfHatimView_Previews: PreviewProvider {
     static var previews: some View {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
-        let hat : Hatim? = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [])
+        let hat : Hatim? = Hatim(hatimName: "hat", createdBy: user,isIndividual: false, isPrivate: true, deadline: Date.now, participantsList: [], partsOfHatimList: [], createdTime: .now)
         let a = HatimPartModel(hatimID : "hatim.id", hatimName : "hatim.hatimName", pages : [Int](), ownerOfPart : user, remainingPages : [Int](), deadline: .now, isPrivate: false)
         PartsOfHatimPage(hatim: hat, selectedCuz: a)
     }

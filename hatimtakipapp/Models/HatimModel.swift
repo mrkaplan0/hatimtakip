@@ -17,5 +17,6 @@ struct Hatim : Identifiable, Codable, Hashable {
     var deadline : Date?
     var participantsList : [MyUser]
     var partsOfHatimList : [HatimPartModel]
+    var createdTime : Date
     
 }

@@ -10,6 +10,7 @@ import Foundation
 class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
    
     let fireStoreService = FirestoreService()
+    @Published var hatimList = [Hatim]()
     
     
     
@@ -26,17 +27,13 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     func createNewHatim(newHatim: Hatim) async -> Result<Bool,Error> {
         return await fireStoreService.createNewHatim(newHatim: newHatim)
     }
-    
-    func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {
-        let result = await fireStoreService.readHatimList(user: user)
+    @MainActor
+    func readHatimList(user: MyUser) async -> [Hatim] {
+        hatimList = await fireStoreService.readHatimList(user: user)
         
-        switch result {
-        case .success(let hatLists):
-            return .success(hatLists)
-        case .failure(let error):
-            print(error)
-            return .failure(error)
-        }
+        hatimList.sort{$0.createdTime < $1.createdTime}
+       return hatimList
+      
     }
     
     func fetchHatimParts(hatim: Hatim) async -> Result<[HatimPartModel], Error> {

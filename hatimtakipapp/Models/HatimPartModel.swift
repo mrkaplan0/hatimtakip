@@ -8,6 +8,7 @@
 import Foundation
 
 struct HatimPartModel : Codable, Hashable {
+    var id = UUID().uuidString
     var hatimID : String
     var hatimName : String
     var pages : [Int]

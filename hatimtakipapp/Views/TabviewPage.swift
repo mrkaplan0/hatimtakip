@@ -20,11 +20,11 @@ struct TabviewPage: View {
     var body: some View {
         NavigationStack {
             TabView(selection: $selection){
-                ListsPage(hatimList: $hatimList,error: $error).tabItem {
+                ListsPage().tabItem {
                     Image(systemName: "list.clipboard")
                     Text("\(listsText)")
                 }.tag(0)
-                IncCountsPage(hatimList: hatimList).tabItem {
+                IncCountsPage().tabItem {
                     Image(systemName: "plus.circle")
                     Text("\(increaseText)")
                 }.tag(1)
@@ -37,17 +37,8 @@ struct TabviewPage: View {
             .navigationBarBackButtonHidden()
         }
         .onAppear(){
-            Task {
-                
-                let result = await readingViewModel.readHatimList(user: userViewModel.user!)
-                
-                switch result {
-                case .success(let hatims) :
-                    hatimList = hatims
-                case .failure(let err)  :
-                    error = err
-                }
-                
+            Task {  
+                 await readingViewModel.readHatimList(user: userViewModel.user!)
             }
         }
         

@@ -13,8 +13,7 @@ struct ListsPage: View {
     let myGroupsText = "Hatimlerim"
     let myReadings = "Cüzlerim"
     let addNewHatim = "Yeni Hatim Baslat"
-    @Binding var hatimList : [Hatim]
-    @Binding var error : Error?
+
     var body: some View {
         
        
@@ -29,7 +28,7 @@ struct ListsPage: View {
                 }
                 List {
                         
-                        ForEach(hatimList, id: \.self) { hatim in
+                    ForEach(readingViewModel.hatimList, id: \.self) { hatim in
                             NavigationLink {
                                 DetailPage(hatim: hatim)
                             } label: {
@@ -40,23 +39,10 @@ struct ListsPage: View {
                             
                             
                         }
-                }
+                }.listStyle(.plain)
                    
-                    .onAppear(){
-                        if hatimList.isEmpty {
-                            Task{
-                                let result = await readingViewModel.readHatimList(user: userViewModel.user!)
-                                
-                                switch result {
-                                case .success(let hatLists):
-                                    hatimList = hatLists
-                                case .failure(let error):
-                                    print(error)
-                                }
-                                
-                            }
-                        }
-                }
+                   
+               
             }
             
         }
@@ -68,8 +54,7 @@ struct ListsPage: View {
 
 struct Lists_Previews: PreviewProvider {
     static var previews: some View {
-        @State var hatimList = [Hatim(id: "asdads", hatimName: "aaa", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now), Hatim(id: "asdaafds", hatimName: "dd", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now), Hatim(id: "asdgfdads", hatimName: "aagffha", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now)]
-        @State var error : Error?
-        ListsPage(hatimList: $hatimList, error: $error)
+    
+        ListsPage()
     }
 }

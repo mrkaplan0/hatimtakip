@@ -18,11 +18,12 @@ struct HatimCellView: View {
     let deadlineText = "Bitis Tarihi: "
     let nildeadlineText = "Süre siniri yok. "
     let lastText = "Son "
-    let hoursText = " saat"
+    let hoursText = " saat!!"
+    let itsDoneText = "Süre Bitti."
     
     var body: some View {
         
-        RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 0).overlay {
+        
             HStack(alignment: .center) {
                 Circular(lineWidth: 6, backgroundColor: .gray, foregroundColor: remainingHours > 0 ? .red : .orange, percentage: 100.0).overlay(content: {
                     Text(hatimName.first?.uppercased() ?? "").bold()
@@ -35,16 +36,19 @@ struct HatimCellView: View {
                         .lineLimit(1)
                     Text(deadlineText + (deadLine?.formatted().description ?? nildeadlineText))
                         .font(.footnote)
-                    if remainingHours == 0 {
+                    if remainingHours == 0 && isHatimDone == false {
                         ZStack(alignment: .leading) {
                             RoundedRectangle(cornerRadius: 1).fill(.gray).frame(width: 200.0, height: 2)
                             RoundedRectangle(cornerRadius: 2).fill(LinearGradient(colors: colorsOfRemainingTimeLine, startPoint: .leading, endPoint: .trailing)).frame(width: Double(widthOfRemainingTimeLine), height: 3)
                         }
                     }
+                    if remainingHours == 0 && isHatimDone == true {
+                        Text(itsDoneText).font(.footnote)
+                    }
                     
                     if remainingHours > 0 {
                         ZStack(alignment: .leading) {
-                            RoundedRectangle(cornerRadius: 1).fill(.white).frame(width: 200.0, height: 1)
+                            RoundedRectangle(cornerRadius: 1).fill(.white.opacity(0.0)).frame(width: 200.0, height: 1)
                             Text(lastText + remainingHours.description + hoursText).font(.footnote).foregroundColor(.red).animation(Animation.easeInOut(duration: 3))
                         }
                             
@@ -53,12 +57,15 @@ struct HatimCellView: View {
                     }
                         Spacer()
                 }
-                
-            }
-            Spacer()
+                Spacer()
+           
+            
         }.frame( height: 50)
             .padding(.horizontal)
-            .foregroundColor(.gray)
+            .background{
+                RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 0)
+            }
+            .foregroundColor(isHatimDone ? .gray : .black)
             .onAppear(){calculate()}
       
     }

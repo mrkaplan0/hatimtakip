@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '13.0'
 
 target 'hatimtakipapp' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -9,16 +9,16 @@ target 'hatimtakipapp' do
 
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
-pod 'FirebaseUI/OAuth' # Used for Sign in with Apple, Twitter, etc
+pod 'FirebaseUI/OAuth' 
 
-
-  target 'hatimtakipappTests' do
-    inherit! :search_paths
-    # Pods for testing
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        xcconfig_path = config.base_configuration_reference.real_path
+        xcconfig = File.read(xcconfig_path)
+        xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+        File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+      end
   end
-
-  target 'hatimtakipappUITests' do
-    # Pods for testing
-  end
-
+end
 end

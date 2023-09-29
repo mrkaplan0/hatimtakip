@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		113B0982B9FF4B3081CE545E /* Pods_hatimtakipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */; };
+		115A9C58F59C8DFBEEA83571 /* Pods_hatimtakipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF28C7627806E32DEBD68841 /* Pods_hatimtakipapp.framework */; };
 		880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A72CE2A97856800BA56AF /* RouterPage.swift */; };
 		8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */; };
 		8838E1CE2A86C18E006BA389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */; };
@@ -51,8 +51,6 @@
 		88D6D2942AB22DEF00B54AF8 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */; };
 		88D6D2962AB2398100B54AF8 /* PartCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2952AB2398100B54AF8 /* PartCellView.swift */; };
 		88D6D29A2AB280CD00B54AF8 /* Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6D2992AB280CD00B54AF8 /* Circular.swift */; };
-		B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */; };
-		DB60E52E2B37DBE32950B17F /* Pods_hatimtakipapp_hatimtakipappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.debug.xcconfig"; sourceTree = "<group>"; };
-		1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.release.xcconfig"; sourceTree = "<group>"; };
-		3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6E21A3D6F00C9E6ACAC2A8 /* Pods-hatimtakipapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.debug.xcconfig"; sourceTree = "<group>"; };
+		701A6BB7994D02CA9B2EB8B4 /* Pods-hatimtakipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.release.xcconfig"; sourceTree = "<group>"; };
 		880A72CE2A97856800BA56AF /* RouterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPage.swift; sourceTree = "<group>"; };
 		8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUsernamePage.swift; sourceTree = "<group>"; };
 		8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -115,12 +112,7 @@
 		88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		88D6D2952AB2398100B54AF8 /* PartCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCellView.swift; sourceTree = "<group>"; };
 		88D6D2992AB280CD00B54AF8 /* Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circular.swift; sourceTree = "<group>"; };
-		891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipappTests.debug.xcconfig"; path = "Target Support Files/Pods-hatimtakipappTests/Pods-hatimtakipappTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp_hatimtakipappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBD63B1733E7D5948E28B9AE /* Pods-hatimtakipappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipappTests.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipappTests/Pods-hatimtakipappTests.release.xcconfig"; sourceTree = "<group>"; };
-		E53022807AD4511F82A26083 /* Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF28C7627806E32DEBD68841 /* Pods_hatimtakipapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hatimtakipapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +127,7 @@
 				884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				884513112A81073D00127D72 /* FirebaseAnalytics in Frameworks */,
 				8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */,
-				113B0982B9FF4B3081CE545E /* Pods_hatimtakipapp.framework in Frameworks */,
+				115A9C58F59C8DFBEEA83571 /* Pods_hatimtakipapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B406843DDCB14694BE0DEB3F /* Pods_hatimtakipappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,32 +142,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB60E52E2B37DBE32950B17F /* Pods_hatimtakipapp_hatimtakipappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FDE8DBDBB3B07D3261BEED4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E614CC2A881C10835FCE8E40 /* Pods_hatimtakipapp.framework */,
-				A56FD8E5EBC9493355AD6675 /* Pods_hatimtakipapp_hatimtakipappUITests.framework */,
-				3EE699AD7933E559EA4D9616 /* Pods_hatimtakipappTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4E6BC4C2A93BA9B7431564A1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */,
-				1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */,
-				891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */,
-				E53022807AD4511F82A26083 /* Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig */,
-				99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */,
-				DBD63B1733E7D5948E28B9AE /* Pods-hatimtakipappTests.release.xcconfig */,
+				1B6E21A3D6F00C9E6ACAC2A8 /* Pods-hatimtakipapp.debug.xcconfig */,
+				701A6BB7994D02CA9B2EB8B4 /* Pods-hatimtakipapp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -189,7 +165,7 @@
 				8842F2BC2A785E90009F316D /* hatimtakipappUITests */,
 				8842F2A02A785E8D009F316D /* Products */,
 				4E6BC4C2A93BA9B7431564A1 /* Pods */,
-				0FDE8DBDBB3B07D3261BEED4 /* Frameworks */,
+				F8756D14F16B38350D8A5875 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -332,6 +308,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		F8756D14F16B38350D8A5875 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF28C7627806E32DEBD68841 /* Pods_hatimtakipapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,11 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842F2C32A785E90009F316D /* Build configuration list for PBXNativeTarget "hatimtakipapp" */;
 			buildPhases = (
-				01D986AF34868E61D9030EE0 /* [CP] Check Pods Manifest.lock */,
+				B799B6D68657F30E7571BB19 /* [CP] Check Pods Manifest.lock */,
 				8842F29B2A785E8D009F316D /* Sources */,
 				8842F29C2A785E8D009F316D /* Frameworks */,
 				8842F29D2A785E8D009F316D /* Resources */,
-				03051B90A011AE895F41D548 /* [CP] Embed Pods Frameworks */,
+				AD6DC669DAE0640961A37EE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,7 +351,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842F2C62A785E90009F316D /* Build configuration list for PBXNativeTarget "hatimtakipappTests" */;
 			buildPhases = (
-				155686815FBEAAD2DB85D6E6 /* [CP] Check Pods Manifest.lock */,
 				8842F2AB2A785E90009F316D /* Sources */,
 				8842F2AC2A785E90009F316D /* Frameworks */,
 				8842F2AD2A785E90009F316D /* Resources */,
@@ -386,11 +369,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8842F2C92A785E90009F316D /* Build configuration list for PBXNativeTarget "hatimtakipappUITests" */;
 			buildPhases = (
-				4F962F9B3C62CDB54C903811 /* [CP] Check Pods Manifest.lock */,
 				8842F2B52A785E90009F316D /* Sources */,
 				8842F2B62A785E90009F316D /* Frameworks */,
 				8842F2B72A785E90009F316D /* Resources */,
-				4060A3DAEDA02CFC4CBEB706 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -476,29 +457,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01D986AF34868E61D9030EE0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hatimtakipapp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		03051B90A011AE895F41D548 /* [CP] Embed Pods Frameworks */ = {
+		AD6DC669DAE0640961A37EE0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -515,7 +474,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		155686815FBEAAD2DB85D6E6 /* [CP] Check Pods Manifest.lock */ = {
+		B799B6D68657F30E7571BB19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -530,46 +489,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hatimtakipappTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4060A3DAEDA02CFC4CBEB706 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hatimtakipapp-hatimtakipappUITests/Pods-hatimtakipapp-hatimtakipappUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F962F9B3C62CDB54C903811 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hatimtakipapp-hatimtakipappUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-hatimtakipapp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -765,7 +685,7 @@
 		};
 		8842F2C42A785E90009F316D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10CBE25B8F205744D4009972 /* Pods-hatimtakipapp.debug.xcconfig */;
+			baseConfigurationReference = 1B6E21A3D6F00C9E6ACAC2A8 /* Pods-hatimtakipapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -795,7 +715,7 @@
 		};
 		8842F2C52A785E90009F316D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BB5751B23E1AA7805439C30 /* Pods-hatimtakipapp.release.xcconfig */;
+			baseConfigurationReference = 701A6BB7994D02CA9B2EB8B4 /* Pods-hatimtakipapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -825,7 +745,6 @@
 		};
 		8842F2C72A785E90009F316D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99DBE11351FA229D6AC1A128 /* Pods-hatimtakipappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -846,7 +765,6 @@
 		};
 		8842F2C82A785E90009F316D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBD63B1733E7D5948E28B9AE /* Pods-hatimtakipappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -867,7 +785,6 @@
 		};
 		8842F2CA2A785E90009F316D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 891D9A58740902F428C1C2E8 /* Pods-hatimtakipapp-hatimtakipappUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -886,7 +803,6 @@
 		};
 		8842F2CB2A785E90009F316D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E53022807AD4511F82A26083 /* Pods-hatimtakipapp-hatimtakipappUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

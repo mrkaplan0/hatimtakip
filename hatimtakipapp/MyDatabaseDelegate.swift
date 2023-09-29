@@ -18,7 +18,7 @@ protocol MyDatabaseDelegate {
     
     func createNewHatim(newHatim : Hatim) async -> Result<Bool,Error>
     
-    func readHatimList( user : MyUser) async -> Result<[Hatim],Error>
+    func readHatimList( user : MyUser) async -> [Hatim]
     
     func fetchHatimParts(hatim : Hatim) async -> Result<[HatimPartModel],Error>
     

@@ -99,13 +99,13 @@ struct FirestoreService : MyDatabaseDelegate{
         return .success(true)
     }
     
-    func readHatimList(user: MyUser) async -> Result<[Hatim], Error> {
+    func readHatimList(user: MyUser) async -> [Hatim] {
         var hatimList : Set<Hatim> = []
         let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
         let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
        
        
-        guard let userDict = user.dictionary else { return .failure(print(" JSON ENCodable error") as! Error)}
+        guard let userDict = user.dictionary else { return []}
       
         do {
             
@@ -116,7 +116,7 @@ struct FirestoreService : MyDatabaseDelegate{
                 hatimList.insert(hatim)
             }}catch {
                 print(error)
-                return .failure(error) }
+               }
            
         do {
             
@@ -127,8 +127,8 @@ struct FirestoreService : MyDatabaseDelegate{
                 hatimList.insert(hatim)
             } } catch {
                     print(error)
-                    return .failure(error) }
-            return .success(Array(hatimList))
+                     }
+            return Array(hatimList)
         }
        
     func fetchHatimParts(hatim: Hatim) async -> Result<[HatimPartModel], Error> {

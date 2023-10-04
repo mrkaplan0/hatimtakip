@@ -18,7 +18,7 @@ struct PartCellView: View {
      
        
 
-        RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 0).overlay {
+        
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Circular(lineWidth: 6, backgroundColor: percentage == 0.0 ? .green : .gray, foregroundColor: .orange, percentage: percentage).overlay {
@@ -45,9 +45,11 @@ struct PartCellView: View {
                         Image(systemName: "ellipsis").rotationEffect(Angle(degrees: 90))
                     }
                 }
-            }
+            
          
-        }.frame( height: 60, alignment: .leading).padding(.all)
+            }.background{
+                RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 0).shadow(radius: 2)
+            }.frame( height: 60, alignment: .leading).padding(.all)
          
         
         

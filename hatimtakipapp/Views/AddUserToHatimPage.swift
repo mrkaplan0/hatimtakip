@@ -11,12 +11,16 @@ struct AddUserToHatimPage: View {
     let navigationTitle = "Kisi Ekle"
     let searchFieldInfoText = "Kisi bul ve ekle"
     let cancelButtonText = "Iptal"
+    let favoritesText = "Favori Arkadaslarin"
     @Binding var names : [MyUser]
     @Binding var allParts : [HatimPartModel]
     @Binding var indexOfselectedCuz : Int
+    @State var favoritesPeople = [MyUser]()
     @State private var searchText = ""
+    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
     @Environment(\.dismiss) var dismiss
-    
+    @EnvironmentObject var userViewModel : UserViewModel
+    @EnvironmentObject var readingViewModel : ReadingViewModel
     
     
     var body: some View {
@@ -37,7 +41,27 @@ struct AddUserToHatimPage: View {
                     }
                 }
                 .searchable(text: $searchText, prompt: Text("\(searchFieldInfoText)"))
+               
+                Text(favoritesText).font(.headline).padding(.bottom)
                 
+                LazyVGrid(columns: columns) {
+                    
+                    ForEach(favoritesPeople){ user in
+                        Button {
+                            allParts[indexOfselectedCuz].ownerOfPart = user
+                            
+                            dismiss()
+                        } label: {
+                            Text(user.username).padding().background{
+                                RoundedRectangle(cornerRadius: 8).stroke()
+                            }
+                        }.tint(.orange)
+
+                        
+                    }
+                    .listStyle(PlainListStyle())
+                }
+                Spacer()
             }
             .navigationTitle("\(navigationTitle)")
             .toolbar {
@@ -49,6 +73,18 @@ struct AddUserToHatimPage: View {
                 
             }
             
+        }
+        .onAppear {
+            Task{
+                let result = await readingViewModel.fetchfavoritesPeopleList(user: (userViewModel.user)!)
+                switch result {
+                case .success(let favPeople):
+                    favoritesPeople = favPeople
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
         }
         
         

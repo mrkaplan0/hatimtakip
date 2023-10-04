@@ -202,30 +202,7 @@ struct SelectDateView: View {
             Text(deadlineChosenInfoText)
            // if isDeadLineChosen == true, show date picker. Else make a decision: Do you want or not?
             if isDeadLineChosen == true {
-                DatePicker("\(timepickerInfoText)", selection: $choosenDate, in: Date()...).padding(.top)
-            
-                Button {
-                    if choosenDate == .now || choosenDate < .now {
-                     showAlert = true
-                        return
-                    }
-                    hatim.deadline = choosenDate
-                   toGoNextPage = true
-                } label: {
-                    CustomButtonStyle(buttonText: completeProcessButtonText, buttonColor: .orange)
-                }
-                .alert(errorAlertTitle, isPresented: $showAlert) {}
-            message: {
-                    Text(errorMessage)
-                    }
-
-                Button {
-                    hatim.deadline = nil
-                    toGoNextPage = true
-                } label: {
-                    CustomButtonStyle(buttonText: cancelSelectAndContiueButtonText, buttonColor: .orange)
-                }
-                
+               
                
                
             }
@@ -250,6 +227,37 @@ struct SelectDateView: View {
         .navigationDestination(isPresented: $toGoNextPage) {
             PartsOfHatimPage(hatim: hatim)
         }
+        .sheet(isPresented: $isDeadLineChosen) {
+            
+        } content: {
+            VStack {
+                DatePicker("\(timepickerInfoText)", selection: $choosenDate, in: Date()...).padding()
+            
+                Button {
+                    if choosenDate == .now || choosenDate < .now {
+                     showAlert = true
+                        return
+                    }
+                    hatim.deadline = choosenDate
+                   toGoNextPage = true
+                } label: {
+                    CustomButtonStyle(buttonText: completeProcessButtonText, buttonColor: .orange)
+                }
+                .alert(errorAlertTitle, isPresented: $showAlert) {}
+            message: {
+                    Text(errorMessage)
+                    }
+
+                Button {
+                    hatim.deadline = nil
+                    toGoNextPage = true
+                } label: {
+                    CustomButtonStyle(buttonText: cancelSelectAndContiueButtonText, buttonColor: .orange)
+                }
+                
+            }.presentationDetents([.medium])
+        }
+
     }
     
 }

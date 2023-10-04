@@ -10,25 +10,30 @@ import SwiftUI
 struct DetailPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @EnvironmentObject var readingViewModel : ReadingViewModel
+    @Environment(\.dismiss) var dismiss
     @State var hatim : Hatim
     @State var partsList = [HatimPartModel]()
-    @State private var indexOfSelectedCuz = 0
+    @State var selectedCuz : HatimPartModel = .init(hatimID: "", hatimName: "", pages: [Int](), remainingPages: [Int](), isPrivate: false)
     let editButtonText = "Düzenle"
     let cancelButtonText = "Iptal"
     let changethePersonText = "Kisi Ekle / Degistir"
     @State var isEditActive = false
     @State private var showUpdateOwnerPage = false
+    let warningText = "Uyari"
+    let deleteText = "Hatimi Sil"
+    let alertmessage = "Silmek istediginizden emin misiniz?"
+    @State var showDeleteAlert = false
     
     
     var body: some View {
         NavigationStack {
             List {
                     ForEach(0..<partsList.count, id: \.self) { i in
-                        PartCellView(cuz: $partsList[i], isEditActive: $isEditActive).shadow(radius: 2)
+                        PartCellView(cuz: $partsList[i], isEditActive: $isEditActive)
                             .swipeActions {
                             Button(changethePersonText) {
                                 showUpdateOwnerPage.toggle()
-                                indexOfSelectedCuz = i
+                                selectedCuz = partsList[i]
                               
                             }
                     }
@@ -46,6 +51,13 @@ struct DetailPage: View {
                     Button(isEditActive == false ? editButtonText : cancelButtonText) {
                         isEditActive.toggle()
                     }.tint(.orange) }
+                    
+                    ToolbarItem(placement: .topBarLeading) {
+                        Text(deleteText).foregroundStyle(Color.orange).onTapGesture {
+                            showDeleteAlert.toggle()
+                            
+                        }
+                    }
                                }
                 }
             .onAppear(){
@@ -65,7 +77,25 @@ struct DetailPage: View {
             }
             
             .sheet(isPresented: $showUpdateOwnerPage) {
-                UpdateOwnerOfPartPage(hatim: $hatim, indexOfselectedCuz: $indexOfSelectedCuz)
+                UpdateOwnerOfPartPage(hatim: $hatim, selectedCuz: $selectedCuz)
+            }
+            
+            .alert( isPresented: $showDeleteAlert) {
+                Alert(title: Text(warningText), message: Text(alertmessage), primaryButton: .default(Text(deleteText),
+                                                                                               action: {
+                    Task{
+                        let result = await  readingViewModel.deleteHatim(hatim: hatim)
+                        switch result {
+                        case .success(_):
+                            dismiss()
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }), secondaryButton: .cancel(Text(cancelButtonText), action: {
+                    
+                }))
+                
             }
             
             }

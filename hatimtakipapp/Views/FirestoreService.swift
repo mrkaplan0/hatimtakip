@@ -11,6 +11,12 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct FirestoreService : MyDatabaseDelegate{
+    
+    
+    
+    
+   
+    
    
  
     let db = Firestore.firestore()
@@ -18,7 +24,8 @@ struct FirestoreService : MyDatabaseDelegate{
     func saveMyUser(user: MyUser) async ->  Bool {
         
         do {
-            try await db.collection("Users").document(user.id).setData( ["username": user.username, "email" : user.email ?? "", "id" : user.id] , merge: true)
+            try db.collection("Users").document(user.id).setData(from: user, merge: true)
+            
             return true
         } catch {
             return false
@@ -64,10 +71,28 @@ struct FirestoreService : MyDatabaseDelegate{
         
     }
     
+    func fetchfavoritesPeopleList(user: MyUser) async -> Result<[MyUser], Error> {
+        var favoritesPeopleList = [MyUser]()
+        
+        do{
+            let docs =   try  await db.collection("Users").document(user.id).collection("favoritesPeople").getDocuments()
+            
+            for user in docs.documents {
+                let u = MyUser(id: user.data()["id"] as! String, email: user.data()["email"] as! String, username: user.data()["username"] as! String, userToken: user.data()["username"] as! String)
+                favoritesPeopleList.append(u)
+            }
+            return .success(favoritesPeopleList)
+        } catch {
+            print(error)
+            return .failure(error)
+        }
+        
+    }
+    
     func createNewHatim(newHatim: Hatim) async -> Result<Bool,Error> {
         let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
         let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
-        let docRefUserList = db.collection("Hatimler").document("UserLists").collection("UserLists")
+       
         
         do {
             if newHatim.isPrivate == true {
@@ -76,19 +101,18 @@ struct FirestoreService : MyDatabaseDelegate{
                     try docRefPrivateList.document(newHatim.id).collection("Participants").document(usr.id).setData(from: usr, merge: true)
                 }
                 for i in 0..<newHatim.partsOfHatimList.count {
-                    try docRefPrivateList.document(newHatim.id).collection("Parts").document(i.description).setData(from: newHatim.partsOfHatimList[i])
+                    try docRefPrivateList.document(newHatim.id).collection("Parts").document(newHatim.partsOfHatimList[i].id).setData(from: newHatim.partsOfHatimList[i])
                 }
+                
             } else {
+                
                 try docRefPublicList.document(newHatim.id).setData(from: newHatim, merge: true)
                 for usr in newHatim.participantsList {
                     try docRefPublicList.document(newHatim.id).collection("Participants").document(usr.id).setData(from: usr, merge: true)
+                    try  db.collection("Users").document(newHatim.createdBy.id).collection("favoritesPeople").document(usr.id).setData(from: usr, merge: true)
                 }
-            }
-            
-            for part in newHatim.partsOfHatimList {
-                if part.ownerOfPart != nil {
-                    try  docRefUserList.document(part.ownerOfPart!.id).setData(from: part.ownerOfPart, merge: true)
-                    try docRefUserList.document(part.ownerOfPart!.id).collection("parts").document(part.hatimID + part.pages.first!.description).setData(from: part, merge: true)
+                for i in 0..<newHatim.partsOfHatimList.count {
+                    try docRefPublicList.document(newHatim.id).collection("Parts").document(newHatim.partsOfHatimList[i].id).setData(from: newHatim.partsOfHatimList[i])
                 }
             }
             
@@ -130,6 +154,22 @@ struct FirestoreService : MyDatabaseDelegate{
                      }
             return Array(hatimList)
         }
+    
+    func deleteHatim(hatim: Hatim) async -> Result<Bool, Error> {
+        let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
+        
+        do {
+            if hatim.isPrivate == true {
+                try await docRefPrivateList.document(hatim.id).delete()
+            } else {
+                try await docRefPublicList.document(hatim.id).delete()
+            }
+        } catch {
+            return .failure(error)
+        }
+        return .success(true)
+    }
        
     func fetchHatimParts(hatim: Hatim) async -> Result<[HatimPartModel], Error> {
         var partslist = [HatimPartModel]()
@@ -159,18 +199,18 @@ struct FirestoreService : MyDatabaseDelegate{
     }
     
     
-    func updateOwnerOfPart(newOwner: MyUser, indexOfPart : Int, hatim: Hatim) async -> Result<Bool, Error> {
+    func updateOwnerOfPart(newOwner: MyUser, part: HatimPartModel, hatim: Hatim) async -> Result<Bool, Error> {
         let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
         let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
         do {
             guard let userDict = newOwner.dictionary else { return .failure(print(" JSON ENCodable error") as! Error)}
             
             if hatim.isPrivate == true {
-                try await docRefPrivateList.document(hatim.id).collection("Parts").document(indexOfPart.description).updateData(["ownerOfPart" : userDict])
+                try await docRefPrivateList.document(hatim.id).collection("Parts").document(part.id).updateData(["ownerOfPart" : userDict])
                 
                 
             } else {
-                try await docRefPublicList.document(hatim.id).collection("Parts").document(indexOfPart.description).updateData(["ownerOfPart" : userDict])
+                try await docRefPublicList.document(hatim.id).collection("Parts").document(part.id).updateData(["ownerOfPart" : userDict])
                 
 
             }
@@ -182,6 +222,25 @@ struct FirestoreService : MyDatabaseDelegate{
     }
     
    
-    
+    func updateRemainingPages(part: HatimPartModel) async -> Bool {
+        let docRefPrivateList = db.collection("Hatimler").document("MainLists").collection("PrivateLists")
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
+        do {
+          
+            
+            if part.isPrivate == true {
+                try await docRefPrivateList.document(part.hatimID).collection("Parts").document(part.id).updateData(["remainingPages" : part.remainingPages])
+                
+                
+            } else {
+                try await docRefPublicList.document(part.hatimID).collection("Parts").document(part.id).updateData(["remainingPages" : part.remainingPages])
+                
+
+            }
+        } catch {
+            return false
+        }
+      return true
+    }
     
 }

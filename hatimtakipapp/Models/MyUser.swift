@@ -13,7 +13,7 @@ struct MyUser : Identifiable, Codable, Hashable {
     var email : String?
     var username : String
     var userToken : String?
-    var favoritesPeople : [MyUser]?
+    var favoritesPeople = [MyUser]()
 
     
     init(id: String, email: String, username: String, userToken : String) {

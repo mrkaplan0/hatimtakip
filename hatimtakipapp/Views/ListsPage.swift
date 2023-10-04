@@ -13,6 +13,7 @@ struct ListsPage: View {
     let myGroupsText = "Hatimlerim"
     let myReadings = "Cüzlerim"
     let addNewHatim = "Yeni Hatim Baslat"
+   
 
     var body: some View {
         
@@ -34,9 +35,9 @@ struct ListsPage: View {
                             } label: {
                                 HatimCellView(hatimName: hatim.hatimName, deadLine: hatim.deadline,createdTime: hatim.createdTime)
                             }
-
-                            
-                            
+        
+                            }
+   
                             
                         }
                 }.listStyle(.plain)
@@ -46,15 +47,12 @@ struct ListsPage: View {
             }
             
         }
-       
-           
-       
-    }
+    
 }
 
 struct Lists_Previews: PreviewProvider {
     static var previews: some View {
-    
-        ListsPage()
+       
+        ListsPage().environmentObject(ReadingViewModel())
     }
 }

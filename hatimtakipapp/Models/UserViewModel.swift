@@ -31,7 +31,7 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     init() {
         Task{
             if user == nil{
-                await currentUser()
+              let _ = await currentUser()
             }
             
         }
@@ -116,7 +116,6 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
             }
             
         }
-        
         
         
    

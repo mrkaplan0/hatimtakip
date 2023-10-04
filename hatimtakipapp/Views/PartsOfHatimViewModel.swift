@@ -126,7 +126,7 @@ class PartsOfHatimViewModel: ObservableObject {
             return "\(partText) 28"
         }else if part.first == 561 && part.last == 580 {
             return "\(partText) 29"
-        }else if part.first == 581 && part.last == 602 {
+        }else if part.first == 581 && part.last == 603 {
             return "\(partText) 30"
         }else if part.first == part.last {
             guard let first = part.first else {return ""}
@@ -170,7 +170,7 @@ class PartsOfHatimViewModel: ObservableObject {
     var cuz27 = [521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, ]
     var cuz28 = [ 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, ]
     var cuz29 = [ 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, ]
-    var cuz30 = [581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602]
+    var cuz30 = [581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603]
 
 var c1 = HatimPartModel(hatimID : "hatim.id", hatimName : "hatim.hatimName", pages : cuz1, ownerOfPart : nil, remainingPages : cuz1, deadline: nil, isPrivate: false)
     var c2 = HatimPartModel(hatimID : "hatim.id", hatimName : "hatim.hatimName", pages : cuz2, ownerOfPart : nil, remainingPages : cuz2, deadline: nil, isPrivate: false)

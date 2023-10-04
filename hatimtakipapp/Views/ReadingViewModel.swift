@@ -8,6 +8,8 @@
 import Foundation
 
 class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
+    
+    
    
     let fireStoreService = FirestoreService()
     @Published var hatimList = [Hatim]()
@@ -24,8 +26,15 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
         return await fireStoreService.fetchUserList()
     }
     
+    func fetchfavoritesPeopleList(user: MyUser) async -> Result<[MyUser], Error> {
+        return await fireStoreService.fetchfavoritesPeopleList(user: user)
+    }
+    
     func createNewHatim(newHatim: Hatim) async -> Result<Bool,Error> {
         return await fireStoreService.createNewHatim(newHatim: newHatim)
+    }
+    func deleteHatim(hatim: Hatim) async -> Result<Bool, Error> {
+        return await fireStoreService.deleteHatim(hatim: hatim)
     }
     @MainActor
     func readHatimList(user: MyUser) async -> [Hatim] {
@@ -41,9 +50,11 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     }
     
     
-    func updateOwnerOfPart(newOwner: MyUser, indexOfPart : Int, hatim: Hatim) async -> Result<Bool, Error> {
-        return await fireStoreService.updateOwnerOfPart(newOwner: newOwner, indexOfPart: indexOfPart, hatim: hatim)
+    func updateOwnerOfPart(newOwner: MyUser, part : HatimPartModel, hatim: Hatim) async -> Result<Bool, Error> {
+        return await fireStoreService.updateOwnerOfPart(newOwner: newOwner, part : part, hatim: hatim)
     }
     
-    
+    func updateRemainingPages(part: HatimPartModel) async -> Bool {
+        return await fireStoreService.updateRemainingPages(part: part)
+    }
 }

@@ -92,27 +92,22 @@ struct HatimCellView: View {
          
          switch rate {
          case  0.75...1.0 :
-             print("0.85")
+             
              colorsOfRemainingTimeLine = [.green]
          case 0.5...0.75 :
-             print("0.65")
+             
              colorsOfRemainingTimeLine = [.yellow, .green]
          case 0.25...0.5 :
              colorsOfRemainingTimeLine = [.red, .orange, .yellow]
-             print("0.35")
+             
          case 0.0...0.25 :
-             print("0.15")
+             
              colorsOfRemainingTimeLine = [.red]
              
          default:
              colorsOfRemainingTimeLine = [.red]
          }
-            print("*******************")
-         print(deadLine)
-         print(createdTime)
-         print(rate)
-print(remainingTimeToFinish as Any)
-         print("*******************")
+            
          } else {
              // if it doesn`t have a days but has hours, func returns how many days remained.
              if remainingTimeToFinish.hour ?? 0 > 0 {

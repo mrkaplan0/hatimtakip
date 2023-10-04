@@ -16,13 +16,19 @@ protocol MyDatabaseDelegate {
     
     func fetchUserList() async -> Result<[MyUser],Error> 
     
+    func fetchfavoritesPeopleList(user : MyUser) async -> Result<[MyUser],Error>
+    
     func createNewHatim(newHatim : Hatim) async -> Result<Bool,Error>
+    
+    func deleteHatim(hatim : Hatim) async -> Result<Bool,Error>
     
     func readHatimList( user : MyUser) async -> [Hatim]
     
     func fetchHatimParts(hatim : Hatim) async -> Result<[HatimPartModel],Error>
     
-    func updateOwnerOfPart(newOwner: MyUser, indexOfPart : Int, hatim : Hatim) async -> Result<Bool,Error>
+    func updateOwnerOfPart(newOwner: MyUser, part : HatimPartModel, hatim : Hatim) async -> Result<Bool,Error>
+    
+    func updateRemainingPages (part : HatimPartModel) async -> Bool
     
     
 }

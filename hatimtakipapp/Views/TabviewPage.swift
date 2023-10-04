@@ -10,8 +10,6 @@ import SwiftUI
 struct TabviewPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @EnvironmentObject var readingViewModel : ReadingViewModel
-    @State var hatimList = [Hatim]()
-    @State var error : Error?
     @State private var selection = 0
     let listsText : String = "Hatimlerim"
     let increaseText : String = "Okunan"
@@ -54,6 +52,8 @@ struct TabviewPage_Previews: PreviewProvider {
         @State var error : Error?
         
        
-        TabviewPage(hatimList: hatimList, error: error)
+        TabviewPage()
+            .environmentObject(ReadingViewModel())
+            .environmentObject(UserViewModel())
     }
 }

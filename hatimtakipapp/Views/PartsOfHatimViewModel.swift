@@ -68,7 +68,7 @@ class PartsOfHatimViewModel: ObservableObject {
     
     func setPartName(part : [Int]) -> String {
         
-        if part.first == 1 && part.last == 20 {
+        if part.first == 0 && part.last == 20 {
             return "\(partText) 1"
         }else if part.first == 21 && part.last == 40 {
             return "\(partText) 2"
@@ -141,7 +141,7 @@ class PartsOfHatimViewModel: ObservableObject {
         
     }
 }
-    var cuz1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    var cuz1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     var cuz2 = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
     var cuz3 = [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]
     var cuz4 = [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80]

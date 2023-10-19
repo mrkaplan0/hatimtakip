@@ -8,9 +8,7 @@
 import Foundation
 
 class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
-    
-    
-   
+  
     let fireStoreService = FirestoreService()
     @Published var hatimList = [Hatim]()
     
@@ -39,10 +37,41 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     @MainActor
     func readHatimList(user: MyUser) async -> [Hatim] {
         hatimList = await fireStoreService.readHatimList(user: user)
-        
+        for hatim in hatimList {
+          let checkResult = await deadlineCheck(hatim: hatim)
+            if checkResult == true {
+                hatimList = await fireStoreService.readHatimList(user: user)
+                break
+            }
+        }
         hatimList.sort{$0.createdTime < $1.createdTime}
        return hatimList
       
+    }
+    
+    func deadlineCheck(hatim : Hatim) async -> Bool {
+        // If deadline expired, this method delete the hatim.
+        var result = false
+           
+            if let deadline = hatim.deadline {
+                let allTimesBetweenDates = Calendar.current.dateComponents([.day], from: .now , to: deadline)
+                
+                if let day = allTimesBetweenDates.day {
+                    print(day)
+                    if day <= -10 {
+                     let _ = await  deleteHatim(hatim: hatim)
+                        result = true
+                    } else {
+                        result = false
+                    }
+                }
+            } else {
+                result = false
+            }
+        
+        return result
+     
+       
     }
     
     func fetchHatimParts(hatim: Hatim) async -> Result<[HatimPartModel], Error> {
@@ -57,4 +86,16 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     func updateRemainingPages(part: HatimPartModel) async -> Bool {
         return await fireStoreService.updateRemainingPages(part: part)
     }
+    
+    func fetchOnlyPublicHatims() async -> [Hatim] {
+        return await fireStoreService.fetchOnlyPublicHatims()
+    }
+    
+    func fetchOnlyFreiPartsOfPublicHatims(hatim: Hatim) async -> Result<[HatimPartModel], Error> {
+        return await fireStoreService.fetchOnlyFreiPartsOfPublicHatims(hatim: hatim)
+    }
+    
+    
+    
+   
 }

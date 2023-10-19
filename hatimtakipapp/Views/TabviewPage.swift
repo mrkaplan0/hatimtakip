@@ -22,7 +22,7 @@ struct TabviewPage: View {
                     Image(systemName: "list.clipboard")
                     Text("\(listsText)")
                 }.tag(0)
-                IncCountsPage().tabItem {
+                MyIndividualPage().tabItem {
                     Image(systemName: "plus.circle")
                     Text("\(increaseText)")
                 }.tag(1)

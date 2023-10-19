@@ -30,5 +30,7 @@ protocol MyDatabaseDelegate {
     
     func updateRemainingPages (part : HatimPartModel) async -> Bool
     
-    
+    func fetchOnlyPublicHatims() async -> [Hatim]
+        
+    func fetchOnlyFreiPartsOfPublicHatims(hatim: Hatim) async -> Result<[HatimPartModel],Error>
 }

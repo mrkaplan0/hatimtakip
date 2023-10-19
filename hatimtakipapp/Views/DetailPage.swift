@@ -46,19 +46,21 @@ struct DetailPage: View {
             .navigationTitle(hatim.hatimName)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                // if the hatim is mine, i can only see edit and delete button.
                 if userViewModel.user == hatim.createdBy{
+                    //edit
                     ToolbarItem {
                     Button(isEditActive == false ? editButtonText : cancelButtonText) {
                         isEditActive.toggle()
                     }.tint(.orange) }
-                    
+                    // delete
                     ToolbarItem(placement: .topBarLeading) {
                         Text(deleteText).foregroundStyle(Color.orange).onTapGesture {
                             showDeleteAlert.toggle()
-                            
                         }
                     }
-                               }
+                    
+                  }
                 }
             .onAppear(){
                 Task {
@@ -75,11 +77,11 @@ struct DetailPage: View {
                     }
                 }
             }
-            
+            // assign a user to part
             .sheet(isPresented: $showUpdateOwnerPage) {
                 UpdateOwnerOfPartPage(hatim: $hatim, selectedCuz: $selectedCuz)
             }
-            
+            // make a wrning before delete
             .alert( isPresented: $showDeleteAlert) {
                 Alert(title: Text(warningText), message: Text(alertmessage), primaryButton: .default(Text(deleteText),
                                                                                                action: {

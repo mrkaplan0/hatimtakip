@@ -243,4 +243,55 @@ struct FirestoreService : MyDatabaseDelegate{
       return true
     }
     
+    
+    func fetchOnlyPublicHatims() async -> [Hatim] {
+        var hatimList : Set<Hatim> = []
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
+        
+        do {
+            
+            let querySnap = try await docRefPublicList.getDocuments()
+            
+            for doc in querySnap.documents {
+                let hatim = try doc.data(as: Hatim.self)
+                // this forloop make a control. if any parts have a owner, we don`t need to add this Hatim.
+                for part in hatim.partsOfHatimList{
+                    if part.ownerOfPart == nil {
+                        hatimList.insert(hatim)
+                        break
+                    }
+                }
+               
+            } } catch {
+                    print(error)
+                     }
+            return Array(hatimList)
+    }
+    
+    func fetchOnlyFreiPartsOfPublicHatims(hatim: Hatim) async -> Result<[HatimPartModel], Error> {
+        var partslist = [HatimPartModel]()
+        let docRefPublicList = db.collection("Hatimler").document("MainLists").collection("PublicLists")
+        
+        
+        do {
+            let querySnap = try await docRefPublicList.document(hatim.id).collection("Parts").getDocuments()
+            
+            for doc in querySnap.documents {
+                let part = try doc.data(as: HatimPartModel.self)
+                
+                if part.ownerOfPart == nil {
+                    partslist.append(part)
+                }
+            }
+    
+        } catch {
+            return .failure(error)
+                }
+
+        return .success(partslist)
+    }
+    
+    
+    
+   
 }

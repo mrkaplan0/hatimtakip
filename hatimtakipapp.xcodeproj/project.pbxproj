@@ -38,11 +38,14 @@
 		887E23ED2A81BD7200E65C05 /* ReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */; };
 		887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794C2A791717007FFB1B /* TabviewPage.swift */; };
 		887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E794E2A791953007FFB1B /* ReadingPage.swift */; };
-		887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79502A791AFA007FFB1B /* IncCountsPage.swift */; };
+		887E79512A791AFA007FFB1B /* MyIndividualPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79502A791AFA007FFB1B /* MyIndividualPage.swift */; };
 		887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79522A791CB6007FFB1B /* ListsPage.swift */; };
 		887E79552A79273C007FFB1B /* CreateNewHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */; };
 		887E79572A795324007FFB1B /* AddUserToHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToHatimPage.swift */; };
 		887E79592A799125007FFB1B /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79582A799125007FFB1B /* MyUser.swift */; };
+		888442CE2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */; };
+		8884B7172ADC0C6F0049974F /* ReadQuran.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B7162ADC0C6F0049974F /* ReadQuran.swift */; };
+		8884B7192ADC1AE60049974F /* kuran.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8884B7182ADC1AE50049974F /* kuran.pdf */; };
 		8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */; };
 		8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */; };
 		88A223FC2AB51E920016F300 /* UpdateOwnerOfPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */; };
@@ -99,11 +102,14 @@
 		887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadingViewModel.swift; path = hatimtakipapp/Views/ReadingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		887E794C2A791717007FFB1B /* TabviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabviewPage.swift; sourceTree = "<group>"; };
 		887E794E2A791953007FFB1B /* ReadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingPage.swift; sourceTree = "<group>"; };
-		887E79502A791AFA007FFB1B /* IncCountsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncCountsPage.swift; sourceTree = "<group>"; };
+		887E79502A791AFA007FFB1B /* MyIndividualPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIndividualPage.swift; sourceTree = "<group>"; };
 		887E79522A791CB6007FFB1B /* ListsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsPage.swift; sourceTree = "<group>"; };
 		887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewHatimPage.swift; sourceTree = "<group>"; };
 		887E79562A795324007FFB1B /* AddUserToHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToHatimPage.swift; sourceTree = "<group>"; };
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageForPublicHatim.swift; sourceTree = "<group>"; };
+		8884B7162ADC0C6F0049974F /* ReadQuran.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQuran.swift; sourceTree = "<group>"; };
+		8884B7182ADC1AE50049974F /* kuran.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = kuran.pdf; path = ../../../Downloads/kuran.pdf; sourceTree = "<group>"; };
 		8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartsOfHatimViewModel.swift; path = hatimtakipapp/Views/PartsOfHatimViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCuzTwoPartPage.swift; sourceTree = "<group>"; };
 		88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOwnerOfPartPage.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				8842F2A12A785E8D009F316D /* hatimtakipapp */,
+				8884B7182ADC1AE50049974F /* kuran.pdf */,
 				8842F2B22A785E90009F316D /* hatimtakipappTests */,
 				8842F2BC2A785E90009F316D /* hatimtakipappUITests */,
 				8842F2A02A785E8D009F316D /* Products */,
@@ -223,11 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				88D6D2902AB20ADE00B54AF8 /* Components */,
-				88D6D28F2AB20A8F00B54AF8 /* NavTabs */,
 				888E31A32AB205C6006DCDE4 /* Login */,
+				88D6D28F2AB20A8F00B54AF8 /* NavTabs */,
 				8899D4622A9F78A7001EBB6E /* CreateNewHatim */,
-				88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */,
-				88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +268,17 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8884B7152ADC06F70049974F /* DetailPages */ = {
+			isa = PBXGroup;
+			children = (
+				88D6D2932AB22DEF00B54AF8 /* DetailPage.swift */,
+				888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */,
+				88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */,
+				8884B7162ADC0C6F0049974F /* ReadQuran.swift */,
+			);
+			name = DetailPages;
+			sourceTree = "<group>";
+		};
 		888E31A32AB205C6006DCDE4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,11 +303,12 @@
 		88D6D28F2AB20A8F00B54AF8 /* NavTabs */ = {
 			isa = PBXGroup;
 			children = (
+				8884B7152ADC06F70049974F /* DetailPages */,
 				880A72CE2A97856800BA56AF /* RouterPage.swift */,
 				887E794C2A791717007FFB1B /* TabviewPage.swift */,
 				887E794E2A791953007FFB1B /* ReadingPage.swift */,
 				887E79522A791CB6007FFB1B /* ListsPage.swift */,
-				887E79502A791AFA007FFB1B /* IncCountsPage.swift */,
+				887E79502A791AFA007FFB1B /* MyIndividualPage.swift */,
 			);
 			name = NavTabs;
 			sourceTree = "<group>";
@@ -436,6 +453,7 @@
 			files = (
 				8842F2AA2A785E8F009F316D /* Preview Assets.xcassets in Resources */,
 				8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */,
+				8884B7192ADC1AE60049974F /* kuran.pdf in Resources */,
 				8838E1CE2A86C18E006BA389 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +524,7 @@
 				887E79592A799125007FFB1B /* MyUser.swift in Sources */,
 				8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */,
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
-				887E79512A791AFA007FFB1B /* IncCountsPage.swift in Sources */,
+				887E79512A791AFA007FFB1B /* MyIndividualPage.swift in Sources */,
 				8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */,
 				88D6D2922AB20FE400B54AF8 /* HatimCellView.swift in Sources */,
 				886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */,
@@ -516,6 +534,7 @@
 				887E79572A795324007FFB1B /* AddUserToHatimPage.swift in Sources */,
 				8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */,
 				884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */,
+				8884B7172ADC0C6F0049974F /* ReadQuran.swift in Sources */,
 				8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */,
 				884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */,
 				88D6D2962AB2398100B54AF8 /* PartCellView.swift in Sources */,
@@ -531,6 +550,7 @@
 				8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
 				887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */,
+				888442CE2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift in Sources */,
 				887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */,
 				887E23ED2A81BD7200E65C05 /* ReadingViewModel.swift in Sources */,
 			);

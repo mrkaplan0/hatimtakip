@@ -1,5 +1,5 @@
 //
-//  IncCountsPage.swift
+//  MyIndividualPage.swift
 //  hatimtakipapp
 //
 //  Created by MrKaplan on 01.08.23.
@@ -7,18 +7,20 @@
 
 import SwiftUI
 
-struct IncCountsPage: View {
+struct MyIndividualPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State var myParts = [HatimPartModel]()
+    @State var willBeReadPart : HatimPartModel = .init(hatimID: "", hatimName: "", pages: [Int](), remainingPages: [Int](), isPrivate: false)
     @State private var isSignout = false
+    @State private var goToReadQuranPage = false
     @State private var isPartFinished = false
     @State private var isTimerRunning = false
     @State private var timer: Timer?
     let size = UIScreen.main.bounds.size.width
-    let gridColumn = [GridItem(.flexible()), GridItem(.flexible())]
     let signoutText = "Cikis Yap"
-    
+    let readSwipeButtonText = "Okumaya basla"
+    let remainingPageText = "Kalan Sayfa"
     var body: some View {
         NavigationStack {
             VStack {
@@ -47,10 +49,6 @@ struct IncCountsPage: View {
                     
                     ForEach($myParts, id: \.self) { $part in
                         
-                        
-                        
-                        
-                        
                         HStack (alignment: .center) {
                             PartInfoView(part: part).frame(width: size / 2 - 25)
                             
@@ -71,14 +69,16 @@ struct IncCountsPage: View {
                                     }
                                     
                                     updatePart(part: part)
-                                   
+                                    
                                     
                                 } label: {
                                     Image(systemName: "arrow.uturn.backward.circle.fill").font(.largeTitle).foregroundStyle(Color.gray)
                                 }.buttonStyle(.borderless).opacity(part.remainingPages.count == part.pages.count ?  0.0 : 0.6).disabled(part.remainingPages.count == part.pages.count ? true : false)
-                                Text("Kalan Sayfa").font(.caption)
+                                
+                                Text(remainingPageText).font(.caption)
                                 Text(part.remainingPages.count.description).bold()
-                               //decreaseButton
+                                
+                                //decreaseButton
                                 Button {
                                     part.remainingPages.removeFirst()
                                     
@@ -87,7 +87,7 @@ struct IncCountsPage: View {
                                     if part.remainingPages.count == 0 {
                                         isPartFinished = true
                                     }
-                              
+                                    
                                 } label: {
                                     Image(systemName: "arrowtriangle.down.circle.fill").font(.largeTitle).foregroundStyle(part.remainingPages.count == 0 ? Color.gray : Color.orange).shadow(color: .yellow, radius: 2)
                                 }.buttonStyle(.borderless).disabled(part.remainingPages.count == 0 ? true : false)
@@ -98,8 +98,13 @@ struct IncCountsPage: View {
                             Spacer()
                         }
                         .frame( height: 200)
-
-                    }
+                        
+                        .swipeActions {
+                            
+                            NavigationLink(readSwipeButtonText, destination: {
+                                ReadQuran(pageNumber: part.remainingPages.first ?? 0)
+                            })
+                        }                    }
                     
                 }
                 
@@ -109,7 +114,7 @@ struct IncCountsPage: View {
             
         }
         .onAppear(perform: {
-            
+            myParts.removeAll()
             for hatim in readingViewModel.hatimList {
                 
                 Task {
@@ -125,7 +130,6 @@ struct IncCountsPage: View {
                     myParts.sort{
                         $0.pages.first! < $1.pages.first!
                     }
-                    print(myParts)
                 }
             }
             
@@ -135,6 +139,8 @@ struct IncCountsPage: View {
         .navigationDestination(isPresented: $isSignout){
             LoginPage()
         }
+        
+      
         
         //sheets
         .sheet(isPresented: $isPartFinished) {
@@ -216,7 +222,7 @@ struct IncCountsPage_Previews: PreviewProvider {
     static var previews: some View {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")
         let a = [HatimPartModel(hatimID : "hatim.id", hatimName : "AAAAA aaaaaaaaaa aaaaaa", pages : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], ownerOfPart : user, remainingPages : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], deadline: .now, isPrivate: false),HatimPartModel(hatimID : "hatim.id", hatimName : "BBBBBB", pages : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], ownerOfPart : user, remainingPages : [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], deadline: .now, isPrivate: false)]
-        IncCountsPage(myParts: a).onAppear().environmentObject(ReadingViewModel())
+        MyIndividualPage(myParts: a).onAppear().environmentObject(ReadingViewModel())
     }
 }
 

@@ -18,7 +18,10 @@ import Foundation
 
 class UserViewModel : ObservableObject, MyAuthenticationDelegate{
    
-    
+    enum Process {
+    case loading
+    case done
+    }
 
     
     
@@ -27,6 +30,7 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     let authService = FirebaseAuthService()
     let firestoreService = FirestoreService()
     @Published var user  : MyUser?
+    @Published var process : Process?
     
     init() {
         Task{
@@ -38,13 +42,14 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     }
     @MainActor
     func currentUser() async -> MyUser? {
-        
+        process = Process.loading
         user = await authService.currentUser()
         
         if user != nil {
             
             user = await firestoreService.readMyUser(userId: user!.id)
             print("userview current gelen user \(String(describing: user))")
+            process = Process.done
             return user
         } else {
             return nil
@@ -82,6 +87,7 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     }
     @MainActor
     func signInWithAnonymously() async -> Result<MyUser?,any Error> {
+        process = Process.loading
         let myuserResultFromFirebaseAuth = await authService.signInWithAnonymously()
         
         switch myuserResultFromFirebaseAuth {
@@ -94,6 +100,7 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
                 self.user = await firestoreService.readMyUser(userId: myuser!.id)
                 print("userview createuser db gelen user \(String(describing: user?.id))")
             }
+            process = Process.done
             return .success(user)
             
         case .failure(let error) :

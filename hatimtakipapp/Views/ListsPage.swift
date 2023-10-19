@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListsPage: View {
-    @EnvironmentObject var userViewModel : UserViewModel
+
     @EnvironmentObject var readingViewModel : ReadingViewModel
     let myGroupsText = "Hatimlerim"
     let myReadings = "Cüzlerim"

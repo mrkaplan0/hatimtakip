@@ -10,7 +10,7 @@ import SwiftUI
 struct ListsPage: View {
 
     @EnvironmentObject var readingViewModel : ReadingViewModel
-    let myGroupsText = "Hatimlerim"
+    let myHatimsText = "Katildigin Hatimler"
     let myReadings = "Cüzlerim"
     let addNewHatim = "Yeni Hatim Baslat"
    
@@ -22,13 +22,14 @@ struct ListsPage: View {
             
         NavigationStack {
             VStack {
+                Text(myHatimsText).bold()
                 HStack (alignment: .bottom) {
                     NavigationLink(addNewHatim) {
                         CreateNewHatimPage()
                     }.bold()
                 }
                 List {
-                        
+                     
                     ForEach(readingViewModel.hatimList, id: \.self) { hatim in
                             NavigationLink {
                                 DetailPage(hatim: hatim)

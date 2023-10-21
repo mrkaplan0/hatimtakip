@@ -11,25 +11,30 @@ struct TabviewPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State private var selection = 0
-    let listsText : String = "Hatimlerim"
-    let increaseText : String = "Okunan"
-    let readText : String = "Kuran Oku"
+    let listsText : String = "Hatimler"
+    let readText : String = "Oku"
+    let includeText : String = "Katil"
+    let prayText : String = "Dua"
     
     var body: some View {
         NavigationStack {
             TabView(selection: $selection){
                 ListsPage().tabItem {
-                    Image(systemName: "list.clipboard")
+                    Image(systemName: "list.bullet")
                     Text("\(listsText)")
                 }.tag(0)
                 MyIndividualPage().tabItem {
-                    Image(systemName: "plus.circle")
-                    Text("\(increaseText)")
-                }.tag(1)
-                ReadingPage().tabItem {
                     Image(systemName: "book")
                     Text("\(readText)")
+                }.tag(1)
+                ReadingPage().tabItem {
+                    Image(systemName: "plus.square")
+                    Text("\(includeText)")
                 }.tag(2)
+                SettingsAndPrayPage().tabItem {  
+                    Image(systemName: "book.closed")
+                    Text("\(prayText)")
+                }.tag(3)
             }
             .navigationTitle("")
             .navigationBarBackButtonHidden()
@@ -48,11 +53,13 @@ struct TabviewPage_Previews: PreviewProvider {
     static var previews: some View {
         @EnvironmentObject var userViewModel : UserViewModel
         @EnvironmentObject var readingViewModel : ReadingViewModel
-        @State var hatimList = [Hatim(id: "asdads", hatimName: "aaa", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now), Hatim(id: "asdaafds", hatimName: "dd", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now), Hatim(id: "asdgfdads", hatimName: "aagffha", createdBy: .init(id: "ssq", email: "", username: "ö", userToken: "2"), isIndividual: false, isPrivate: false, deadline: nil, participantsList: [MyUser](), partsOfHatimList: [HatimPartModel](), createdTime: .now)]
-        @State var error : Error?
         
        
-        TabviewPage()
+        TabviewPage().onAppear(){
+            Task {
+                 await readingViewModel.readHatimList(user: userViewModel.user!)
+            }
+        }
             .environmentObject(ReadingViewModel())
             .environmentObject(UserViewModel())
     }

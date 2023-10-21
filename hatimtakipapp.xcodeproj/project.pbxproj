@@ -46,6 +46,9 @@
 		888442CE2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */; };
 		8884B7172ADC0C6F0049974F /* ReadQuran.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B7162ADC0C6F0049974F /* ReadQuran.swift */; };
 		8884B7192ADC1AE60049974F /* kuran.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8884B7182ADC1AE50049974F /* kuran.pdf */; };
+		888561362AE2D32600CF28B2 /* CongratulationsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */; };
+		888561392AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */; };
+		8885613B2AE3517100CF28B2 /* PrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885613A2AE3517100CF28B2 /* PrayView.swift */; };
 		8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */; };
 		8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */; };
 		88A223FC2AB51E920016F300 /* UpdateOwnerOfPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */; };
@@ -110,6 +113,9 @@
 		888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageForPublicHatim.swift; sourceTree = "<group>"; };
 		8884B7162ADC0C6F0049974F /* ReadQuran.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQuran.swift; sourceTree = "<group>"; };
 		8884B7182ADC1AE50049974F /* kuran.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = kuran.pdf; path = ../../../Downloads/kuran.pdf; sourceTree = "<group>"; };
+		888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsSheet.swift; sourceTree = "<group>"; };
+		888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAndPrayPage.swift; sourceTree = "<group>"; };
+		8885613A2AE3517100CF28B2 /* PrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayView.swift; sourceTree = "<group>"; };
 		8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartsOfHatimViewModel.swift; path = hatimtakipapp/Views/PartsOfHatimViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCuzTwoPartPage.swift; sourceTree = "<group>"; };
 		88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOwnerOfPartPage.swift; sourceTree = "<group>"; };
@@ -231,7 +237,8 @@
 			children = (
 				88D6D2902AB20ADE00B54AF8 /* Components */,
 				888E31A32AB205C6006DCDE4 /* Login */,
-				88D6D28F2AB20A8F00B54AF8 /* NavTabs */,
+				8884B7152ADC06F70049974F /* DetailPages */,
+				888561372AE2DAE700CF28B2 /* NavTabs */,
 				8899D4622A9F78A7001EBB6E /* CreateNewHatim */,
 			);
 			path = Views;
@@ -275,8 +282,19 @@
 				888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */,
 				88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */,
 				8884B7162ADC0C6F0049974F /* ReadQuran.swift */,
+				8885613A2AE3517100CF28B2 /* PrayView.swift */,
 			);
 			name = DetailPages;
+			sourceTree = "<group>";
+		};
+		888561372AE2DAE700CF28B2 /* NavTabs */ = {
+			isa = PBXGroup;
+			children = (
+				880A72CE2A97856800BA56AF /* RouterPage.swift */,
+				887E794C2A791717007FFB1B /* TabviewPage.swift */,
+				88D6D28F2AB20A8F00B54AF8 /* Tabs */,
+			);
+			path = NavTabs;
 			sourceTree = "<group>";
 		};
 		888E31A32AB205C6006DCDE4 /* Login */ = {
@@ -300,17 +318,16 @@
 			name = CreateNewHatim;
 			sourceTree = "<group>";
 		};
-		88D6D28F2AB20A8F00B54AF8 /* NavTabs */ = {
+		88D6D28F2AB20A8F00B54AF8 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				8884B7152ADC06F70049974F /* DetailPages */,
-				880A72CE2A97856800BA56AF /* RouterPage.swift */,
-				887E794C2A791717007FFB1B /* TabviewPage.swift */,
 				887E794E2A791953007FFB1B /* ReadingPage.swift */,
 				887E79522A791CB6007FFB1B /* ListsPage.swift */,
 				887E79502A791AFA007FFB1B /* MyIndividualPage.swift */,
+				888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */,
 			);
-			name = NavTabs;
+			name = Tabs;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		88D6D2902AB20ADE00B54AF8 /* Components */ = {
@@ -321,6 +338,7 @@
 				88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */,
 				88D6D2952AB2398100B54AF8 /* PartCellView.swift */,
 				88D6D2992AB280CD00B54AF8 /* Circular.swift */,
+				888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -526,11 +544,13 @@
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* MyIndividualPage.swift in Sources */,
 				8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */,
+				888561392AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift in Sources */,
 				88D6D2922AB20FE400B54AF8 /* HatimCellView.swift in Sources */,
 				886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
 				880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */,
 				886938FF2A9CE48F00DD9644 /* PartsOfHatimPage.swift in Sources */,
+				8885613B2AE3517100CF28B2 /* PrayView.swift in Sources */,
 				887E79572A795324007FFB1B /* AddUserToHatimPage.swift in Sources */,
 				8845130A2A8102F100127D72 /* UserViewModel.swift in Sources */,
 				884513022A80F44600127D72 /* MyDatabaseDelegate.swift in Sources */,
@@ -547,6 +567,7 @@
 				88A223FC2AB51E920016F300 /* UpdateOwnerOfPartPage.swift in Sources */,
 				887E23E72A81268800E65C05 /* FirebaseAuthService.swift in Sources */,
 				884513082A81015D00127D72 /* HatimModel.swift in Sources */,
+				888561362AE2D32600CF28B2 /* CongratulationsSheet.swift in Sources */,
 				8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
 				887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */,

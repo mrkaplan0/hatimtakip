@@ -23,6 +23,10 @@ struct hatimtakipappApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    init() {
+            // Set the primary color for the entire app
+            UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.orange 
+        }
     
     var body: some Scene {
      

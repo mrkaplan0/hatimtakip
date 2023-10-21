@@ -12,45 +12,26 @@ struct MyIndividualPage: View {
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State var myParts = [HatimPartModel]()
     @State var willBeReadPart : HatimPartModel = .init(hatimID: "", hatimName: "", pages: [Int](), remainingPages: [Int](), isPrivate: false)
-    @State private var isSignout = false
     @State private var goToReadQuranPage = false
     @State private var isPartFinished = false
     @State private var isTimerRunning = false
     @State private var timer: Timer?
     let size = UIScreen.main.bounds.size.width
-    let signoutText = "Cikis Yap"
+    let resposibilityText = "Sorumlu Oldugun Cüzler"
     let readSwipeButtonText = "Okumaya basla"
     let remainingPageText = "Kalan Sayfa"
     var body: some View {
         NavigationStack {
-            VStack {
-                HStack{
-                    Spacer()
-                    Button {
-                        Task{
-                            let signOutResult = await userViewModel.signOut()
-                            
-                            switch signOutResult{
-                            case .success(let signoutConfirmed) :
-                                isSignout = signoutConfirmed
-                                print("cikis ok \(isSignout)")
-                            case .failure(let error) :
-                                print(error.localizedDescription)
-                            }
-                        }
-                        
-                        
-                    } label: {
-                        
-                        Text("\(signoutText)")
-                    }.tint(.black).padding(.trailing)
-                }
+            
+            VStack(content: {
+                Text (resposibilityText).bold().padding(.bottom)
+            })
                 List {
                     
                     ForEach($myParts, id: \.self) { $part in
                         
                         HStack (alignment: .center) {
-                            PartInfoView(part: part).frame(width: size / 2 - 25)
+                            PartInfoView(part: part).frame(width: size / 2 - 10)
                             
                             Spacer()
                             Divider()
@@ -68,7 +49,7 @@ struct MyIndividualPage: View {
                                         part.remainingPages.append(part.pages.last!)
                                     }
                                     
-                                    updatePart(part: part)
+                                    readingViewModel.updatePart(part: part)
                                     
                                     
                                 } label: {
@@ -82,7 +63,7 @@ struct MyIndividualPage: View {
                                 Button {
                                     part.remainingPages.removeFirst()
                                     
-                                    updatePart(part: part)
+                                    readingViewModel.updatePart(part: part)
                                     
                                     if part.remainingPages.count == 0 {
                                         isPartFinished = true
@@ -94,7 +75,7 @@ struct MyIndividualPage: View {
                                 
                                 
                                 
-                            }.frame(width: size / 2 - 25)
+                            }.frame(width: size / 2 - 10)
                             Spacer()
                         }
                         .frame( height: 200)
@@ -102,15 +83,15 @@ struct MyIndividualPage: View {
                         .swipeActions {
                             
                             NavigationLink(readSwipeButtonText, destination: {
-                                ReadQuran(pageNumber: part.remainingPages.first ?? 0)
-                            })
+                                ReadQuran(part: $part)
+                            }).disabled(part.remainingPages.count == 0 ? true : false)
                         }                    }
                     
-                }
+                }.listStyle(.plain)
                 
                 Spacer()
                 
-            }
+            
             
         }
         .onAppear(perform: {
@@ -135,10 +116,7 @@ struct MyIndividualPage: View {
             
             
         })
-        // navigations
-        .navigationDestination(isPresented: $isSignout){
-            LoginPage()
-        }
+       
         
       
         
@@ -146,33 +124,12 @@ struct MyIndividualPage: View {
         .sheet(isPresented: $isPartFinished) {
             isPartFinished = false
         } content: {
-            CongratulationsSheet()
+           CongratulationsSheet()
         }
 
     }
     
-    func updatePart (part : HatimPartModel){
-        // this timer aim to reduce writing to server. When every onClicked, it is not necessary to update server.
-        if isTimerRunning {
-                           // Stop the timer
-                            timer?.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                Task {
-                    let _ = await readingViewModel.updateRemainingPages(part: part)
-                    isTimerRunning = false
-                }
-            }
-        } else {
-                           // Start the timer
-                           isTimerRunning = true
-                           timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-                               Task {
-                                   let _ = await readingViewModel.updateRemainingPages(part: part)
-                                   isTimerRunning = false
-                               }
-                           }
-                       }
-    }
+   
 }
 
 
@@ -197,27 +154,7 @@ struct PartInfoView: View {
 }
 
 
-struct CongratulationsSheet: View {
-    @Environment(\.dismiss) var dismiss
-    let congsText = "Tebrikler"
-    let itsDoneText = "Cüzünüzü tamamladiniz."
-    let dismissButtonText = "Kapat"
-    var body: some View {
-        VStack {
-            Spacer(minLength: 150)
-            Text(congsText).font(.largeTitle).bold()
-            Image("confetti").resizable().frame(width: 150, height: 150)
-            Text(itsDoneText)
-            Spacer()
-            Button {
-                dismiss()
-            } label: {
-                CustomButtonStyle(buttonText: dismissButtonText, buttonColor: .orange)
-            }
 
-        }
-    }
-}
 struct IncCountsPage_Previews: PreviewProvider {
     static var previews: some View {
         let user = MyUser(id: "ddd", email: "", username: "lkdjl", userToken: "")

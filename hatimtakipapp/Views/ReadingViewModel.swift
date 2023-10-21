@@ -11,8 +11,8 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
   
     let fireStoreService = FirestoreService()
     @Published var hatimList = [Hatim]()
-    
-    
+    var isTimerRunning = false
+    var timer: Timer?
     
     func saveMyUser(user: MyUser) async -> Bool {
        return await fireStoreService.saveMyUser(user: user)
@@ -57,7 +57,7 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
                 let allTimesBetweenDates = Calendar.current.dateComponents([.day], from: .now , to: deadline)
                 
                 if let day = allTimesBetweenDates.day {
-                    print(day)
+                    
                     if day <= -10 {
                      let _ = await  deleteHatim(hatim: hatim)
                         result = true
@@ -85,6 +85,30 @@ class ReadingViewModel : ObservableObject, MyDatabaseDelegate {
     
     func updateRemainingPages(part: HatimPartModel) async -> Bool {
         return await fireStoreService.updateRemainingPages(part: part)
+    }
+    
+    func updatePart (part : HatimPartModel){
+        // this timer aim to reduce writing to server. When every onClicked, it is not necessary to update server.
+        
+        if isTimerRunning {
+                           // Stop the timer
+                            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                Task {
+                    let _ = await self.updateRemainingPages(part: part)
+                    self.isTimerRunning = false
+                }
+            }
+        } else {
+                           // Start the timer
+            self.isTimerRunning = true
+                           timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+                               Task {
+                                   let _ = await self.updateRemainingPages(part: part)
+                                   self.isTimerRunning = false
+                               }
+                           }
+                       }
     }
     
     func fetchOnlyPublicHatims() async -> [Hatim] {

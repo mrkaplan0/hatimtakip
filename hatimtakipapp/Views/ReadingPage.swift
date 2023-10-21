@@ -13,10 +13,9 @@ struct ReadingPage: View {
     let publicHatimsText = "Herkesin Katilabilecegi Hatimler"
     var body: some View {
         NavigationStack {
+            Text(publicHatimsText).bold().padding(.bottom)
             
             List {
-                
-                Text(publicHatimsText).bold().padding(.bottom)
                 ForEach(publicHatimList, id: \.self) { hatim in
                     NavigationLink {
                         DetailPageForPublicHatim(hatim: hatim)

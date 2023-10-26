@@ -14,9 +14,9 @@ struct SplitCuzTwoPartPage: View {
     @State var newCuz : HatimPartModel?
     @Environment(\.dismiss) var dismiss
     @State private var splitPage: Double = 0
-    let splitPagestext = "sayfadan bölünecek"
-    let buttonConfirmText = "Böl"
-    let buttonDismissText = "Iptal"
+    let splitPagestext : LocalizedStringKey = "sayfadan bölünecek"
+    let buttonConfirmText : LocalizedStringKey = "Böl"
+    let buttonDismissText : LocalizedStringKey = "Iptal"
     
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct SplitCuzTwoPartPage: View {
             Text(partOfHatimViewModel.setPartName(part: selectedCuz.pages))
             Slider(value: $splitPage, in: 0...Double(selectedCuz.pages.count)).padding(.horizontal)
             Text("\(Int(splitPage)).")
-            Text("\(splitPagestext)")
+            Text(splitPagestext)
             
             Spacer()
             HStack {

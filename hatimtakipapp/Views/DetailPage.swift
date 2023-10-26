@@ -14,14 +14,14 @@ struct DetailPage: View {
     @State var hatim : Hatim
     @State var partsList = [HatimPartModel]()
     @State var selectedCuz : HatimPartModel = .init(hatimID: "", hatimName: "", pages: [Int](), remainingPages: [Int](), isPrivate: false)
-    let editButtonText = "Düzenle"
-    let cancelButtonText = "Iptal"
-    let changethePersonText = "Kisi Ekle / Degistir"
+    let editButtonText : LocalizedStringKey = "Düzenle"
+    let cancelButtonText : LocalizedStringKey = "Iptal"
+    let changethePersonText : LocalizedStringKey = "Kisi Ekle / Degistir"
     @State var isEditActive = false
     @State private var showUpdateOwnerPage = false
-    let warningText = "Uyari"
-    let deleteText = "Hatimi Sil"
-    let alertmessage = "Silmek istediginizden emin misiniz?"
+    let warningText : LocalizedStringKey = "Uyari"
+    let deleteText : LocalizedStringKey = "Hatimi Sil"
+    let alertmessage : LocalizedStringKey = "Silmek istediginizden emin misiniz?"
     @State var showDeleteAlert = false
     
     

@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  hatimtakipapp
+
+  Created by MrKaplan on 25.10.23.
+  
+*/
+
+"Bitis Tarihi: " = "Bitiş Tarihi: ";
+"Süre siniri yok." = "Süre sınırı yok.";
+"Son %@ saat!!" = "Son %@ saat!!";
+"Süre Bitti." = " Süre doldu.";
+"Okuyan: %@" = "Okuyan: %@";
+"Tebrikler" = "Tebrikler";
+"Cüzünüzü tamamladiniz." = "Cüzünüzü tamamladınız.";
+"Kapat" = "Kapat";
+"Kullanici Adi" = "Kullanıcı Adı";
+" Kullanici Adi Belirleyin." = "Kullanıcı Adı Belirleyin.";
+"Kaydet" = "Kaydet";
+"Bu kullanici adi kullaniliyor olabilir." = "Bu kullanıcı adı zaten kullanılıyor olabilir.";
+" Kullanici adi alani bos birakilamaz." = " Kullanıcı adı alanı boş bırakılamaz.";
+"Hata" = "Hata";
+"Kaydol" = "Kaydol";
+"Email" = "E-mail";
+"Sifre" = "Şifre";
+"Kullanici Adi" = "Kullanıcı Adı";
+"Giris Yap" = "Giriş Yap";
+"Hesabiniz yok mu?" = "Hesabınız yok mu?";
+"Kaydolun" = "Kaydolun";
+"Üye Olmadan Devam Et" = "Üye Olmadan Devam Et";
+"Düzenle" = "Düzenle";
+"Iptal" = "İptal";
+"Kisi Ekle / Degistir" = "Üye Ekle / Değiştir";
+"Uyari" = "Uyarı";
+"Hatimi Sil" = "Hatmi Sil";
+"Silmek istediginizden emin misiniz?" = "Silmek istediğinizden emin misiniz?";
+"Oku" = "Oku";
+"Kisi Ekle" = "Üye Ekle";
+"Kisi bul ve ekle" = "Üye bul ve ekle";
+"Hatim Duasi" = "Hatim Duası";
+"Hatimler" = "Hatimler";
+"Katil" = "Katıl";
+"Dua" = "Dua";
+"Favori Arkadaslarin" = "Favori Arkadaşlarınız";
+"Hatminize bir isim verin." = "Hatminize bir isim verin.";
+"Örnek: Ramazan Hatmi" = "Örnek: Ramazan Hatmi";
+"Hatim Ayarlari" = "Hatim Ayarları";
+"Sonraki" = "Sonraki";
+"Nasil bir hatim arzu ediyorsun?" = "Nasıl bir hatim arzu ediyorsun?";
+"Bireysel" = "Bireysel";
+"Cok katilimcili" = "Çok Katılımcılı";
+"Hatime kimler erisebilsin?" = "Hatmime kimler erişebilir?";
+"Sadece Sectigim Kisiler" = "Sadece Seçtiğim Katılımcılar";
+"Herkes" = "Herkes";
+"Hatimin icin bitis tarihi ayarlamak ister misin?" = "Hatim için bir bitiş tarihi belirlemek ister misin?";
+"Hatimin bitis tarihini secin." = "Hatmin bitiş tarihini seçin.";
+"Evet" = "Evet";
+"Hayir" = "Hayır";
+"Vazgeç ve Devam Et" = "Vazgeç ve Devam Et";
+"Tamamla" = "Tamamla";
+"Bugünün tarihini seçtiniz." = "Bugünün tarihini seçtiniz.";
+"Cüz Ayarlari" = "Cüz Ayarları";
+"Cüz" = "Cüz";
+"Böl" = "Böl";
+"Olustur" = "Oluştur";
+"Kisi eklenmeyen cüz sayisi: " = "Kişi eklenmeyen cüz sayısı: ";
+". Lütfen kontrol edin." = ". Lütfen kontrol edin.";
+"sayfadan bölünecek" = "sayfadan bölünecek";
+"Yeni Hatim Baslat" = "Yeni Hatim Oluştur";
+"Katildigin Hatimler" = "Katıldığınız Hatimler";
+"Sorumlu Oldugun Cüzler" = "Sorumlu Olduğun Cüzler";
+"Okumaya basla" = "Okumaya Başla";
+"Kalan Sayfa" = "Kalan Sayfa";
+"Hatim Adi:" = "Hatim Adı:";
+"Cuz Adi:" = "Cüz Adı:";
+"Bitis Tarihi: " = "Bitiş Tarihi:";
+"Herkesin Katilabilecegi Hatimler" = "Herkesin Katılabileceği Hatimler";
+"sayfalari arasi" = "sayfaları arası";
+"sayfa" = "sayfa";
+"Cikis Yap" = "Çıkış Yap";
+"Hatim Duasi" = "Hatim Duası";
+"Kuran Oku" = "Kuran Oku";
+

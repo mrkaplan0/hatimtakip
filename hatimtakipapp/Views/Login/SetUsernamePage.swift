@@ -10,17 +10,17 @@ import SwiftUI
 struct SetUsernamePage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @EnvironmentObject var readingViewModel : ReadingViewModel
-    let setUserNameNavTitle = "Kullanici Adi"
-    let usernameTextFieldInfo = " Kullanici Adi Belirleyin."
-    let saveButtonText = "Kaydet"
-    let usernameNotUsableText = "Bu kullanici adi kullaniliyor olabilir."
-    let usernameCanNotNilText = " Kullanici adi alani bos birakilamaz."
+    let setUserNameNavTitle : LocalizedStringKey = "Kullanici Adi"
+    let usernameTextFieldInfo : LocalizedStringKey = " Kullanici Adi Belirleyin."
+    let saveButtonText : LocalizedStringKey = "Kaydet"
+    let usernameNotUsableText = "Bu kullanici adi kullaniliyor! / Kullanici adi alani bos birakilamaz."
+    let usernameCanNotNilText : LocalizedStringKey = " Kullanici adi alani bos birakilamaz."
     @State private var username : String = ""
     @State private var isUsernameUpdated = false
     @State private var isUsernameNotUsable = false
     @State private var iserrorAlertActive = false
     @State private var errorMessage = ""
-    let errorAlertTitle = "Hata"
+    let errorAlertTitle : LocalizedStringKey = "Hata"
     @State private var  usernameList = [String]()
     
     var body: some View {
@@ -28,7 +28,7 @@ struct SetUsernamePage: View {
             VStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(usernameTextFieldInfo)", text: $username).padding(.leading)
+                    TextField(usernameTextFieldInfo, text: $username).padding(.leading)
                         .onChange(of: username) { newValue in
                             //compare username with all users
                             isUsernameNotUsable = usernameList.contains(username.lowercased())
@@ -49,7 +49,8 @@ struct SetUsernamePage: View {
                          isUsernameUpdated = await updateUsername()
                         }
                     }else {
-                        errorMessage = usernameNotUsableText + usernameCanNotNilText
+                        let errorString = Bundle.main.localizedString(forKey: usernameNotUsableText, value: nil, table: "Localizable")
+                        errorMessage = errorString
                         iserrorAlertActive = true
                     }
                 } label: {

@@ -10,9 +10,9 @@ import SwiftUI
 struct SettingsAndPrayPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @State private var isSignout = false
-    let signoutText = "Cikis Yap"
-    let prayOfHatimText = "Hatim Duasi"
-    let readQuranText = "Kuran Oku"
+    let signoutText : LocalizedStringKey = "Cikis Yap"
+    let prayOfHatimText : LocalizedStringKey = "Hatim Duasi"
+    let readQuranText : LocalizedStringKey = "Kuran Oku"
     @State var part = HatimPartModel(hatimID: "", hatimName: "", pages: [Int](), remainingPages: [Int](), isPrivate: false)
     var body: some View {
         VStack {
@@ -34,12 +34,12 @@ struct SettingsAndPrayPage: View {
                     
                 } label: {
                     
-                    Text("\(signoutText)")
+                    Text(signoutText)
                 }.tint(.black).padding(.trailing)
             }
             List {
                 NavigationLink {
-                    ReadQuran(part: $part)
+                    ReadQuran(part: $part, isFromMyIndividualPage: false)
                 } label: {
                     Text(readQuranText)
                 }

@@ -10,9 +10,8 @@ import SwiftUI
 struct ListsPage: View {
 
     @EnvironmentObject var readingViewModel : ReadingViewModel
-    let myHatimsText = "Katildigin Hatimler"
-    let myReadings = "Cüzlerim"
-    let addNewHatim = "Yeni Hatim Baslat"
+    let myHatimsText : LocalizedStringKey = "Katildigin Hatimler"
+    let addNewHatim : LocalizedStringKey = "Yeni Hatim Baslat"
    
 
     var body: some View {

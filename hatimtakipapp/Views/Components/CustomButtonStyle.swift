@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CustomButtonStyle: View {
-    let buttonText : String
+    let buttonText : LocalizedStringKey
     var buttonColor : Color
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8).stroke(buttonColor)
-            Text("\(buttonText)").foregroundColor(buttonColor)
+            Text(buttonText).foregroundColor(buttonColor)
         }.frame(height: 50)
             .padding(.horizontal).padding(.top)
     }

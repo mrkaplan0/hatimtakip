@@ -17,9 +17,9 @@ struct MyIndividualPage: View {
     @State private var isTimerRunning = false
     @State private var timer: Timer?
     let size = UIScreen.main.bounds.size.width
-    let resposibilityText = "Sorumlu Oldugun Cüzler"
-    let readSwipeButtonText = "Okumaya basla"
-    let remainingPageText = "Kalan Sayfa"
+    let resposibilityText : LocalizedStringKey = "Sorumlu Oldugun Cüzler"
+    let readSwipeButtonText : LocalizedStringKey = "Okumaya basla"
+    let remainingPageText : LocalizedStringKey = "Kalan Sayfa"
     var body: some View {
         NavigationStack {
             
@@ -83,7 +83,7 @@ struct MyIndividualPage: View {
                         .swipeActions {
                             
                             NavigationLink(readSwipeButtonText, destination: {
-                                ReadQuran(part: $part)
+                                ReadQuran(part: $part, isFromMyIndividualPage: true)
                             }).disabled(part.remainingPages.count == 0 ? true : false)
                         }                    }
                     
@@ -137,18 +137,18 @@ struct MyIndividualPage: View {
 
 struct PartInfoView: View {
     let part : HatimPartModel
-    let hatimNameText = "Hatim Adi:"
-    let partNameText = "Cuz Adi:"
-    let deadlineText = "Bitis Tarihi: "
-    let nildeadlineText = "Süre siniri yok. "
+    let hatimNameText : LocalizedStringKey = "Hatim Adi:"
+    let partNameText : LocalizedStringKey = "Cuz Adi:"
+    let deadlineText : LocalizedStringKey = "Bitis Tarihi: "
+    let nildeadlineText = "Süre siniri yok."
     var body: some View {
         VStack (alignment: .leading, spacing: 10){
             Text(hatimNameText).font(.caption)
             Text(part.hatimName)
             Text(partNameText).font(.caption)
-            Text(PartsOfHatimViewModel().setPartName(part: part.pages))
+            Text(LocalizedStringKey(PartsOfHatimViewModel().setPartName(part: part.pages)))
             Text(deadlineText).font(.caption)
-            Text(part.deadline?.formatted().description ?? nildeadlineText)
+            Text(LocalizedStringKey(part.deadline?.formatted().description ?? nildeadlineText))
         }.padding()
     }
 }

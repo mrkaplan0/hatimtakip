@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  hatimtakipapp
+
+  Created by MrKaplan on 25.10.23.
+  
+*/
+
+"Bitis Tarihi: " = "Deadline: ";
+"Süre siniri yok." = "There is no time limit.";
+"Son %@ saat!!" = "Last %@ hours!!";
+"Süre Bitti." = "Time is up.";
+"Okuyan: %@" = "Read by: %@";
+"Tebrikler" = "Congratulations";
+"Cüzünüzü tamamladiniz." = "You have completed your purse.";
+"Kapat" = "Close";
+"Kullanici Adi" = "Username";
+" Kullanici Adi Belirleyin." = "Set Username.";
+"Kaydet" = "Save";
+"Bu kullanici adi kullaniliyor olabilir." = "This username may be already in use.";
+" Kullanici adi alani bos birakilamaz." = "Username field cannot be left blank.";
+"Hata" = "Error";
+"Kaydol" = "Sign Up";
+"Email" = "E-mail";
+"Sifre" = "Password";
+"Kullanici Adi" = "Username";
+"Giris Yap" = "Login";
+"Hesabiniz yok mu?" = "Don't you have an account?";
+"Kaydolun" = "Sign Up";
+"Üye Olmadan Devam Et" = "Continue Without Membership";
+"Düzenle" = "Edit";
+"Iptal" = "Cancel";
+"Kisi Ekle / Degistir" = "Add / Change Member";
+"Uyari" = "Warning";
+"Hatimi Sil" = "Delete Hatim";
+"Silmek istediginizden emin misiniz?" = "Are you sure you want to delete?";
+"Oku" = "Read";
+"Kisi Ekle" = "Add Member";
+"Kisi bul ve ekle" = "Find and add Member";
+"Hatim Duasi" = "Hatim Pray";
+"Hatimler" = "Hatims";
+"Katil" = "Join";
+"Dua" = "Pray";
+"Favori Arkadaslarin" = "Your Favorite Friends";
+"Hatminize bir isim verin." = "Give your Hatim a name.";
+"Örnek: Ramazan Hatmi" = "Example: Hatim for Ramadan";
+"Hatim Ayarlari" = "Hatim Settings";
+"Sonraki" = "Next";
+"Nasil bir hatim arzu ediyorsun?" = "What kind of Hatim do you desire?";
+"Bireysel" = "Individual";
+"Cok katilimcili" = "Multi-member";
+"Hatime kimler erisebilsin?" = "Who can access my Hatim?";
+"Sadece Sectigim Kisiler" = "Only Member I Choose";
+"Herkes" = "Everyone";
+"Hatimin icin bitis tarihi ayarlamak ister misin?" = "Would you like to set a deadline for Hatim?";
+"Hatimin bitis tarihini secin." = "Select the end date of Hatim.";
+"Evet" = "Yes";
+"Hayir" = "No";
+"Vazgeç ve Devam Et" = "Cancel and Continue";
+"Tamamla" = "Complete";
+"Bugünün tarihini seçtiniz." = "You chose today's date.";
+"Cüz Ayarlari" = "Juz Settings";
+"Cüz" = "Juz";
+"Böl" = "Split";
+"Olustur" = "Create";
+"Kisi eklenmeyen cüz sayisi: " = "Number of Juzs without adding a person: ";
+". Lütfen kontrol edin." = ". Please check.";
+"sayfadan bölünecek" = "will split from page";
+"Yeni Hatim Baslat" = "Create new Hatim";
+"Katildigin Hatimler" = "Hatims You've Joined";
+"Sorumlu Oldugun Cüzler" = "Juzs You are Responsible for";
+"Okumaya basla" = "Start Reading";
+"Kalan Sayfa" = "Remaining Pages";
+"Hatim Adi:" = "Hatim Name:";
+"Cuz Adi:" = "Juz Name:";
+"Bitis Tarihi: " = "Deadline:";
+"Herkesin Katilabilecegi Hatimler" = "Hatims Everyone Can Participate";
+"sayfalari arasi" = "between pages";
+"sayfa" = "page";
+"Cikis Yap" = "Logout";
+"Hatim Duasi" = "Pray of Hatim";
+"Kuran Oku" = "Read Quran";
+"Sayfa %@ kk" = "Page %@";

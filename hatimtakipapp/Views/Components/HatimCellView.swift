@@ -15,11 +15,11 @@ struct HatimCellView: View {
     @State var colorsOfRemainingTimeLine = [Color]()
     @State var remainingHours = 0
     @State var isHatimDone = false
-    let deadlineText = "Bitis Tarihi: "
-    let nildeadlineText = "Süre siniri yok. "
-    let lastText = "Son "
-    let hoursText = " saat!!"
-    let itsDoneText = "Süre Bitti."
+   let deadlineText : LocalizedStringKey = "Bitis Tarihi: "
+    let nildeadlineText = "Süre siniri yok."
+   // let lastText : LocalizedStringKey = "Son "
+    // let hoursText : LocalizedStringKey = " saat!!"
+    let itsDoneText : LocalizedStringKey = "Süre Bitti."
     
     var body: some View {
         
@@ -34,8 +34,12 @@ struct HatimCellView: View {
                     Text(hatimName)
                         .font(.headline)
                         .lineLimit(1)
-                    Text(deadlineText + (deadLine?.formatted().description ?? nildeadlineText))
-                        .font(.footnote)
+                   HStack {
+                        Text(deadlineText)
+                            .font(.footnote)
+                       Text(LocalizedStringKey(deadLine?.formatted().description ?? nildeadlineText))
+                            .font(.footnote)
+                    }
                     if remainingHours == 0 && isHatimDone == false {
                         ZStack(alignment: .leading) {
                             RoundedRectangle(cornerRadius: 1).fill(.gray).frame(width: 200.0, height: 2)
@@ -49,7 +53,7 @@ struct HatimCellView: View {
                     if remainingHours > 0 {
                         ZStack(alignment: .leading) {
                             RoundedRectangle(cornerRadius: 1).fill(.white.opacity(0.0)).frame(width: 200.0, height: 1)
-                            Text(lastText + remainingHours.description + hoursText).font(.footnote).foregroundColor(.red).animation(Animation.easeInOut(duration: 3))
+                            Text("Son \(remainingHours.description ) saat!!").font(.footnote).foregroundColor(.red).animation(Animation.easeInOut(duration: 3))
                         }
                             
                             

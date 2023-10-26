@@ -46,6 +46,7 @@
 		888442CE2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */; };
 		8884B7172ADC0C6F0049974F /* ReadQuran.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B7162ADC0C6F0049974F /* ReadQuran.swift */; };
 		8884B7192ADC1AE60049974F /* kuran.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8884B7182ADC1AE50049974F /* kuran.pdf */; };
+		888530172AE93956005E2D0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 888530192AE93957005E2D0A /* Localizable.strings */; };
 		888561362AE2D32600CF28B2 /* CongratulationsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */; };
 		888561392AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */; };
 		8885613B2AE3517100CF28B2 /* PrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885613A2AE3517100CF28B2 /* PrayView.swift */; };
@@ -113,6 +114,9 @@
 		888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageForPublicHatim.swift; sourceTree = "<group>"; };
 		8884B7162ADC0C6F0049974F /* ReadQuran.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQuran.swift; sourceTree = "<group>"; };
 		8884B7182ADC1AE50049974F /* kuran.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = kuran.pdf; path = ../../../Downloads/kuran.pdf; sourceTree = "<group>"; };
+		888530182AE93957005E2D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8885301A2AE9395B005E2D0A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8885301B2AE9395E005E2D0A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsSheet.swift; sourceTree = "<group>"; };
 		888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAndPrayPage.swift; sourceTree = "<group>"; };
 		8885613A2AE3517100CF28B2 /* PrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		8842F2962A785E8D009F316D = {
 			isa = PBXGroup;
 			children = (
+				888530192AE93957005E2D0A /* Localizable.strings */,
 				8842F2A12A785E8D009F316D /* hatimtakipapp */,
 				8884B7182ADC1AE50049974F /* kuran.pdf */,
 				8842F2B22A785E90009F316D /* hatimtakipappTests */,
@@ -447,7 +452,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				de,
+				tr,
 			);
 			mainGroup = 8842F2962A785E8D009F316D;
 			packageReferences = (
@@ -469,6 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888530172AE93956005E2D0A /* Localizable.strings in Resources */,
 				8842F2AA2A785E8F009F316D /* Preview Assets.xcassets in Resources */,
 				8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */,
 				8884B7192ADC1AE60049974F /* kuran.pdf in Resources */,
@@ -608,6 +615,19 @@
 			targetProxy = 8842F2BA2A785E90009F316D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		888530192AE93957005E2D0A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				888530182AE93957005E2D0A /* en */,
+				8885301A2AE9395B005E2D0A /* de */,
+				8885301B2AE9395E005E2D0A /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8842F2C12A785E90009F316D /* Debug */ = {

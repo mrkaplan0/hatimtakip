@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CongratulationsSheet: View {
     @Environment(\.dismiss) var dismiss
-    let congsText = "Tebrikler"
-    let itsDoneText = "Cüzünüzü tamamladiniz."
-    let dismissButtonText = "Kapat"
+    let congsText : LocalizedStringKey = "Tebrikler"
+    let itsDoneText : LocalizedStringKey = "Cüzünüzü tamamladiniz."
+    let dismissButtonText : LocalizedStringKey = "Kapat"
     var body: some View {
         VStack {
             Spacer(minLength: 150)

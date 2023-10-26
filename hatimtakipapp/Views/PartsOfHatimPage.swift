@@ -11,15 +11,15 @@ struct PartsOfHatimPage: View {
     @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State var hatim : Hatim?
-    let partsOfHatimNavTitle = "Cüz Ayarlari"
-    let parttext = "Cüz"
-    let splitButtontext = "Böl"
-    let addPerson = "Kisi Ekle"
-    let createButtonText = "Olustur"
-    let cancelButtonText = "Iptal"
-    let alertTitle = "Uyari"
-    let alertMessage1 = "Kisi eklenmeyen cüz sayisi: "
-    let alertMessage2 = ". Lütfen kontrol edin."
+  //  let partsOfHatimNavTitle : LocalizedStringKey = "Cüz Ayarlari"
+   // let parttext  : LocalizedStringKey = "Cüz"
+   // let splitButtontext  = "Böl"
+   // let addPerson : LocalizedStringKey  = "Kisi Ekle"
+    //let createButtonText  = "Olustur"
+    //let cancelButtonText   = "Iptal"
+    //let alertTitle : LocalizedStringKey = "Uyari"
+   // let alertMessage1  : LocalizedStringKey = "Kisi eklenmeyen cüz sayisi: "
+   // let alertMessage2 : LocalizedStringKey = ". Lütfen kontrol edin."
     @State var showAlert = false
     @State private var showSplitView = false
     @State private var showAddUserToHatimView = false
@@ -44,7 +44,7 @@ struct PartsOfHatimPage: View {
                                 Spacer()
                                 Text(partOfHatimViewModel.setPartName(part: part.pages))
                                 Spacer()
-                                Button(part.ownerOfPart != nil ? part.ownerOfPart?.username ?? "" : addPerson) {
+                                Button(part.ownerOfPart != nil ? part.ownerOfPart?.username ?? "" : "Kisi Ekle") {
                                     indexOfSelectedCuz = i
                                     showAddUserToHatimView.toggle()
                                 }.padding(.trailing)
@@ -54,7 +54,7 @@ struct PartsOfHatimPage: View {
                             
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                            Button(splitButtontext) {
+                            Button("Böl") {
                                 selectedCuz = partOfHatimViewModel.allParts[i]
                                 showSplitView.toggle()
                             }
@@ -63,7 +63,7 @@ struct PartsOfHatimPage: View {
                 }
               
                 .listStyle(.plain)
-                .navigationTitle(partsOfHatimNavTitle)
+                .navigationTitle("Cüz Ayarlari")
                 
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
@@ -74,7 +74,7 @@ struct PartsOfHatimPage: View {
                 // Create and save Button
                 
                 ToolbarItem {
-                    Button(createButtonText) {
+                    Button("Olustur") {
                         Task {
                             hatim?.participantsList = partOfHatimViewModel.createParticipantList()
                             //if hatim is private, you must to add person
@@ -93,14 +93,14 @@ struct PartsOfHatimPage: View {
                         }
                     }
                     .foregroundColor(.orange)
-                    .alert(alertTitle, isPresented: $showAlert) {}
+                    .alert("Uyari", isPresented: $showAlert) {}
                 message: {
-                        Text(alertMessage1 + String(nonAddedPersonToCuzIndexArray.count) + alertMessage2)
+                        Text("Kisi eklenmeyen cüz sayisi: " + String(nonAddedPersonToCuzIndexArray.count) + ". Lütfen kontrol edin.")
                         }
 
                 }
                 ToolbarItem(placement: .navigationBarLeading ) {
-                    Button(cancelButtonText) {
+                    Button("Iptal") {
                      toGoNextPage = true
                     }
                     .foregroundColor(.orange)

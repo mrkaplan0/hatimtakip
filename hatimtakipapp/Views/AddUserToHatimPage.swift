@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AddUserToHatimPage: View {
-    let navigationTitle = "Kisi Ekle"
-    let searchFieldInfoText = "Kisi bul ve ekle"
-    let cancelButtonText = "Iptal"
-    let favoritesText = "Favori Arkadaslarin"
+    let navigationTitle : LocalizedStringKey = "Kisi Ekle"
+    let searchFieldInfoText : LocalizedStringKey = "Kisi bul ve ekle"
+    let cancelButtonText : LocalizedStringKey = "Iptal"
+    let favoritesText : LocalizedStringKey = "Favori Arkadaslarin"
     @Binding var names : [MyUser]
     @Binding var allParts : [HatimPartModel]
     @Binding var indexOfselectedCuz : Int
@@ -40,7 +40,7 @@ struct AddUserToHatimPage: View {
                         }
                     }
                 }
-                .searchable(text: $searchText, prompt: Text("\(searchFieldInfoText)"))
+                .searchable(text: $searchText, prompt: Text(searchFieldInfoText))
                
                 Text(favoritesText).font(.headline).padding(.bottom)
                 
@@ -63,7 +63,7 @@ struct AddUserToHatimPage: View {
                 }
                 Spacer()
             }
-            .navigationTitle("\(navigationTitle)")
+            .navigationTitle(navigationTitle)
             .toolbar {
                 
                 Button(cancelButtonText) {

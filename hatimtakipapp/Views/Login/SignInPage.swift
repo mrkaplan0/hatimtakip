@@ -18,13 +18,13 @@ struct SignInPage: View {
     @State private var username = ""
     @State private var errorMessage = ""
     @State private var headerColor : Color = .orange
-    let signUpText = "Kaydol"
-    let emailtext = "Email"
-    let passwordText = "Sifre"
-    let usernameText = "Kullanici Adi"
-    let errorAlertTitle = "Hata"
-    let usernameNotUsableText = "Bu kullanici adi kullaniliyor!"
-    let usernameCanNotNilText = " Kullanici adi alani bos birakilamaz."
+    let signUpText : LocalizedStringKey = "Kaydol"
+    let emailtext : LocalizedStringKey = "Email"
+    let passwordText : LocalizedStringKey = "Sifre"
+    let usernameText : LocalizedStringKey = "Kullanici Adi"
+    let errorAlertTitle : LocalizedStringKey = "Hata"
+    let usernameNotUsableText  = "Bu kullanici adi kullaniliyor! / Kullanici adi alani bos birakilamaz."
+    
     
     @State private var  usernameList = [String]()
     
@@ -40,19 +40,19 @@ struct SignInPage: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(emailtext)", text: $email).padding(.leading)
+                    TextField(emailtext, text: $email).padding(.leading)
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(passwordText)", text: $password).padding(.leading)
+                    TextField(passwordText, text: $password).padding(.leading)
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(usernameText)", text: $username).padding(.leading)
+                    TextField(usernameText, text: $username).padding(.leading)
                         .onChange(of: username) { newValue in
                             //compare username with all users
                             isUsernameNotUsable = usernameList.contains(username.lowercased())
@@ -74,7 +74,8 @@ struct SignInPage: View {
                             isSignedIn = await createUserWithEmail()
                         }
                     }else {
-                        errorMessage = usernameNotUsableText + usernameCanNotNilText
+                        let errorString = Bundle.main.localizedString(forKey: usernameNotUsableText, value: nil, table: "Localizable")
+                        errorMessage = errorString
                         iserrorAlertActive = true
                     }
                 } label: {

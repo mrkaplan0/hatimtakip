@@ -16,7 +16,7 @@ struct DetailPageForPublicHatim: View {
     @State var partsList = [HatimPartModel]()
     @State var selectedCuz : HatimPartModel = .init(hatimID: "", hatimName: "", pages: [Int](), remainingPages: [Int](), isPrivate: false)
     @State var isEditActive = false
-    let readButtonText = "Oku"
+    let readButtonText : LocalizedStringKey = "Oku"
    
     
     

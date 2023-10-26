@@ -4,7 +4,7 @@
 //
 //  Created by MrKaplan on 30.08.23.
 //
-
+import SwiftUI
 import Foundation
 
 class PartsOfHatimViewModel: ObservableObject {
@@ -12,7 +12,7 @@ class PartsOfHatimViewModel: ObservableObject {
     var parts = [cuz1, cuz2, cuz3, cuz4, cuz5, cuz6, cuz7, cuz8, cuz9, cuz10, cuz11, cuz12, cuz13, cuz14, cuz15, cuz16, cuz17,cuz18, cuz19, cuz20, cuz21, cuz22, cuz23, cuz24, cuz25, cuz26, cuz27,cuz28, cuz29, cuz30 ]
     @Published var allParts = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30]
     let partText = "Cüz"
-    let pageBetweenText = "sayfalari arasi"
+    let pageBetweenText  = "sayfalari arasi"
     let pageText = "sayfa"
     
    

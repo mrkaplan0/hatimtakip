@@ -14,18 +14,15 @@ struct Header: View {
     var body: some View {
         VStack {
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 0).foregroundColor(headerColor.opacity(0.3))
-                    .rotationEffect(Angle(degrees: 30))
-                RoundedRectangle(cornerRadius: 0).foregroundColor(headerColor.opacity(0.9))
-                    .rotationEffect(Angle(degrees: -10))
+           
                 VStack {
-                    Text("Hatim Oku").font(.system(size: 50)).fontWeight(.bold)
-                    Text("Hatim Takip Uygulamasi").font(.headline).fontWeight(.bold)
+                    Image("logo").resizable().frame(width: 240, height: 240, alignment: .bottom)
+                    Text("Hatim Oku").font(.system(size: 50)).fontWeight(.bold).fontDesign(.rounded)
+                    Text("Hatim Takip Uygulamasi").font(.headline).fontWeight(.bold).fontDesign(.rounded).foregroundStyle(.gray)
+                    Spacer()
                 }
                 
-            }.frame(width: UIScreen.main.bounds.width*3, height: 200)
-                .offset(y:50)
+           
             
             Spacer()
         }

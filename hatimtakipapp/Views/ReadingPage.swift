@@ -10,7 +10,7 @@ import SwiftUI
 struct ReadingPage: View {
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State var publicHatimList = [Hatim]()
-    let publicHatimsText = "Herkesin Katilabilecegi Hatimler"
+    let publicHatimsText : LocalizedStringKey = "Herkesin Katilabilecegi Hatimler"
     var body: some View {
         NavigationStack {
             Text(publicHatimsText).bold().padding(.bottom)

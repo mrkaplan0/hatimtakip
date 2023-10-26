@@ -11,29 +11,29 @@ struct TabviewPage: View {
     @EnvironmentObject var userViewModel : UserViewModel
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State private var selection = 0
-    let listsText : String = "Hatimler"
-    let readText : String = "Oku"
-    let includeText : String = "Katil"
-    let prayText : String = "Dua"
+    let listsText : LocalizedStringKey  = "Hatimler"
+    let readText : LocalizedStringKey = "Oku"
+    let includeText : LocalizedStringKey = "Katil"
+    let prayText : LocalizedStringKey = "Dua"
     
     var body: some View {
         NavigationStack {
             TabView(selection: $selection){
                 ListsPage().tabItem {
                     Image(systemName: "list.bullet")
-                    Text("\(listsText)")
+                    Text(listsText)
                 }.tag(0)
                 MyIndividualPage().tabItem {
                     Image(systemName: "book")
-                    Text("\(readText)")
+                    Text(readText)
                 }.tag(1)
                 ReadingPage().tabItem {
                     Image(systemName: "plus.square")
-                    Text("\(includeText)")
+                    Text(includeText)
                 }.tag(2)
                 SettingsAndPrayPage().tabItem {  
                     Image(systemName: "book.closed")
-                    Text("\(prayText)")
+                    Text(prayText)
                 }.tag(3)
             }
             .navigationTitle("")

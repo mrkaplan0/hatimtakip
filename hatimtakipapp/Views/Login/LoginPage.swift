@@ -18,13 +18,13 @@ struct LoginPage: View {
     @State var password = ""
     @State var headerColor : Color = .green
     @State var errorMessage = ""
-    let loginText = "Giris Yap"
-    let emailtext = "Email"
-    let passwordText = "Sifre"
-    let errorAlertTitle = "Hata"
-    let haveAccountText = "Hesabiniz yok mu?"
-    let signUpButtonText = "Kaydolun"
-    let signInAnonymouslyText = "Üye Olmadan Devam Et"
+    let loginText : LocalizedStringKey = "Giris Yap"
+    let emailtext : LocalizedStringKey = "Email"
+    let passwordText : LocalizedStringKey = "Sifre"
+    let errorAlertTitle : LocalizedStringKey = "Hata"
+    let haveAccountText : LocalizedStringKey = "Hesabiniz yok mu?"
+    let signUpButtonText : LocalizedStringKey = "Kaydolun"
+    let signInAnonymouslyText : LocalizedStringKey = "Üye Olmadan Devam Et"
     
     var body: some View {
         
@@ -39,13 +39,13 @@ struct LoginPage: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(emailtext)", text: $email).padding(.leading)
+                    TextField(emailtext, text: $email).padding(.leading)
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(passwordText)", text: $password).padding(.leading)
+                    TextField(passwordText, text: $password).padding(.leading)
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
@@ -86,13 +86,13 @@ struct LoginPage: View {
                        
                     
                     HStack{
-                        Text("\(haveAccountText)")
+                        Text(haveAccountText)
                         
                         Button {
                             toSignInPage = true
                         } label: {
                             
-                            Text("\(signUpButtonText)").foregroundColor(Color(uiColor: .green)).bold()
+                            Text(signUpButtonText).foregroundColor(Color(uiColor: .green)).bold()
                         }
                     }
                     Spacer(minLength: 20)
@@ -110,7 +110,9 @@ struct LoginPage: View {
                 })
                 .navigationBarBackButtonHidden()
                 
-            }
+            }.frame(width: .infinity).background(
+                LinearGradient(gradient: Gradient(colors: [.white, .white, .orange.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
+            )
         }
     }
    

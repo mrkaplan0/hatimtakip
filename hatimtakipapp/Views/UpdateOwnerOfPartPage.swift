@@ -9,9 +9,9 @@ import SwiftUI
 
 struct UpdateOwnerOfPartPage: View {
     @EnvironmentObject var readingViewModel : ReadingViewModel
-    let navigationTitle = "Kisi Ekle"
-    let searchFieldInfoText = "Kisi bul ve ekle"
-    let cancelButtonText = "Iptal"
+    let navigationTitle : LocalizedStringKey = "Kisi Ekle"
+    let searchFieldInfoText : LocalizedStringKey = "Kisi bul ve ekle"
+    let cancelButtonText : LocalizedStringKey = "Iptal"
     @State var names = [MyUser]()
     @Binding var hatim : Hatim
     @Binding var selectedCuz : HatimPartModel
@@ -36,10 +36,10 @@ struct UpdateOwnerOfPartPage: View {
                         }
                     }
                 }
-                .searchable(text: $searchText, prompt: Text("\(searchFieldInfoText)"))
+                .searchable(text: $searchText, prompt: Text(searchFieldInfoText))
                 
             }
-            .navigationTitle("\(navigationTitle)")
+            .navigationTitle(navigationTitle)
             .toolbar {
                 
                 Button(cancelButtonText) {

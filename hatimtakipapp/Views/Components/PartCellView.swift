@@ -11,7 +11,6 @@ struct PartCellView: View {
     @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
     @Binding var cuz : HatimPartModel
     @Binding var isEditActive : Bool
-    let readingByText = "Okuyan: "
     @State var percentage : Double = 0.1
     
     var body: some View {
@@ -31,7 +30,7 @@ struct PartCellView: View {
                             .font(.headline)
                             .lineLimit(1)
                         
-                        Text(readingByText + (cuz.ownerOfPart?.username ?? ""))
+                        Text("Okuyan: \(cuz.ownerOfPart?.username ?? "")")
                             .lineLimit(1)
                         Text("\(cuz.remainingPages.count)/\(cuz.pages.count)")
                                 .font(.footnote)

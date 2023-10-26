@@ -49,10 +49,10 @@ struct CreateNewHatimPage: View {
 
     struct HatimNameView: View {
         @EnvironmentObject var userViewModel : UserViewModel
-        let hatimNametitle = "Hatminize bir isim verin."
-        let hatimNameexample = "Örnek: Ramazan Hatmi"
-        let hatimNameNavTitle = "Hatim Ayarlari"
-        let nextButtonText = "Sonraki"
+        let hatimNametitle : LocalizedStringKey = "Hatminize bir isim verin."
+        let hatimNameexample : LocalizedStringKey = "Örnek: Ramazan Hatmi"
+        let hatimNameNavTitle : LocalizedStringKey = "Hatim Ayarlari"
+        let nextButtonText : LocalizedStringKey = "Sonraki"
         @Binding var hatimName : String
         @Binding var hatim : Hatim
         var nextAction: () -> Void
@@ -63,10 +63,10 @@ struct CreateNewHatimPage: View {
                 Spacer(minLength: 300)
                 Image(systemName: "books.vertical").resizable().foregroundColor(.orange).frame(width: 100,height: 100)
                 Spacer(minLength: 50)
-                Text("\(hatimNametitle)")
+                Text(hatimNametitle)
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField("\(hatimNameexample)", text: $hatimName).padding(.leading)
+                    TextField(hatimNameexample, text: $hatimName).padding(.leading)
                 }.frame(height: 50).padding(.top)
                 
                     .navigationTitle(hatimNameNavTitle)
@@ -88,9 +88,9 @@ struct CreateNewHatimPage: View {
 struct IndividualSelectView: View {
     @Binding var isIndividual : Bool
     @Binding var hatim : Hatim
-    let individualInfoText = "Nasil bir hatim arzu ediyorsun?"
-    let indiviButtonText = "Bireysel"
-    let multiButtonText = "Cok katilimcili"
+    let individualInfoText : LocalizedStringKey = "Nasil bir hatim arzu ediyorsun?"
+    let indiviButtonText : LocalizedStringKey = "Bireysel"
+    let multiButtonText : LocalizedStringKey = "Cok katilimcili"
     var nextAction: () -> Void
     var body: some View {
         VStack {
@@ -131,9 +131,9 @@ struct HatimPrivacyView: View {
     @Binding var isPrivate : Bool
     @Binding var isIndividual : Bool
     var nextAction: () -> Void
-    let makePrivatInfoText = "Hatime kimler erisebilsin?"
-    let onlyChosenPersonButtonText = "Sadece Sectigim Kisiler"
-    let publicAccessButtonText = "Herkes"
+    let makePrivatInfoText : LocalizedStringKey = "Hatime kimler erisebilsin?"
+    let onlyChosenPersonButtonText : LocalizedStringKey = "Sadece Sectigim Kisiler"
+    let publicAccessButtonText : LocalizedStringKey = "Herkes"
 
 
     var body: some View {
@@ -179,14 +179,14 @@ struct SelectDateView: View {
     @Binding var hatim : Hatim
     @Binding var choosenDate : Date
     @Binding var isDeadLineChosen : Bool
-    let deadlineChosenInfoText = "Hatimin icin bitis tarihi ayarlamak ister misin?"
-    let timepickerInfoText = "Hatimin bitis tarihini secin."
-    let yesButtonText = "Evet"
-    let noButtonText = "Hayir"
-    let cancelSelectAndContiueButtonText = "Vazgeç ve Devam Et"
-    let completeProcessButtonText = "Tamamla"
-    let errorAlertTitle = "Hata"
-    let errorMessage = "Bugünün tarihini seçtiniz."
+    let deadlineChosenInfoText : LocalizedStringKey = "Hatimin icin bitis tarihi ayarlamak ister misin?"
+    let timepickerInfoText : LocalizedStringKey = "Hatimin bitis tarihini secin."
+    let yesButtonText : LocalizedStringKey = "Evet"
+    let noButtonText : LocalizedStringKey = "Hayir"
+    let cancelSelectAndContiueButtonText : LocalizedStringKey = "Vazgeç ve Devam Et"
+    let completeProcessButtonText : LocalizedStringKey = "Tamamla"
+    let errorAlertTitle : LocalizedStringKey = "Hata"
+    let errorMessage : LocalizedStringKey = "Bugünün tarihini seçtiniz."
     @State var toGoNextPage = false
     @State var showAlert = false
     
@@ -231,7 +231,7 @@ struct SelectDateView: View {
             
         } content: {
             VStack {
-                DatePicker("\(timepickerInfoText)", selection: $choosenDate, in: Date()...).padding()
+                DatePicker(timepickerInfoText, selection: $choosenDate, in: Date()...).padding()
             
                 Button {
                     if choosenDate == .now || choosenDate < .now {

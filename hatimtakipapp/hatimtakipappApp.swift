@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-
-import SwiftUI
+import Reachability
 import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -29,12 +28,15 @@ struct hatimtakipappApp: App {
         }
     
     var body: some Scene {
-     
+        @ObservedObject var networkMonitor = NetworkMonitor()
         WindowGroup {
-            
-            RouterPage()
-                .environmentObject(UserViewModel())
-                .environmentObject(ReadingViewModel())
-        }
+            if networkMonitor.isNetworkAvailable {
+                RouterPage()
+                    .environmentObject(UserViewModel())
+                    .environmentObject(ReadingViewModel())
+            } else {
+                Header()
+            }
+            }
     }
 }

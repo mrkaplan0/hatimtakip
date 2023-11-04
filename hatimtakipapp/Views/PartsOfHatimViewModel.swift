@@ -130,13 +130,13 @@ class PartsOfHatimViewModel: ObservableObject {
             return "\(partText) 30"
         }else if part.first == part.last {
             guard let first = part.first else {return ""}
-            return "\(first). \(pageText)"
+            return "\(first.description). sayfa"
         }
         else {
             
             guard let first = part.first else {return ""}
             guard let last = part.last else {return ""}
-            return "\(String(describing: first)) - \(String(describing: last)) \(pageBetweenText)"
+            return "\(first.description) - \(last.description)"
         }
         
     }

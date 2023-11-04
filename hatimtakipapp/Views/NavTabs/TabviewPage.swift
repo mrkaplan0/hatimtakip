@@ -15,6 +15,7 @@ struct TabviewPage: View {
     let readText : LocalizedStringKey = "Oku"
     let includeText : LocalizedStringKey = "Katil"
     let prayText : LocalizedStringKey = "Dua"
+    let settingsText : LocalizedStringKey = "Ayarlar"
     
     var body: some View {
         NavigationStack {
@@ -31,10 +32,14 @@ struct TabviewPage: View {
                     Image(systemName: "plus.square")
                     Text(includeText)
                 }.tag(2)
-                SettingsAndPrayPage().tabItem {  
+                PrayAndQuranPage().tabItem {  
                     Image(systemName: "book.closed")
                     Text(prayText)
                 }.tag(3)
+                SettingsPage().tabItem {
+                    Image(systemName: "gearshape.fill")
+                    Text(settingsText)
+                }
             }
             .navigationTitle("")
             .navigationBarBackButtonHidden()

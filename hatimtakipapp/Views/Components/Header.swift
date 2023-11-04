@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct Header: View {
-    
-    var headerColor : Color
-    
+    @StateObject var networkMonitor = NetworkMonitor()
     var body: some View {
         VStack {
             
            
                 VStack {
-                    Image("logo").resizable().frame(width: 240, height: 240, alignment: .bottom)
+                    Image("logowithoutbg").resizable().frame(width: 240, height: 240, alignment: .bottom)
                     Text("Hatim Oku").font(.system(size: 50)).fontWeight(.bold).fontDesign(.rounded)
-                    Text("Hatim Takip Uygulamasi").font(.headline).fontWeight(.bold).fontDesign(.rounded).foregroundStyle(.gray)
+                    Text(LocalizedStringKey("Hatim Takip Uygulamasi"))
+                        .font(.headline).fontWeight(.bold).fontDesign(.rounded).foregroundStyle(.gray)
+                   if  !networkMonitor.isNetworkAvailable {
+                        ProgressView()
+                        Text("Internet baglantinizi kontrol ediniz!!").foregroundStyle(.red)
+                    }
                     Spacer()
                 }
                 
-           
+        
             
             Spacer()
         }
@@ -32,6 +35,6 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header(headerColor: .green)
+        Header()
     }
 }

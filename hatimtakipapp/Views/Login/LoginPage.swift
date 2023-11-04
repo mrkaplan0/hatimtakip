@@ -16,7 +16,6 @@ struct LoginPage: View {
     @State var iserrorAlertActive = false
     @State var email = ""
     @State var password = ""
-    @State var headerColor : Color = .green
     @State var errorMessage = ""
     let loginText : LocalizedStringKey = "Giris Yap"
     let emailtext : LocalizedStringKey = "Email"
@@ -32,7 +31,7 @@ struct LoginPage: View {
             VStack{
                 //Header
                 
-                Header(headerColor: headerColor)
+                Header()
                 
                 Spacer(minLength: 100)
                 //LoginForm
@@ -45,7 +44,7 @@ struct LoginPage: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField(passwordText, text: $password).padding(.leading)
+                    SecureField(passwordText, text: $password).padding(.leading)
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
@@ -110,8 +109,8 @@ struct LoginPage: View {
                 })
                 .navigationBarBackButtonHidden()
                 
-            }.frame(width: .infinity).background(
-                LinearGradient(gradient: Gradient(colors: [.white, .white, .orange.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
+            }.frame(maxWidth: .infinity).background(
+                LinearGradient(gradient: Gradient(colors: [.white, .white, .orange.opacity(0.6)]), startPoint: .top, endPoint: .bottom)
             )
         }
     }

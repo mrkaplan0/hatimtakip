@@ -11,15 +11,6 @@ struct PartsOfHatimPage: View {
     @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
     @EnvironmentObject var readingViewModel : ReadingViewModel
     @State var hatim : Hatim?
-  //  let partsOfHatimNavTitle : LocalizedStringKey = "Cüz Ayarlari"
-   // let parttext  : LocalizedStringKey = "Cüz"
-   // let splitButtontext  = "Böl"
-   // let addPerson : LocalizedStringKey  = "Kisi Ekle"
-    //let createButtonText  = "Olustur"
-    //let cancelButtonText   = "Iptal"
-    //let alertTitle : LocalizedStringKey = "Uyari"
-   // let alertMessage1  : LocalizedStringKey = "Kisi eklenmeyen cüz sayisi: "
-   // let alertMessage2 : LocalizedStringKey = ". Lütfen kontrol edin."
     @State var showAlert = false
     @State private var showSplitView = false
     @State private var showAddUserToHatimView = false
@@ -42,9 +33,9 @@ struct PartsOfHatimPage: View {
                             HStack (alignment: .bottom, spacing: 30){
                                 Text("\(i + 1)")
                                 Spacer()
-                                Text(partOfHatimViewModel.setPartName(part: part.pages))
+                                writeJuzName(part: part)
                                 Spacer()
-                                Button(part.ownerOfPart != nil ? part.ownerOfPart?.username ?? "" : "Kisi Ekle") {
+                                Button(LocalizedStringKey(part.ownerOfPart != nil ? part.ownerOfPart?.username ?? "" : "Kisi Ekle")) {
                                     indexOfSelectedCuz = i
                                     showAddUserToHatimView.toggle()
                                 }.padding(.trailing)
@@ -93,9 +84,15 @@ struct PartsOfHatimPage: View {
                         }
                     }
                     .foregroundColor(.orange)
+                    
+                   
                     .alert("Uyari", isPresented: $showAlert) {}
                 message: {
-                        Text("Kisi eklenmeyen cüz sayisi: " + String(nonAddedPersonToCuzIndexArray.count) + ". Lütfen kontrol edin.")
+                    VStack {
+                        Text("Kisi eklenmeyen cüz sayisi: \(nonAddedPersonToCuzIndexArray.count.description). Lütfen kontrol edin.")
+                        Text("Lütfen kontrol edin.")
+                    }
+                       
                         }
 
                 }
@@ -163,15 +160,28 @@ struct PartsOfHatimPage: View {
             
             
         }
-     
-        
+
         return true
     }
         
    
 }
 
-
+struct writeJuzName: View {
+    var part : HatimPartModel
+    @StateObject var partOfHatimViewModel = PartsOfHatimViewModel()
+    var body: some View {
+        if part.pages.count >= 20 {
+            Text(LocalizedStringKey( partOfHatimViewModel.setPartName(part: part.pages)))
+        } 
+        if part.pages.count == 1 {
+            Text(LocalizedStringKey("\(part.pages[0].description). sayfa"))
+        }
+        if part.pages.count >= 2 && part.pages.count < 20 {
+            Text(LocalizedStringKey( "\(part.pages[0].description) - \(part.pages.last!.description) sayfalari arasi"))
+        }
+        }
+}
 
 
 

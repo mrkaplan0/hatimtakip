@@ -17,8 +17,7 @@
 "Kullanici Adi" = "Kullanıcı Adı";
 " Kullanici Adi Belirleyin." = "Kullanıcı Adı Belirleyin.";
 "Kaydet" = "Kaydet";
-"Bu kullanici adi kullaniliyor olabilir." = "Bu kullanıcı adı zaten kullanılıyor olabilir.";
-" Kullanici adi alani bos birakilamaz." = " Kullanıcı adı alanı boş bırakılamaz.";
+"Bu kullanici adi kullaniliyor! / Kullanici adi alani bos birakilamaz." = "Bu kullanıcı adı zaten kullanılıyor olabilir. / Kullanıcı adı alanı boş bırakılamaz.";
 "Hata" = "Hata";
 "Kaydol" = "Kaydol";
 "Email" = "E-mail";
@@ -41,6 +40,7 @@
 "Hatimler" = "Hatimler";
 "Katil" = "Katıl";
 "Dua" = "Dua";
+"Ayarlar" = "Ayarlar";
 "Favori Arkadaslarin" = "Favori Arkadaşlarınız";
 "Hatminize bir isim verin." = "Hatminize bir isim verin.";
 "Örnek: Ramazan Hatmi" = "Örnek: Ramazan Hatmi";
@@ -63,8 +63,7 @@
 "Cüz" = "Cüz";
 "Böl" = "Böl";
 "Olustur" = "Oluştur";
-"Kisi eklenmeyen cüz sayisi: " = "Kişi eklenmeyen cüz sayısı: ";
-". Lütfen kontrol edin." = ". Lütfen kontrol edin.";
+"Kisi eklenmeyen cüz sayisi: %@. Lütfen kontrol edin."  = "Kişi eklenmeyen cüz sayısı: %@. Lütfen kontrol edin.";
 "sayfadan bölünecek" = "sayfadan bölünecek";
 "Yeni Hatim Baslat" = "Yeni Hatim Oluştur";
 "Katildigin Hatimler" = "Katıldığınız Hatimler";
@@ -80,4 +79,5 @@
 "Cikis Yap" = "Çıkış Yap";
 "Hatim Duasi" = "Hatim Duası";
 "Kuran Oku" = "Kuran Oku";
-
+"Internet baglantinizi kontrol ediniz!!" = "Lütfen İnternet Bağlantınızı kontrol edin!!" ;
+"Hatim Takip Uygulamasi" = "Hatim Takip Uygulaması";

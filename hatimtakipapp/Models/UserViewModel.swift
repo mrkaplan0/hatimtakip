@@ -24,13 +24,10 @@ class UserViewModel : ObservableObject, MyAuthenticationDelegate{
     }
 
     
-    
-    
-    
     let authService = FirebaseAuthService()
     let firestoreService = FirestoreService()
     @Published var user  : MyUser?
-    @Published var process : Process?
+    @Published var process : Process = .done
     
     init() {
         Task{

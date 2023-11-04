@@ -48,8 +48,11 @@
 		8884B7192ADC1AE60049974F /* kuran.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8884B7182ADC1AE50049974F /* kuran.pdf */; };
 		888530172AE93956005E2D0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 888530192AE93957005E2D0A /* Localizable.strings */; };
 		888561362AE2D32600CF28B2 /* CongratulationsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */; };
-		888561392AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */; };
+		888561392AE2DBCE00CF28B2 /* PrayAndQuranPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888561382AE2DBCE00CF28B2 /* PrayAndQuranPage.swift */; };
 		8885613B2AE3517100CF28B2 /* PrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885613A2AE3517100CF28B2 /* PrayView.swift */; };
+		8888EBBB2AF6648E004A9BB8 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888EBBA2AF6648E004A9BB8 /* SettingsPage.swift */; };
+		8888EBBD2AF66E14004A9BB8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8888EBBC2AF66E14004A9BB8 /* NetworkManager.swift */; };
+		8888EBC02AF66FE7004A9BB8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 8888EBBF2AF66FE7004A9BB8 /* Reachability */; };
 		8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */; };
 		8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */; };
 		88A223FC2AB51E920016F300 /* UpdateOwnerOfPartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */; };
@@ -101,6 +104,7 @@
 		886938FA2A9B7D9B00DD9644 /* HatimPartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimPartModel.swift; sourceTree = "<group>"; };
 		886938FE2A9CE48F00DD9644 /* PartsOfHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfHatimPage.swift; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		887B9CEB2AEC65B000FB1DC4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		887E23E62A81268800E65C05 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthService.swift; path = hatimtakipapp/Models/FirebaseAuthService.swift; sourceTree = SOURCE_ROOT; };
 		887E23EA2A81B85900E65C05 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirestoreService.swift; path = hatimtakipapp/Views/FirestoreService.swift; sourceTree = SOURCE_ROOT; };
 		887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadingViewModel.swift; path = hatimtakipapp/Views/ReadingViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -118,10 +122,13 @@
 		8885301A2AE9395B005E2D0A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8885301B2AE9395E005E2D0A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsSheet.swift; sourceTree = "<group>"; };
-		888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAndPrayPage.swift; sourceTree = "<group>"; };
+		888561382AE2DBCE00CF28B2 /* PrayAndQuranPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayAndQuranPage.swift; sourceTree = "<group>"; };
 		8885613A2AE3517100CF28B2 /* PrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayView.swift; sourceTree = "<group>"; };
+		8888EBBA2AF6648E004A9BB8 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		8888EBBC2AF66E14004A9BB8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = hatimtakipapp/Views/NetworkManager.swift; sourceTree = SOURCE_ROOT; };
 		8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PartsOfHatimViewModel.swift; path = hatimtakipapp/Views/PartsOfHatimViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8899D4632A9F790B001EBB6E /* SplitCuzTwoPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCuzTwoPartPage.swift; sourceTree = "<group>"; };
+		88A00E042AEC56E000F8A49D /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88A223FB2AB51E920016F300 /* UpdateOwnerOfPartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOwnerOfPartPage.swift; sourceTree = "<group>"; };
 		88C195552A93FA3800006F89 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		88D6D2912AB20FE400B54AF8 /* HatimCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimCellView.swift; sourceTree = "<group>"; };
@@ -140,6 +147,7 @@
 				884513172A81073D00127D72 /* FirebaseFirestore in Frameworks */,
 				8845131D2A81073D00127D72 /* FirebaseMessaging in Frameworks */,
 				884513152A81073D00127D72 /* FirebaseAuth in Frameworks */,
+				8888EBC02AF66FE7004A9BB8 /* Reachability in Frameworks */,
 				884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				884513112A81073D00127D72 /* FirebaseAnalytics in Frameworks */,
 				8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */,
@@ -276,6 +284,7 @@
 				884513032A80F4B300127D72 /* MyAuthDelegate.swift */,
 				887E23E62A81268800E65C05 /* FirebaseAuthService.swift */,
 				887E23EA2A81B85900E65C05 /* FirestoreService.swift */,
+				8888EBBC2AF66E14004A9BB8 /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -329,7 +338,8 @@
 				887E794E2A791953007FFB1B /* ReadingPage.swift */,
 				887E79522A791CB6007FFB1B /* ListsPage.swift */,
 				887E79502A791AFA007FFB1B /* MyIndividualPage.swift */,
-				888561382AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift */,
+				888561382AE2DBCE00CF28B2 /* PrayAndQuranPage.swift */,
+				8888EBBA2AF6648E004A9BB8 /* SettingsPage.swift */,
 			);
 			name = Tabs;
 			path = ..;
@@ -382,6 +392,7 @@
 				884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */,
 				8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */,
 				8845131C2A81073D00127D72 /* FirebaseMessaging */,
+				8888EBBF2AF66FE7004A9BB8 /* Reachability */,
 			);
 			productName = hatimtakipapp;
 			productReference = 8842F29F2A785E8D009F316D /* hatimtakipapp.app */;
@@ -454,10 +465,13 @@
 				en,
 				de,
 				tr,
+				ar,
+				fr,
 			);
 			mainGroup = 8842F2962A785E8D009F316D;
 			packageReferences = (
 				8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8888EBBE2AF66FE7004A9BB8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 8842F2A02A785E8D009F316D /* Products */;
 			projectDirPath = "";
@@ -551,7 +565,8 @@
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* MyIndividualPage.swift in Sources */,
 				8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */,
-				888561392AE2DBCE00CF28B2 /* SettingsAndPrayPage.swift in Sources */,
+				888561392AE2DBCE00CF28B2 /* PrayAndQuranPage.swift in Sources */,
+				8888EBBB2AF6648E004A9BB8 /* SettingsPage.swift in Sources */,
 				88D6D2922AB20FE400B54AF8 /* HatimCellView.swift in Sources */,
 				886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */,
 				887E79532A791CB6007FFB1B /* ListsPage.swift in Sources */,
@@ -564,6 +579,7 @@
 				8884B7172ADC0C6F0049974F /* ReadQuran.swift in Sources */,
 				8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */,
 				884513042A80F4B300127D72 /* MyAuthDelegate.swift in Sources */,
+				8888EBBD2AF66E14004A9BB8 /* NetworkManager.swift in Sources */,
 				88D6D2962AB2398100B54AF8 /* PartCellView.swift in Sources */,
 				88D6D2942AB22DEF00B54AF8 /* DetailPage.swift in Sources */,
 				88D6D29A2AB280CD00B54AF8 /* Circular.swift in Sources */,
@@ -623,6 +639,8 @@
 				888530182AE93957005E2D0A /* en */,
 				8885301A2AE9395B005E2D0A /* de */,
 				8885301B2AE9395E005E2D0A /* tr */,
+				88A00E042AEC56E000F8A49D /* ar */,
+				887B9CEB2AEC65B000FB1DC4 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -930,6 +948,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		8888EBBE2AF66FE7004A9BB8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alecrim/Reachability";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -967,6 +993,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8845130F2A81073D00127D72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		8888EBBF2AF66FE7004A9BB8 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8888EBBE2AF66FE7004A9BB8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

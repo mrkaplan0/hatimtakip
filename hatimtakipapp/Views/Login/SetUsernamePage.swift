@@ -39,7 +39,7 @@ struct SetUsernamePage: View {
                 if isUsernameNotUsable == true {
                     HStack {
                         Image(systemName: "x.circle").foregroundColor(.red)
-                        Text(usernameNotUsableText).foregroundColor(.red)
+                        Text(LocalizedStringKey(usernameNotUsableText)).foregroundColor(.red)
                     }
                 }
                 
@@ -49,8 +49,8 @@ struct SetUsernamePage: View {
                          isUsernameUpdated = await updateUsername()
                         }
                     }else {
-                        let errorString = Bundle.main.localizedString(forKey: usernameNotUsableText, value: nil, table: "Localizable")
-                        errorMessage = errorString
+                        
+                        errorMessage = usernameNotUsableText
                         iserrorAlertActive = true
                     }
                 } label: {

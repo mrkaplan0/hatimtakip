@@ -21,7 +21,7 @@ struct SplitCuzTwoPartPage: View {
     var body: some View {
         VStack {
             Spacer()
-            Text(partOfHatimViewModel.setPartName(part: selectedCuz.pages))
+            Text(LocalizedStringKey(partOfHatimViewModel.setPartName(part: selectedCuz.pages)))
             Slider(value: $splitPage, in: 0...Double(selectedCuz.pages.count)).padding(.horizontal)
             Text("\(Int(splitPage)).")
             Text(splitPagestext)
@@ -58,8 +58,7 @@ struct SplitCuzTwoPartPage: View {
                         allParts.append(newCuz!)
                         allParts.append(selectedCuz)
                     }
-                    print(newList)
-                    print(selectedCuz)
+                   
                     
                     dismiss()
                     

@@ -20,7 +20,7 @@ struct RouterPage: View {
             
             if self.showSplash {
                 Spacer(minLength: 200)
-                Header(headerColor: .orange)
+                Header()
             } else {
                 ProgressView()
                 

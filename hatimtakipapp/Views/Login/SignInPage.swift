@@ -17,7 +17,6 @@ struct SignInPage: View {
     @State private var password = ""
     @State private var username = ""
     @State private var errorMessage = ""
-    @State private var headerColor : Color = .orange
     let signUpText : LocalizedStringKey = "Kaydol"
     let emailtext : LocalizedStringKey = "Email"
     let passwordText : LocalizedStringKey = "Sifre"
@@ -33,7 +32,7 @@ struct SignInPage: View {
             VStack{
                 //Header
                 
-                Header(headerColor: headerColor)
+                Header()
                 
                 
                 //LoginForm
@@ -46,7 +45,8 @@ struct SignInPage: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 8).stroke()
-                    TextField(passwordText, text: $password).padding(.leading)
+                    SecureField(passwordText, text: $password).padding(.leading)
+                    
                 }.frame(height: 50)
                     .padding(.horizontal)
                 
@@ -56,6 +56,7 @@ struct SignInPage: View {
                         .onChange(of: username) { newValue in
                             //compare username with all users
                             isUsernameNotUsable = usernameList.contains(username.lowercased())
+                            if   username.isEmpty == true || username == "" { isUsernameNotUsable = true }
                                     }
                 }.frame(height: 50)
                     .padding(.horizontal)
@@ -63,19 +64,19 @@ struct SignInPage: View {
                 if isUsernameNotUsable == true {
                     HStack {
                         Image(systemName: "x.circle").foregroundColor(.red)
-                        Text(usernameNotUsableText).foregroundColor(.red)
+                        Text(LocalizedStringKey(usernameNotUsableText)).foregroundColor(.red)
                     }
                 }
                 
                 //SignIn Button
                 Button {
-                    if isUsernameNotUsable != true{
+                    if isUsernameNotUsable != true && username != "" && email != "" && password != "" {
                         Task{
                             isSignedIn = await createUserWithEmail()
                         }
                     }else {
-                        let errorString = Bundle.main.localizedString(forKey: usernameNotUsableText, value: nil, table: "Localizable")
-                        errorMessage = errorString
+                        errorMessage = usernameNotUsableText
+                        
                         iserrorAlertActive = true
                     }
                 } label: {
@@ -136,7 +137,7 @@ struct SignInPage: View {
             print(error)
             
         }
-        print(usernameList)
+       
     }
 }
 

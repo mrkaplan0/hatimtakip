@@ -10,6 +10,7 @@ target 'hatimtakipapp' do
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/OAuth' 
+pod 'Google-Mobile-Ads-SDK'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

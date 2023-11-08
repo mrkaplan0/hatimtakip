@@ -24,6 +24,7 @@ struct SettingsPage: View {
             
             
                Spacer()
+            
              // Logout Button
                 Button {
                    Task{
@@ -33,7 +34,7 @@ struct SettingsPage: View {
                     CustomButtonStyle(buttonText: signoutText, buttonColor: .orange)
                 }.padding(.bottom)
             
-            
+            BannerView().frame(height: 65)
         }
         // navigations
         .navigationDestination(isPresented: $isSignout){

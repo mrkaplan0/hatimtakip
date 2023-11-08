@@ -27,7 +27,7 @@ struct ReadingPage: View {
           
         }.listStyle(.plain)
         
-        
+            BannerView().frame(height: 65)
         
         }.onAppear {
             Task{

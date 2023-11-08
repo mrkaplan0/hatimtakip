@@ -10,7 +10,6 @@
 		115A9C58F59C8DFBEEA83571 /* Pods_hatimtakipapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF28C7627806E32DEBD68841 /* Pods_hatimtakipapp.framework */; };
 		880A72CF2A97856800BA56AF /* RouterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A72CE2A97856800BA56AF /* RouterPage.swift */; };
 		8838E1C82A86B86D006BA389 /* SetUsernamePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */; };
-		8838E1CE2A86C18E006BA389 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */; };
 		8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */; };
 		8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842F2A42A785E8D009F316D /* LoginPage.swift */; };
 		8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8842F2A62A785E8F009F316D /* Assets.xcassets */; };
@@ -43,6 +42,9 @@
 		887E79552A79273C007FFB1B /* CreateNewHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */; };
 		887E79572A795324007FFB1B /* AddUserToHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79562A795324007FFB1B /* AddUserToHatimPage.swift */; };
 		887E79592A799125007FFB1B /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887E79582A799125007FFB1B /* MyUser.swift */; };
+		887EC0862AFBDF3C006A3E9F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EC0852AFBDF3C006A3E9F /* BannerView.swift */; };
+		887EC0882AFBE0BC006A3E9F /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */; };
+		887EC08A2AFBE572006A3E9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 887EC0892AFBE572006A3E9F /* GoogleService-Info.plist */; };
 		888442CE2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */; };
 		8884B7172ADC0C6F0049974F /* ReadQuran.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B7162ADC0C6F0049974F /* ReadQuran.swift */; };
 		8884B7192ADC1AE60049974F /* kuran.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8884B7182ADC1AE50049974F /* kuran.pdf */; };
@@ -85,7 +87,6 @@
 		701A6BB7994D02CA9B2EB8B4 /* Pods-hatimtakipapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hatimtakipapp.release.xcconfig"; path = "Target Support Files/Pods-hatimtakipapp/Pods-hatimtakipapp.release.xcconfig"; sourceTree = "<group>"; };
 		880A72CE2A97856800BA56AF /* RouterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterPage.swift; sourceTree = "<group>"; };
 		8838E1C72A86B86D006BA389 /* SetUsernamePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUsernamePage.swift; sourceTree = "<group>"; };
-		8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8842F29F2A785E8D009F316D /* hatimtakipapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hatimtakipapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hatimtakipappApp.swift; sourceTree = "<group>"; };
 		8842F2A42A785E8D009F316D /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
@@ -115,6 +116,10 @@
 		887E79542A79273C007FFB1B /* CreateNewHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewHatimPage.swift; sourceTree = "<group>"; };
 		887E79562A795324007FFB1B /* AddUserToHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserToHatimPage.swift; sourceTree = "<group>"; };
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		887EC0842AFBCF2B006A3E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		887EC0852AFBDF3C006A3E9F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerViewController.swift; path = hatimtakipapp/Views/Components/BannerViewController.swift; sourceTree = SOURCE_ROOT; };
+		887EC0892AFBE572006A3E9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageForPublicHatim.swift; sourceTree = "<group>"; };
 		8884B7162ADC0C6F0049974F /* ReadQuran.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQuran.swift; sourceTree = "<group>"; };
 		8884B7182ADC1AE50049974F /* kuran.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = kuran.pdf; path = ../../../Downloads/kuran.pdf; sourceTree = "<group>"; };
@@ -208,12 +213,13 @@
 		8842F2A12A785E8D009F316D /* hatimtakipapp */ = {
 			isa = PBXGroup;
 			children = (
+				887EC0842AFBCF2B006A3E9F /* Info.plist */,
 				8873CCAA2A786FDE00C18995 /* Services */,
 				8873CCA92A786FCF00C18995 /* Models */,
 				8873CCA82A786FBD00C18995 /* ViewModels */,
 				8873CCA72A786F9300C18995 /* Views */,
 				8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */,
-				8838E1CD2A86C18E006BA389 /* GoogleService-Info.plist */,
+				887EC0892AFBE572006A3E9F /* GoogleService-Info.plist */,
 				8842F2A62A785E8F009F316D /* Assets.xcassets */,
 				8842F2A82A785E8F009F316D /* Preview Content */,
 			);
@@ -285,6 +291,7 @@
 				887E23E62A81268800E65C05 /* FirebaseAuthService.swift */,
 				887E23EA2A81B85900E65C05 /* FirestoreService.swift */,
 				8888EBBC2AF66E14004A9BB8 /* NetworkManager.swift */,
+				887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -354,6 +361,7 @@
 				88D6D2952AB2398100B54AF8 /* PartCellView.swift */,
 				88D6D2992AB280CD00B54AF8 /* Circular.swift */,
 				888561352AE2D32600CF28B2 /* CongratulationsSheet.swift */,
+				887EC0852AFBDF3C006A3E9F /* BannerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -491,9 +499,9 @@
 			files = (
 				888530172AE93956005E2D0A /* Localizable.strings in Resources */,
 				8842F2AA2A785E8F009F316D /* Preview Assets.xcassets in Resources */,
+				887EC08A2AFBE572006A3E9F /* GoogleService-Info.plist in Resources */,
 				8842F2A72A785E8F009F316D /* Assets.xcassets in Resources */,
 				8884B7192ADC1AE60049974F /* kuran.pdf in Resources */,
-				8838E1CE2A86C18E006BA389 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,8 +601,10 @@
 				888561362AE2D32600CF28B2 /* CongratulationsSheet.swift in Sources */,
 				8899D4642A9F790B001EBB6E /* SplitCuzTwoPartPage.swift in Sources */,
 				8842F2A32A785E8D009F316D /* hatimtakipappApp.swift in Sources */,
+				887EC0862AFBDF3C006A3E9F /* BannerView.swift in Sources */,
 				887E794D2A791717007FFB1B /* TabviewPage.swift in Sources */,
 				888442CE2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift in Sources */,
+				887EC0882AFBE0BC006A3E9F /* BannerViewController.swift in Sources */,
 				887E794F2A791953007FFB1B /* ReadingPage.swift in Sources */,
 				887E23ED2A81BD7200E65C05 /* ReadingViewModel.swift in Sources */,
 			);
@@ -774,6 +784,7 @@
 				DEVELOPMENT_TEAM = A7A8HH2XC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hatimtakipapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -804,6 +815,7 @@
 				DEVELOPMENT_TEAM = A7A8HH2XC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = hatimtakipapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

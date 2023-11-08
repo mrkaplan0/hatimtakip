@@ -91,7 +91,7 @@ struct MyIndividualPage: View {
                 
                 Spacer()
                 
-            
+            BannerView().frame(height: 65)
             
         }
         .onAppear(perform: {

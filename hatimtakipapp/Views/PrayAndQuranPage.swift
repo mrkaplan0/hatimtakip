@@ -28,6 +28,8 @@ struct PrayAndQuranPage: View {
                 
                 
             }.listStyle(.plain)
+            
+            BannerView().frame(height: 65)
         }
         
        

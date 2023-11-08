@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct ListsPage: View {
 
@@ -27,7 +28,9 @@ struct ListsPage: View {
                         CreateNewHatimPage()
                     }.bold()
                 }
+               
                 List {
+                   
                      
                     ForEach(readingViewModel.hatimList, id: \.self) { hatim in
                             NavigationLink {
@@ -42,8 +45,8 @@ struct ListsPage: View {
                         }
                 }.listStyle(.plain)
                    
-                   
-               
+                
+            BannerView().frame(height: 65)
             }
             
         }

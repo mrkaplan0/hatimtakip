@@ -29,6 +29,7 @@
 		884513192A81073D00127D72 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 884513182A81073D00127D72 /* FirebaseFirestoreCombine-Community */; };
 		8845131B2A81073D00127D72 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131A2A81073D00127D72 /* FirebaseFirestoreSwift */; };
 		8845131D2A81073D00127D72 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8845131C2A81073D00127D72 /* FirebaseMessaging */; };
+		88495CB92AFE892900297068 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88495CB82AFE892900297068 /* InterstitialViewController.swift */; };
 		886938FB2A9B7D9C00DD9644 /* HatimPartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FA2A9B7D9B00DD9644 /* HatimPartModel.swift */; };
 		886938FF2A9CE48F00DD9644 /* PartsOfHatimPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886938FE2A9CE48F00DD9644 /* PartsOfHatimPage.swift */; };
 		8873CCAC2A78704800C18995 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8873CCAB2A78704800C18995 /* Header.swift */; };
@@ -102,6 +103,7 @@
 		884513032A80F4B300127D72 /* MyAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyAuthDelegate.swift; path = hatimtakipapp/MyAuthDelegate.swift; sourceTree = SOURCE_ROOT; };
 		884513072A81015D00127D72 /* HatimModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimModel.swift; sourceTree = "<group>"; };
 		884513092A8102F100127D72 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = hatimtakipapp/Models/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		88495CB82AFE892900297068 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		886938FA2A9B7D9B00DD9644 /* HatimPartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatimPartModel.swift; sourceTree = "<group>"; };
 		886938FE2A9CE48F00DD9644 /* PartsOfHatimPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsOfHatimPage.swift; sourceTree = "<group>"; };
 		8873CCAB2A78704800C18995 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		887E79582A799125007FFB1B /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
 		887EC0842AFBCF2B006A3E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		887EC0852AFBDF3C006A3E9F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerViewController.swift; path = hatimtakipapp/Views/Components/BannerViewController.swift; sourceTree = SOURCE_ROOT; };
+		887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerViewController.swift; path = hatimtakipapp/ViewModels/BannerViewController.swift; sourceTree = SOURCE_ROOT; };
 		887EC0892AFBE572006A3E9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		888442CD2ADB0F3B0043CFEB /* DetailPageForPublicHatim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageForPublicHatim.swift; sourceTree = "<group>"; };
 		8884B7162ADC0C6F0049974F /* ReadQuran.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQuran.swift; sourceTree = "<group>"; };
@@ -213,13 +215,13 @@
 		8842F2A12A785E8D009F316D /* hatimtakipapp */ = {
 			isa = PBXGroup;
 			children = (
-				887EC0842AFBCF2B006A3E9F /* Info.plist */,
 				8873CCAA2A786FDE00C18995 /* Services */,
 				8873CCA92A786FCF00C18995 /* Models */,
 				8873CCA82A786FBD00C18995 /* ViewModels */,
 				8873CCA72A786F9300C18995 /* Views */,
 				8842F2A22A785E8D009F316D /* hatimtakipappApp.swift */,
 				887EC0892AFBE572006A3E9F /* GoogleService-Info.plist */,
+				887EC0842AFBCF2B006A3E9F /* Info.plist */,
 				8842F2A62A785E8F009F316D /* Assets.xcassets */,
 				8842F2A82A785E8F009F316D /* Preview Content */,
 			);
@@ -266,9 +268,11 @@
 		8873CCA82A786FBD00C18995 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */,
 				884513092A8102F100127D72 /* UserViewModel.swift */,
 				887E23EC2A81BD7200E65C05 /* ReadingViewModel.swift */,
 				8899D4602A9F5C43001EBB6E /* PartsOfHatimViewModel.swift */,
+				88495CB82AFE892900297068 /* InterstitialViewController.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -291,7 +295,6 @@
 				887E23E62A81268800E65C05 /* FirebaseAuthService.swift */,
 				887E23EA2A81B85900E65C05 /* FirestoreService.swift */,
 				8888EBBC2AF66E14004A9BB8 /* NetworkManager.swift */,
-				887EC0872AFBE0BC006A3E9F /* BannerViewController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				8842F2A52A785E8D009F316D /* LoginPage.swift in Sources */,
 				88C195562A93FA3800006F89 /* CustomButtonStyle.swift in Sources */,
 				887E79512A791AFA007FFB1B /* MyIndividualPage.swift in Sources */,
+				88495CB92AFE892900297068 /* InterstitialViewController.swift in Sources */,
 				8899D4612A9F5C43001EBB6E /* PartsOfHatimViewModel.swift in Sources */,
 				888561392AE2DBCE00CF28B2 /* PrayAndQuranPage.swift in Sources */,
 				8888EBBB2AF6648E004A9BB8 /* SettingsPage.swift in Sources */,

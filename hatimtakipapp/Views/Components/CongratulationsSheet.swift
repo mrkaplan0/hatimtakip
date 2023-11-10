@@ -19,6 +19,7 @@ struct CongratulationsSheet: View {
             Image("confetti").resizable().frame(width: 150, height: 150)
             Text(itsDoneText)
             Spacer()
+            BannerView().frame(height: 65)
             Button {
                 dismiss()
             } label: {

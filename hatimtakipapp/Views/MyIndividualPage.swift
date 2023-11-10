@@ -20,6 +20,8 @@ struct MyIndividualPage: View {
     let resposibilityText : LocalizedStringKey = "Sorumlu Oldugun Cüzler"
     let readSwipeButtonText : LocalizedStringKey = "Okumaya basla"
     let remainingPageText : LocalizedStringKey = "Kalan Sayfa"
+    private let adViewControllerRepresentable = AdViewControllerRepresentable()
+    private let adCoordinator = AdCoordinator()
     var body: some View {
         NavigationStack {
             
@@ -66,7 +68,8 @@ struct MyIndividualPage: View {
                                     readingViewModel.updatePart(part: part)
                                     
                                     if part.remainingPages.count == 0 {
-                                        isPartFinished = true
+                                        adCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
+                                      
                                     }
                                     
                                 } label: {
@@ -94,6 +97,11 @@ struct MyIndividualPage: View {
             BannerView().frame(height: 65)
             
         }
+        // background to show ad
+        .background {
+            adViewControllerRepresentable
+                      .frame(width: .zero, height: .zero)
+        }
         .onAppear(perform: {
             myParts.removeAll()
             for hatim in readingViewModel.hatimList {
@@ -113,11 +121,14 @@ struct MyIndividualPage: View {
                     }
                 }
             }
-            
-            
+            //load interstitial ad
+            adCoordinator.loadAd()
         })
-       
-        
+        // when ad dismissed, show CongratulationsSheet()
+        .onChange(of: adCoordinator.isDismissed, perform: { result in
+           
+            isPartFinished = true
+        })
       
         
         //sheets
